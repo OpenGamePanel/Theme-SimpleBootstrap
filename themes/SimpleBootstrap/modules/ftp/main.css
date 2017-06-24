@@ -1,0 +1,29 @@
+html,
+body {
+	background: transparent !important;
+	color: #fff;
+}
+td {
+	color: #fff !important;
+}
+
+#StatusbarForm .fa {
+	font-size: 32px;
+	margin-right: 10px;
+}
+
+h1 {
+        padding: 0px !important;
+        margin: 0px !important;
+        border-bottom: none !important;
+	font-size: 24px;
+}
+
+.table:not(.inner-table) {
+	margin-bottom: 20px;
+}
+
+.alert {
+        display: inline-block;
+}
+

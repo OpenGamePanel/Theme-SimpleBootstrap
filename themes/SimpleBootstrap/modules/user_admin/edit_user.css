@@ -1,0 +1,10 @@
+select[name="days"],
+select[name="month"],
+select[name="years"],
+select[name="hours"],
+select[name="minutes"]
+{
+	max-width: 70px;
+	display: inline-block;
+}
+

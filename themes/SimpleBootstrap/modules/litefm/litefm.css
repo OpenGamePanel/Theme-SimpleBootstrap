@@ -1,0 +1,59 @@
+.viewitem {
+	width: 16px;
+	height: 16px;
+}
+.file-operations {
+	display: inline-block;
+	margin-bottom: 10px;
+}
+.operations-button
+{
+	display: inline-block;
+	margin-right: 5px;
+}
+.operations-button:before {
+	font-family: FontAwesome;
+	display: inline-block;
+	margin-right: 2px;
+}
+.operations-button img {
+	display: none;
+}
+.operations-button div {
+	display: inline-block;
+}
+table tbody tr:nth-child(odd) {
+	background: rgba(67, 72, 87, 0.6) !important;
+}
+a[href^="?m=litefm&home_id="] {
+	margin-right: 5px;
+}
+
+#remove:before {
+	content: "\f1f8";
+}
+#rename:before {
+	content: "\f044";
+}
+#move:before {
+	content: "\f047";
+}
+#copy:before {
+        content: "\f24d";
+}
+#compress:before {
+        content: "\f1c6";
+}
+#uncompress:before {
+        content: "\f1c6";
+}
+#create_file:before {
+        content: "\f044";
+}
+#create_folder:before {
+        content: "\f114";
+}
+#upload:before {
+        content: "\f093";
+}
+

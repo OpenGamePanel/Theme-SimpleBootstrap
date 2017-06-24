@@ -1,0 +1,26 @@
+.admin-buttons {
+	display: inline-block;
+	width: 160px;
+	height: 110px;
+	text-align: center;
+	border-radius: 4px;
+	padding: 5px;
+	margin: 0px 5px 5px 0px;
+	vertical-align: middle;
+}
+.admin-buttons div {
+	line-height: 16px;
+	max-height: 32px;
+	overflow: hidden;
+}
+.admin-buttons:before {
+	font-size: 48px;
+}
+.admin-buttons img,
+.admin-buttons br
+{
+	display: none;
+}
+.admin-buttons:hover {
+	background-position: 0 -90px !important;
+}

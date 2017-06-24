@@ -1,0 +1,55 @@
+.btn:not([name="update"]),
+.loading,
+b:not(:first-of-type){
+	float: right;
+}
+b.label {
+	font-size: 12px;
+	font-weight: normal;
+	padding: 5px;
+	margin: 0px 5px;
+}
+.btn,
+.badge {
+	margin: 0px 5px !important;
+}
+.uninstall,
+.install,
+.remove,
+.badge {
+	min-width: 75px;
+}
+.content {
+	height: 30px;
+	line-height: 30px;
+	padding: 4px;
+}
+.content:nth-child(even) {
+	background-color: rgba(40, 42, 49, 0.3) !important;
+}
+.badge {
+	font-weight: normal !important;
+}
+.fa {
+	margin-left: 5px;
+}
+.dragbox-content input[type="checkbox"] {
+	margin-right: 5px;
+}
+
+.extras .bloc {
+	padding: 0px;
+	float: left;
+	width: 49%;
+}
+.extras .bloc:first-of-type {
+	margin-right: 1%;
+}
+
+@media screen and (max-width: 1200px) {
+	.extras .bloc {
+		float: none;
+		width: 100%;
+		margin: 0px;
+	}
+}

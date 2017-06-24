@@ -1,0 +1,26 @@
+.collapsible a.collapsed,
+.collapsible a.expanded
+{
+	background: none;
+}
+
+.collapsible a.collapsed:before,
+.collapsible a.expanded:before
+{
+	display: inline-block !important;
+	width: 20px;
+	height: 20px;
+	font-family: FontAwesome;
+	color: #fff !important;
+}
+
+.collapsible a.collapsed:before {
+	content: "\f196";
+}
+.collapsible a.expanded:before {
+	content: "\f147";
+}
+
+#servermonitor td {
+	vertical-align: middle;
+}

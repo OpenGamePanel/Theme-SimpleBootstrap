@@ -1,0 +1,19 @@
+.container-fluid .row:nth-child(2) {
+	display: flex;
+}
+
+.main .footer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	font-size: 80%;
+}
+
+.main > .footer > div:nth-child(1) {
+	display: inline-block !important;
+}
+
+.main > .footer > .credits {
+	display: inline-block !important;
+	margin-left: 20px;
+}

@@ -1,0 +1,6 @@
+.main [href="?m=simple-billing&p=cart"] > img {
+	display: none;
+}
+.main [href="?m=simple-billing&p=cart"] .fa {
+	margin-right: 5px;
+}

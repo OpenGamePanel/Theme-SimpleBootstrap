@@ -1,0 +1,11 @@
+select[name="ip"],
+input[name="port"]
+{
+	max-width: 200px;
+	display: inline-block;
+	margin: 0px 10px;
+}
+
+#cpu_select span {
+	margin-right: 10px;
+}

@@ -1,0 +1,10 @@
+.main li,
+.main ul
+{
+	list-style: none;
+	padding-left: 0px;
+}
+
+.left {
+	text-align: left;
+}

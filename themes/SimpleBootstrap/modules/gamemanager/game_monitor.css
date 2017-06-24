@@ -1,0 +1,251 @@
+.monitorbutton,
+#server_icon
+{
+	width: 150px;
+	border-radius: 4px;
+	margin: 2px;
+	font-size: 12px;
+	float: left;
+}
+.expand-child #server_icon {
+	width: auto;
+}
+.monitorbutton
+{
+	height: 90px;
+	text-align: center;
+	vertical-align: middle;
+}
+.monitorbutton span {
+	line-height: 14px;
+	max-height: 28px;
+}
+.monitorbutton.size {
+	font-size: 12px !important;
+}
+.monitorbutton:hover,
+#server_icon:hover
+{
+	cursor: pointer !important;
+}
+.monitorbutton:hover {
+	background-position: 0 -90px !important;
+}
+.monitorbutton img {
+	display: none;
+}
+.monitorButtonContainer form {
+	clear: both;
+}
+
+#server_icon {
+	line-height: 0.5 !important;
+        padding: 0px 5px;
+}
+#server_icon div {
+	display: inline-block;
+}
+#server_icon input {
+	vertical-align: middle;
+	margin-top: 0px;
+	margin-right: 2px;
+}
+#server_icon img {
+	display: none;
+}
+
+
+.srvctrl td {
+	padding: 5px 0px;
+}
+.srvctrl a:before {
+	display: block;
+	font-size: 64px;
+	margin-bottom: -10px;
+	margin-top: -10px;
+}
+.srvctrl b {
+	font-weight: normal !important;
+}
+#servermonitor .monitor-1 {
+        float: left;
+        width: calc(100% - 260px);
+        margin-bottom: 20px;
+}
+#servermonitor .monitor-1 > div {
+        float: left;
+        margin-right: 10px;
+}
+#servermonitor .monitor-2 {
+        float: right;
+}
+#servermonitor .monitor-2 .srvctrl {
+        width: auto;
+        border-radius: 5px;
+}
+#servermonitor .monitor-2 .srvctrl td:first-of-type {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+}
+#servermonitor .monitor-2 .srvctrl td:last-of-type {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+}
+#servermonitor .monitor-3 {
+        clear: both;
+}
+#servermonitor .monitor-3 table {
+        width: 100%;
+}
+#servermonitor .monitor-3 > div {
+        padding: 10px 0px;
+        background-color: rgba(40, 42, 49, 0.3) !important;
+        border: 1px solid rgba(40, 42, 49, 1) !important;
+}
+.mapicon {
+        border-radius: 4px;
+        margin-bottom: 5px;
+	padding: 0px;
+	border: 1px solid #22252f;
+}
+.owner .form-control {
+        width: auto !important;
+}
+
+#servermonitor .monitor-2 .srvctrl img,
+#servermonitor .monitor-2 .srvctrl br {
+        display: none;
+}
+#servermonitor .monitor-2 .srvctrl a {
+        display: inline-block;
+        color: #fff;
+}
+#servermonitor .monitor-2 .srvctrl td {
+        width: 100px;
+}
+#servermonitor .monitor-2 .srvctrl td:first-of-type a:before {
+        content: "\f144";
+}
+#servermonitor .monitor-2 .srvctrl td:last-of-type a:before {
+        content: "\f28d";
+}
+
+#servermonitor .monitor-2 .srvctrl td:first-of-type a:hover:before {
+        color: #5cb85c;
+//	color: #3e8f3e;
+}
+#servermonitor .monitor-2 .srvctrl td:last-of-type a:hover:before {
+        color: #d9534f;
+//	color: #b92c28;
+}
+
+.ts3_viewer b {
+	font-weight: normal;
+}
+.ts3_viewer {
+	border: 0px !important;
+	background: transparent;
+	margin: 0px 10px;
+	width: auto !important;
+}
+
+tr.maintr td:last-child {
+	padding: 3px 8px 3px;
+}
+@media screen and (min-width: 767px){
+	tr.maintr td:last-child {
+	        width: 330px;
+	}
+}
+
+
+@media screen and (max-width: 766px){
+        .table-responsive>.table {
+                max-width: 800px;
+        }
+}
+
+#server_icon[class^="action-start"] {
+	background-image: -webkit-linear-gradient(top, #5cb85c 0, #419641 100%);
+	background-image: -o-linear-gradient(top, #5cb85c 0, #419641 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #5cb85c), to(#419641));
+	background-image: linear-gradient(to bottom, #5cb85c 0, #419641 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5cb85c', endColorstr='#ff419641', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	background-repeat: repeat-x;
+	border-color: #3e8f3e;
+}
+#server_icon[class^="action-start"]:hover {
+	background-color: #419641;
+	background-position: 0 -15px;
+}
+.header > #action-start {
+	color: #5cb85c;
+}
+.header > #action-stop {
+	color: #d9534f;
+}
+.header > #action-restart {
+        color: #f0ad4e;
+}
+.header > .fa:hover {
+	color: #fff !important;
+}
+
+#server_icon[class^="action-stop"] {
+	background-image: -webkit-linear-gradient(top, #d9534f 0, #c12e2a 100%);
+	background-image: -o-linear-gradient(top, #d9534f 0, #c12e2a 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #d9534f), to(#c12e2a));
+	background-image: linear-gradient(to bottom, #d9534f 0, #c12e2a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9534f', endColorstr='#ffc12e2a', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	background-repeat: repeat-x;
+	border-color: #b92c28;
+}
+#server_icon[class^="action-stop"]:hover {
+	background-color: #c12e2a;
+}
+
+#server_icon[class^="action-restart"] {
+	background-image: -webkit-linear-gradient(top, #f0ad4e 0, #eb9316 100%);
+	background-image: -o-linear-gradient(top, #f0ad4e 0, #eb9316 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f0ad4e), to(#eb9316));
+	background-image: linear-gradient(to bottom, #f0ad4e 0, #eb9316 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff0ad4e', endColorstr='#ffeb9316', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	background-repeat: repeat-x;
+	border-color: #e38d13;
+}
+#server_icon[class^="action-restart"]:hover {
+	background-color: #eb9316;
+	background-position: 0 -15px;
+}
+
+/*
+.ui-widget-content {
+	background-color: transparent !important;
+	border-color: transparent !important;
+}
+.ui-dialog {
+	background-color: rgba(26, 28, 34, 0.8) !important;
+	border: 1px solid #23282e !important;
+}
+.ui-draggable .ui-dialog-titlebar {
+	background-color: #1997c6;
+	border: none;
+	color: #fff;
+}
+input[name="map-image"] {
+	color: #fff;
+	outline: none;
+}
+.ui-widget-content {
+	height: auto !important;
+}
+button.ui-dialog-titlebar-close {
+	font-family: FontAwesome !important;
+}
+button.ui-dialog-titlebar-close:before {
+	content: "\f00d";
+}
+*/

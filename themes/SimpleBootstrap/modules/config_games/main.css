@@ -1,0 +1,9 @@
+html,
+body {
+	background: transparent !important;
+	color: #fff;
+}
+
+td {
+	font-size: 14px;
+}

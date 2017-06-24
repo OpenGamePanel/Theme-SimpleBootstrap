@@ -1,0 +1,55 @@
+iframe {
+	border: none !important;
+	background: transparent !important;
+}
+.ftp_iframe {
+	background: transparent !important;
+}
+.ftp_iframe #LoginForm div {
+        display: block !important;
+}
+
+.ftp_iframe #LoginForm > div > div:first-child {
+        padding: 6px 10px 0px;
+        color: #fff;
+        margin: 0 auto;
+        height: 31px;
+        background: #4875B3;
+        padding-top: 10px;
+        text-align: center;
+        font-family: Roboto;
+        font-weight: 300;
+        font-size: 15px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+}
+
+.ftp_iframe #LoginForm > div > div:nth-child(2) {
+        padding: 6px 6px 0px;
+}
+
+.ftp_iframe .page table {
+        width: 100%;
+        text-align: center;
+}
+
+.ftp_iframe .page table table {
+        width: 400px;
+        margin: auto;
+}
+
+.ftp_iframe #wrapper {
+        border-left: none;
+        padding: 20px;
+}
+
+.ftp_iframe #header,
+.ftp_iframe #page-title
+{
+        text-align: center;
+}
+
+select[name="home_id"] {
+	margin-bottom: 20px;
+}
+

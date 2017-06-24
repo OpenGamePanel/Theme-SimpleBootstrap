@@ -1,0 +1,21 @@
+.log .table:first-of-type {
+	margin-bottom: 0px;
+}
+.log .table:first-of-type form {
+	margin: 0px;
+}
+.log .table:first-of-type td {
+	vertical-align: bottom;
+}
+
+.log b table {
+	width: 100%;
+}	
+.log b table td:not(:last-of-type){
+	width: 60px !important;
+	text-align: center;
+}
+
+input.form-control {
+	width: 46px;
+}

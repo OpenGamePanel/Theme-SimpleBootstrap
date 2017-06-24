@@ -1,0 +1,641 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+@import url("font-awesome.min.css");
+
+body {
+	-webkit-background-size: cover !important;
+	-moz-background-size: cover !important;
+	-o-background-size: cover !important;
+	background-size: cover !important;
+}
+
+::-webkit-scrollbar-button{
+        display: none;
+}
+::-webkit-scrollbar-button:hover{
+        background-color: #AAA;
+}
+::-webkit-scrollbar-thumb{
+        background-color: #CCC;
+}
+::-webkit-scrollbar-thumb:hover{
+        background-color: #CCC;
+}
+::-webkit-scrollbar-track{
+        background-color: rgba(40, 42, 49, 1);
+}
+::-webkit-scrollbar-track:hover{
+        background-color: #CCC;
+}
+::-webkit-scrollbar{
+        width: 3px;
+        height: 3px;
+}
+
+@media (max-width: 360px) {
+	.g-recaptcha {
+		-ms-zoom: 0.95;
+	        -moz-transform: scale(0.95);
+	        -moz-transform-origin: 0 0;
+	        -o-transform: scale(0.95);
+	        -o-transform-origin: 0 0;
+	        -webkit-transform: scale(0.95);
+	        -webkit-transform-origin: 0 0;
+	}
+}
+
+input[type="image"]{
+	margin-right: 5px;
+}
+input[type="radio"], input[type="checkbox"] {
+	margin: 4px 6px;
+}
+
+.btn-file {
+	position: relative;
+	overflow: hidden;
+}
+.btn-file input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	min-width: 100%;
+	min-height: 100%;
+	font-size: 100px;
+	text-align: right;
+	filter: alpha(opacity=0);
+	opacity: 0;
+	outline: none;
+	background: white;
+	cursor: inherit;
+	display: block;
+}
+
+.loadinggif {
+	font-size: 100px;
+}
+
+.redirectLink {
+	margin-bottom: 15px !important;
+}
+
+h0, h1, h2, h3, h4, h5, h6 {
+        text-transform: uppercase;
+        padding-bottom: 10px;
+}
+.logo{
+        padding: 20px;
+}
+
+.login-container {
+	max-width: 400px;
+	padding: 20px;
+	margin: auto;
+	//background-color: rgba(67,72,87,0.6);
+	background-color: rgba(26, 28, 34, 0.5);
+	border-radius: 5px;
+}
+.login-container input, .login-container select {
+	margin-bottom: 10px;
+}
+.login-container h3 {
+	margin-top: 0px;
+}
+
+.btn:not(span) {
+	margin: 2px;
+}
+h4.collapse {
+        display: block !important;
+}
+.bloc {
+        padding: 10px;
+}
+.col.footer {
+//	background-color: rgba(67,72,87,0.6);
+	background-color: rgba(26, 28, 34, 0.5);
+        padding: 40px;
+        margin-top: 40px;
+}
+.footer.center {
+        text-align: left !important;
+}
+.hidden, .hide {
+        display: none !important;
+}
+.inline-block{
+	display: inline-block;
+}
+div.OGPVersionArea{
+	width: 100%;
+	position: relative;
+}
+
+span.copyVersionResult{
+	position: absolute;
+	left: 90%;
+	top: 0;
+}
+.bootstrap-datetimepicker-widget > ul{
+	padding: 0px;
+}
+
+span.versionInfo{
+	cursor: pointer;
+	text-decoration: underline;
+}
+#dialog
+{
+	height: auto !important;
+	color: #fff;
+}
+
+#dialog p{
+	text-align: left;
+	text-align: initial;
+}
+
+table:not(.online_servers) {
+	border: 1px solid rgba(34, 37, 47, 0.6);
+}
+
+.table .table {
+	background-color: inherit;
+}
+.table>thead>tr>th {
+	border-bottom: none;
+}
+
+label {
+	font-weight: normal;
+}
+.label-size {
+	font-size: 90%;
+	line-height: 1.5;
+	font-weight: normal;
+}
+
+.tablesorter .header:hover {
+	cursor: pointer;
+}
+.headerSortDown:before,
+.headerSortUp:before
+{
+	font-family: 'FontAwesome';
+	margin-right: 5px;
+	float: left;
+}
+.headerSortDown:before { content: "\f107"; }
+.headerSortUp:before { content: "\f106"; }
+
+fieldset.infoBox {
+	margin-right: 10px;
+}
+th {
+	font-weight: 400 !important;
+	text-transform: uppercase !important;
+	background-color: rgba(26, 28, 34, 0.5);
+}
+
+.collapsible:hover {
+	cursor: pointer;
+}
+
+.expandme:hover {
+	background-color: rgba(67,72,87,0.6);
+}
+
+[data-toggle="tooltip"] {
+	font-size: 130%;
+}
+.image-tooltip + .tooltip {
+	left: 40px !important;
+}
+.image-tooltip + .tooltip > .tooltip-inner {
+	max-width: 100%;
+	padding: 0px;
+}
+
+.online { color: #5cb85c; }
+.offline { color: #d9534f; }
+
+input[type="checkbox"] {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-o-appearance: none;
+        font-family: FontAwesome;
+	border: 1px solid #22252f;
+	width: 16px;
+	height: 16px;
+	background-color: rgba(67,72,87,0.3) !important;
+	border-radius: 3px;
+	display: inline-block;
+	outline: none;
+	margin: 0px 4px;
+}
+input[type=checkbox]:before {
+        content: "\f00c";
+	color: transparent;
+}
+input[type=checkbox]:checked:before {
+	color: #fff;
+}
+
+/* *** Button Fix *** */
+button { -webkit-appearance: button; }
+#server_icon,
+input[name="empty_logger"]
+{
+	cursor: pointer;
+	background-image: -webkit-linear-gradient(top, #1997c6 0, #126e90 100%);
+	background-image: -o-linear-gradient(top, #1997c6 0, #126e90 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1997c6), to(#126e90));
+	background-image: linear-gradient(to bottom, #1997c6 0, #126e90 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1997c6', endColorstr='#ff126e90', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	background-repeat: repeat-x;
+	border-color: #116787;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 1px 1px rgba(0,0,0,0.075);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 1px 1px rgba(0,0,0,0.075);
+	padding: 5px 10px;
+	font-size: 12px;
+	line-height: 1.5;
+	border-radius: 3px;
+	color: #fff;
+	background-color:#126e90;
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	white-space: nowrap;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+}
+#server_icon:hover,
+input[name="empty_logger"]:hover
+{
+	background-color: #126e90;
+	background-position: 0 -15px;
+}
+
+/* *** Magnifier Restyling *** */
+.mfp-bg {
+	opacity: 1 !important;
+	background: rgba(170, 170, 170, 0.3) !important;
+}
+.white-popup {
+	background-color: rgba(26, 28, 34, 0.9) !important;
+	border: 1px solid #23282e !important;
+	color: #fff !important;
+	border-radius: 4px !important;
+	padding: 2px !important;
+}
+.magnificTitle {
+	background-color: #1997C6 !important;
+	border-radius: 4px !important;
+	font-size: 15px !important;
+}
+.magnificSubTitle {
+	background-color: transparent !important;
+	padding: 5px !important;
+	font-size: 14px !important;
+}
+.mfp-close {
+	width: 30px !important;
+	height: 30px !important;
+	margin: 5px !important;
+	background-image: -webkit-linear-gradient(top, #1997c6 0, #126e90 100%) !important;
+	background-image: -o-linear-gradient(top, #1997c6 0, #126e90 100%) !important;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1997c6), to(#126e90)) !important;
+	background-image: linear-gradient(to bottom, #1997c6 0, #126e90 100%) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1997c6', endColorstr='#ff126e90', GradientType=0) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false) !important;
+	background-repeat: repeat-x !important;
+	border-color: #116787 !important;
+}
+button.mfp-close:hover {
+	background-color: #126e90 !important;
+}
+button.mfp-close:focus {
+	outline: none !important;
+}
+
+
+/* *** UI-Dialog Restyling *** */
+.ui-widget-content {
+        background-color: transparent !important;
+        border-color: transparent !important;
+}
+.ui-dialog {
+        background-color: rgba(26, 28, 34, 0.8) !important;
+        border: 1px solid #23282e !important;
+}
+.ui-draggable .ui-dialog-titlebar {
+        background-color: #1997c6;
+        border: none;
+        color: #fff;
+}
+input[name="map-image"] {
+        color: #fff;
+        outline: none;
+}
+.ui-widget-content {
+        height: auto !important;
+}
+.ui-dialog-titlebar-close:before {
+        content: "\f00d";
+}
+.ui-dialog-titlebar-close
+{
+	font-family: FontAwesome !important;
+	background-image: -webkit-linear-gradient(top, #d9534f 0, #c12e2a 100%);
+	background-image: -o-linear-gradient(top, #d9534f 0, #c12e2a 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #d9534f), to(#c12e2a));
+	background-image: linear-gradient(to bottom, #d9534f 0, #c12e2a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9534f', endColorstr='#ffc12e2a', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	background-repeat: repeat-x;
+	border-color: #b92c28;
+}
+.ui-dialog-titlebar-close:hover
+{
+	background-color: #c12e2a;
+}
+
+
+
+/* ***** MENU ***** */
+@media (min-width: 992px) {
+	.navbar-header {
+		display: none;
+	}
+	.navigation {
+		padding-right: 0px;
+	}
+}
+.navbar-header {
+	background-color: rgba(25, 151, 198, 0.8);
+	border-radius: 4px;
+	margin-bottom: 3px;
+}
+.navbar-brand {
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+.navbar-toggle {
+	margin: 8px !important;
+}
+.navbar.navbar-default {
+        margin-top: 15px;
+}
+.navbar:not(.navbar-default) {
+	margin: 0px !important;
+}
+
+
+.menu {
+        margin-bottom: 20px;
+}
+.menu ul[id^=submenu] > li > a,
+.menu [class*="menu_link"]
+{
+        border-bottom: 1px solid #23282e;
+}
+.menu > ul > li > ul > li:first-of-type {
+	border-top: 1px solid #23282e;
+}
+
+.menu ul {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+        line-height: 35px;
+        cursor: pointer;
+	background-color: rgba(26, 28, 34, 0.2);
+}
+.menu > ul { background-color: rgba(26, 28, 34, 0.5); }
+
+.menu ul#administration,
+.menu ul#administration li,
+.menu ul[id^=submenu],
+.menu ul[id^=submenu] li {
+        line-height: 25px;
+}
+
+.menu a:hover,
+.menu .ready{
+        background-color: rgba(25, 151, 198, 0.8) !important;
+        text-decoration: none;
+	transition: all 0.1s;
+}
+[class$="menu_link_selected"] {
+	background-color: #1686af !important;
+}
+
+.menu a {
+        display: block;
+        color: #fff;
+        font-size: 14px;
+        padding: 0px 10px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.menu #submenu_1 a {
+        padding: 0px 20px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+}
+
+.menu ul[id^=submenu] a,
+.menu ul#administration a,
+.menu ul > li > ul a
+{
+        font-size: 12px;
+        padding-left: 16px;
+}
+
+.menu a:hover {
+        text-decoration: none;
+}
+
+.menu ul li ul {
+        overflow:hidden;
+        max-height:0;
+        transition:max-height 1s ease-in;
+}
+.menu .opened {
+        max-height: 1000px;
+}
+.menu img {
+        max-height: 15px;
+        margin-right: 5px;
+        border-radius: 2px;
+}
+.menu a > span {
+	white-space: nowrap;
+}
+.menu .tree ul:not(.opened) .tree:before {
+	visibility: hidden;
+}
+.menu .tree ul.opened .tree:before {
+        visibility: visible;
+}
+
+
+
+/* *** Font-Awesome *** */
+a:before,
+.menu .tree:before,
+.menu a span:before
+{
+	font-family: 'FontAwesome';
+}
+.menu a span:before {
+        width: 22px;
+        display: inline-block;
+}
+
+.menu .tree:before {
+	position: absolute;
+	right: 0px;
+        content: "\f104";
+        margin-right: 10px;
+	font-size: 80%;
+}
+.menu .tree.active:before {
+        content: "\f107";
+	font-size: 100%;
+}
+
+.monitorbutton:before
+{
+        display: block;
+        font-size: 40px;
+        //margin-bottom: -5px;
+}
+.loading:before {
+        content: "\f021" !important;
+        -webkit-animation: fa-spin 2s infinite linear;
+        animation: fa-spin 2s infinite linear;
+}
+.loading {
+        content: "Loading..." !important;
+}
+
+/* Default */
+.menu a > span:before,
+.administration-table a:before,
+.monitorButtonContainer a:before
+{ content: "\f192"; }
+
+/* Defined */
+.menu ul[id^="submenu"] span:before { display: none; }
+.menu [href="?m=dashboard&p=dashboard"] > span:before,
+.administration-table [href="?m=dashboard&p=dashboard"]:before { content: "\f0e4"; }
+.menu [href="?m=gamemanager&p=game_monitor"] > span:before { content: "\f108"; }
+.menu [href="?m=administration&p=main"] > span:before { content: "\f023"; }
+.menu [href="?m=TS3Admin"] > span:before { content: "\f086"; }
+.menu [href^="?m=gamemanager&p=log"] > span:before,
+.monitorButtonContainer [href^="?m=gamemanager&p=log"]:before { content: "\f1da"; }
+.menu [href="?m=addonsmanager&p=addons_manager"] > span:before,
+.monitorButtonContainer [href^="?m=addonsmanager&p=user_addons"]:before,
+.administration-table [href="?m=addonsmanager&p=addons_manager"]:before { content: "\f12e"; }
+.menu [href="?m=extras"] > span:before,
+.administration-table [href="?m=extras"]:before{ content: "\f1e6"; }
+.menu [href^="?m=ftp"] > span:before,
+.monitorButtonContainer [href^="?m=ftp"]:before,
+.administration-table [href^="?m=ftp"]:before{ content: "\f15c"; }
+.menu [href="?m=user_games"] > span:before,
+.administration-table [href="?m=user_games"]:before{ content: "\f11b"; }
+.menu [href="?m=config_games"] > span:before,
+.administration-table [href="?m=config_games"]:before{ content: "\f046"; }
+.menu [href^="?m=litefm"] > span:before,
+.menu [href="?m=litefm&p=litefm_settings"] > span:before,
+.administration-table [href="?m=litefm&p=litefm_settings"]:before,
+.menu [href^="?m=user_games&p=edit"] > span:before,
+.monitorButtonContainer [href^="?m=user_games&p=edit"]:before{ content: "\f085"; }
+.menu [href="?m=modulemanager"] > span:before,
+.administration-table [href="?m=modulemanager"]:before { content: "\f009"; }
+.menu [href="?m=settings"] > span:before,
+.administration-table [href="?m=settings"]:before { content: "\f1de"; }
+.menu [href="?m=server"] > span:before,
+.administration-table [href="?m=server"]:before { content: "\f233"; }
+.menu [href="?m=settings&p=themes"] > span:before,
+.administration-table [href="?m=settings&p=themes"]:before { content: "\f043"; }
+.menu [href="?m=update"] > span:before,
+.administration-table [href="?m=update"]:before { content: "\f021"; }
+.menu [href^="?m=gamemanager&p=update"] > span:before,
+.monitorButtonContainer [href^="?m=gamemanager&p=update"]:before { content: "\f1b6"; }
+.menu [href^="?m=user_admin"] > span:before,
+.administration-table [href^="?m=user_admin"]:before{ content: "\f007"; }
+.menu [href="?m=user_admin&p=show_groups"] > span:before { content: "\f0c0"; }
+.menu [href="?m=administration&p=watch_logger"] > span:before,
+.administration-table [href="?m=administration&p=watch_logger"]:before { content: "\f017"; }
+.menu [href^="?m=cron"] > span:before,
+.administration-table [href^="?m=cron"]:before { content: "\f073"; }
+.menu [href="?m=mysql&p=mysql_admin"] > span:before,
+.administration-table [href="?m=mysql&p=mysql_admin"]:before { content: "\f1c0"; }
+.menu [href="?m=administration&p=banlist"] > span:before,
+.administration-table [href="?m=administration&p=banlist"]:before { content: "\f05e"; }
+.menu [href^="home.php?m=gamemanager&p=rcon_presets"] > span:before,
+.monitorButtonContainer [href^="home.php?m=gamemanager&p=rcon_presets"]:before,
+.menu [href="?m=rcon&p=rcon"] > span:before,
+.administration-table [href="?m=rcon&p=rcon"]:before { content: "\f120"; }
+.menu [href^="?m=gamemanager&p=rsync_install"] > span:before { content: "\f0ad"; }
+.menu [href^="?m=support"] > span:before { content: "\f1cd"; }
+.menu [href^="?m=faq"] > span:before,
+.administration-table [href^="?m=faq"]:before{ content: "\f29c"; }
+.menu [href^="?m=fast_download"] > span:before,
+.administration-table [href^="?m=fast_download"]:before { content: "\f019"; }
+.menu [href^="?m=dsi"] > span:before,
+.administration-table [href^="?m=dsi"]:before{ content: "\f03e"; }
+.menu [href^="?m=simple-billing"] > span:before,
+.administration-table [href^="?m=simple-billing"]:before { content: "\f07a"; }
+.menu [href^="?m=util"] > span:before { content: "\f0ad"; }
+.menu [href^="?m=lgsl_with_img_mod"] > span:before,
+.administration-table [href^="?m=lgsl_with_img_mod"]:before { content: "\f022"; }
+.menu [href^="?m=news"] > span:before,
+.administration-table [href^="?m=news"]:before { content: "\f1ea"; }
+.menu [href^="?m=register"] > span:before { content: "\f067"; }
+.menu [href="?logout"] > span:before { content: "\f08b"; }
+.menu [href="index.php"] > span:before { content: "\f0e4"; }
+.monitorButtonContainer [href^="?m=litefm"]:before { content: "\f03a"; }
+.monitorbutton.size:before { content: "\f115"; }
+.monitorbutton.getAutoUpdateLink:before { content: "\f0c1"; }
+.monitorButtonContainer [href^="?m=gamemanager&p=rsync_install"]:before { content: "\f0ed"; }
+.administration-table [href^="?m=administration&p=iframe&external_link="]:before { content: "\f0c1"; }
+
+
+
+/* *** Theme Styler - Dont remove anything below this Line or it will break the Sheet!!! *** */
+
+/* *** THEME STYLER *** */
+body {
+        background: url(../images/bg/blur_1.jpg) no-repeat center center fixed;
+        background-color: #2b343b;
+}
+h1, h2, h3, h4, h5, h6 {
+        border-bottom: 1px solid #9fa1a9;
+}
+h0 a
+{
+	color: #272c32;
+}
+h0 a:hover
+{
+        color: #fff;
+}
+
+
+/* *** THEME STYLER END *** */
+
