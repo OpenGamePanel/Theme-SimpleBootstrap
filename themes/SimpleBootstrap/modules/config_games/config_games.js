@@ -5,11 +5,11 @@ $(document).ready(function() {
 		$('iframe').attr('id', 'xcc_iframe');
 		$('iframe').load(function() {
 			$(this).contents().find("body").addClass('xcc_iframe');
-			var main_css = '<link rel="stylesheet" type="text/css" href="../../themes/SBS/css/main.css">';
-			var bs = '<link rel="stylesheet" href="../../themes/SBS/css/bootstrap.min.css">';
-			var bs_t = '<link rel="stylesheet" href="../../themes/SBS/css/bootstrap-theme.min.css">';
-			var js = '<link rel="stylesheet" href="../../themes/SBS/js/main.js">';
-			var xml_css = '<link rel="stylesheet" type="text/css" href="../../themes/SBS/modules/config_games/main.css">';
+			var main_css = '<link rel="stylesheet" type="text/css" href="../../themes/SimpleBootstrap/css/main.css">';
+			var bs = '<link rel="stylesheet" href="../../themes/SimpleBootstrap/css/bootstrap.min.css">';
+			var bs_t = '<link rel="stylesheet" href="../../themes/SimpleBootstrap/css/bootstrap-theme.min.css">';
+			var js = '<link rel="stylesheet" href="../../themes/SimpleBootstrap/js/main.js">';
+			var xml_css = '<link rel="stylesheet" type="text/css" href="../../themes/SimpleBootstrap/modules/config_games/main.css">';
 			$(this).contents().find("head").append(bs);
 			$(this).contents().find("head").append(bs_t);
 			$(this).contents().find("head").append(js);

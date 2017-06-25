@@ -11,11 +11,11 @@ $(document).ready(function(){
 			$(this).contents().find('.table .table').addClass('inner-table');
 
                         $(this).contents().find('link').remove();
-                        var main_css = '<link rel="stylesheet" type="text/css" href="../../themes/SBS/css/main.css">';
-			var ftp_css = '<link rel="stylesheet" type="text/css" href="../../themes/SBS/modules/ftp/main.css">';
-			var bs = '<link rel="stylesheet" href="../../themes/SBS/css/bootstrap.min.css">';
-			var bs_t = '<link rel="stylesheet" href="../../themes/SBS/css/bootstrap-theme.min.css">';
-			var js = '<link rel="stylesheet" href="../../themes/SBS/js/main.js">';
+                        var main_css = '<link rel="stylesheet" type="text/css" href="../../themes/SimpleBootstrap/css/main.css">';
+			var ftp_css = '<link rel="stylesheet" type="text/css" href="../../themes/SimpleBootstrap/modules/ftp/main.css">';
+			var bs = '<link rel="stylesheet" href="../../themes/SimpleBootstrap/css/bootstrap.min.css">';
+			var bs_t = '<link rel="stylesheet" href="../../themes/SimpleBootstrap/css/bootstrap-theme.min.css">';
+			var js = '<link rel="stylesheet" href="../../themes/SimpleBootstrap/js/main.js">';
                         $(this).contents().find("head").append(bs);
 			$(this).contents().find("head").append(bs_t);
                         $(this).contents().find("head").append(js);

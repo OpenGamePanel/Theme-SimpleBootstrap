@@ -5,7 +5,7 @@ $(document).ready(function() {
 	$('form[action="?m=settings&p=themes"] tr:nth-child(4),form[action="?m=settings&p=themes"] tr:nth-child(5)').addClass('hide');
 	$('form[action="?m=settings&p=themes"]').attr('enctype','multipart/form-data');
 
-        $.getJSON("themes/SBS/conf/theme.config", function(json) {
+        $.getJSON("themes/SimpleBootstrap/conf/theme.config", function(json) {
                 if(json['style']=='light'){
 			$('form[action="?m=settings&p=themes"] tr:last').after('<tr><td align="right"><label for="style_tab">Theme Style:</label></td><td align="left"><select id="style_tab" name="style_tab" class="form-control"><option value="dark">dark</option><option value="light" selected>light</option></select></td><td><i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Changes the Theme Style"></i></td></tr>');
                 }else{
@@ -46,7 +46,7 @@ $(document).ready(function() {
 	$('form[action="?m=settings&p=themes"]').submit(function(e){
 //		e.preventDefault();
 		$.ajax({
-			url: "themes/SBS/conf/write_conf.php",
+			url: "themes/SimpleBootstrap/conf/write_conf.php",
 			type: "POST",
 			data: new FormData(this),
 			contentType: false,
@@ -64,7 +64,7 @@ $(document).ready(function() {
 $(window).load(function(){
         $('#del_custom_bg').click(function(){
 		if(confirm('Are you sure you want to remove the Background Image?')){
-			$.get('themes/SBS/conf/write_conf.php',
+			$.get('themes/SimpleBootstrap/conf/write_conf.php',
                         	{del_custom_bg:'yes'},
                         	function(data){
                         	        console.log(data);
@@ -97,7 +97,7 @@ function get_active_loader() {
 	var result = null;
 	const regex = /url\("pace_(.*).css"\);/g;
 	$.ajax({
-		url: "themes/SBS/css/pace.css",
+		url: "themes/SimpleBootstrap/css/pace.css",
 		type: 'get',
 		dataType: 'html',
 		async: false,

@@ -10,7 +10,7 @@ $(document).ready(function() {
 
 	$('.bloc > div > br').remove();
 
-	var url = "themes/SBS/js/radialIndicator.js";
+	var url = "themes/SimpleBootstrap/js/radialIndicator.js";
 	$.getScript( url, function() {
 		animateProgressBars();
 	});
