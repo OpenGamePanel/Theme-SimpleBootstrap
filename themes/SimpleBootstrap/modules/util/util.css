@@ -23,7 +23,7 @@
 	font-size: 14px;
 	line-height: 1.42857143;
 	color: #fff;
-	background-color: rgba(67, 72, 87, 0.6);
+	background-color: rgba(26, 28, 34, 0.4);
 	background-image: none;
 	border: 1px solid #2a2e3a;
 	border-radius: 4px;
@@ -36,7 +36,7 @@
 
 .ui-tabs .ui-tabs-panel {
 	border: 1px solid #22252f !important;
-	background-color: rgba(67,72,87,0.3) !important;
+	background-color: rgba(26, 28, 34, 0.2) !important;
 }
 
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {

@@ -14,3 +14,8 @@ h0 a:hover
         color: #fff;
 }
 
+.bloc,
+.form-control,
+table:not(.online_servers) {
+        border: 1px solid rgba(35, 40, 46, 0.8);
+}

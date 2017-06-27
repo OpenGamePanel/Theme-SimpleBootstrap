@@ -6,3 +6,12 @@ h1, h2, h3, h4, h5, h6 {
         border-bottom: 1px solid #434857;
 }
 
+.bloc,
+.form-control,
+table:not(.online_servers) {
+	border: 1px solid rgba(67, 72, 87, 0.5);
+}
+
+.form-control:focus {
+	border-color: rgba(255, 255, 255, 0.4)
+}

@@ -22,9 +22,6 @@
 .operations-button div {
 	display: inline-block;
 }
-table tbody tr:nth-child(odd) {
-	background: rgba(67, 72, 87, 0.6) !important;
-}
 a[href^="?m=litefm&home_id="] {
 	margin-right: 5px;
 }
@@ -53,7 +50,7 @@ a[href^="?m=litefm&home_id="] {
 #create_folder:before {
         content: "\f114";
 }
-#upload:before {
+#upload:not(form):before {
         content: "\f093";
 }
 
