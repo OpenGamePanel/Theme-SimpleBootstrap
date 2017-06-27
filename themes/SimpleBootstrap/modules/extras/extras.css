@@ -41,6 +41,7 @@ b.label {
 	padding: 0px;
 	float: left;
 	width: 49%;
+	border: none !important;
 }
 .extras .bloc:first-of-type {
 	margin-right: 1%;
