@@ -154,10 +154,6 @@ span.versionInfo{
 	text-align: initial;
 }
 
-table:not(.online_servers) {
-	border: 1px solid rgba(34, 37, 47, 0.6);
-}
-
 .table .table {
 	background-color: inherit;
 }
@@ -226,7 +222,7 @@ input[type="checkbox"] {
 	border: 1px solid #22252f;
 	width: 16px;
 	height: 16px;
-	background-color: rgba(67,72,87,0.3) !important;
+	background-color: rgba(26, 28, 34, 0.2) !important;
 	border-radius: 3px;
 	display: inline-block;
 	outline: none;
@@ -636,6 +632,11 @@ h0 a:hover
         color: #fff;
 }
 
+.bloc,
+.form-control,
+table:not(.online_servers) {
+        border: 1px solid rgba(35, 40, 46, 0.8);
+}
 
 /* *** THEME STYLER END *** */
 
