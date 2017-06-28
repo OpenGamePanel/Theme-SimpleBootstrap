@@ -42,5 +42,8 @@ $(document).ready(function(){
 	var col_diff = cutter - td_cnt + 1;
 	$('.main > table:last-of-type tr:last-of-type td:last-of-type').attr('colspan', col_diff);
 
+	$('.main > table:last-of-type form').remove();
+	$('.main > table:last-of-type').wrap('<form method="POST" \>');
+
 });
 
