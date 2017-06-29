@@ -83,8 +83,6 @@ $(document).ready(function() {
 	$('td b.success').removeClass('alert').removeClass('alert-success');
         $('.failure:not(b)').addClass('alert').addClass('alert-danger');
 
-	$('.g-recaptcha').attr('data-theme','dark');
-
 	$('img[src="modules/addonsmanager/loading.gif"]').replaceWith('<i class="fa fa-spinner fa-pulse fa-3x fa-fw loadinggif"></i>');
 	$('img[src="images/online.png"], img[src$="icon_online.gif"]').replaceWith('<i class="fa fa-circle online" aria-hidden="true"></i>');
 	$('img[src="images/offline.png"], img[src$="icon_offline.gif"]').replaceWith('<i class="fa fa-circle offline" aria-hidden="true"></i>');
@@ -193,11 +191,13 @@ $(document).ready(function() {
 	if(/^(\/|\/index\.php)$/i.test(location.pathname)){
 
 		if($('form[name="login_form"]').length > 0) {
-			if ($('.g-recaptcha').length > 0) {
-				var recaptcha = '<div class="text-center">'+$('[name="login_form"] tr:nth-child(4) td:last-child').html()+'</div>';
-			}else{
-				var recaptcha = "";
-			}
+	                if ($('.g-recaptcha').length > 0) {
+	                        var recaptcha_pubkey = $('.g-recaptcha').attr('data-sitekey');
+				var recaptcha = "<div class='text-center'><script src='//www.google.com/recaptcha/api.js'></script><div style='display: inline-block;' class='g-recaptcha' data-sitekey='"+recaptcha_pubkey+"' data-theme='dark'></div></div>";
+	                }else{
+	                        var recaptcha = "";
+	                }
+
         	        var title = $('.main h4').text();
         	        var user = $('[name="login_form"] tr:nth-child(2) td:first-child').text().replace(':', '');
         	        var pass = $('[name="login_form"] tr:nth-child(3) td:first-child').text().replace(':', '');

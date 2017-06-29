@@ -5,7 +5,20 @@ $(document).ready(function() {
 	$('form[action="?m=settings&p=themes"] tr:nth-child(4),form[action="?m=settings&p=themes"] tr:nth-child(5)').addClass('hide');
 	$('form[action="?m=settings&p=themes"]').attr('enctype','multipart/form-data');
 
-        $.getJSON("themes/SimpleBootstrap/conf/theme.config", function(json) {
+        //$.getJSON("themes/SimpleBootstrap/conf/theme.config", function(json) {
+	$.ajax({
+		type: "POST",
+		url: "themes/SimpleBootstrap/conf/theme.config",
+		contentType: "application/json; charset=utf-8",
+		dataType: "json",
+		beforeSend: function( xhr ) {
+			xhr.overrideMimeType('application/json');
+		},
+		success: function(json) {
+
+			console.log(JSON.stringify(json));
+
+
                 if(json['style']=='light'){
 			$('form[action="?m=settings&p=themes"] tr:last').after('<tr><td align="right"><label for="style_tab">Theme Style:</label></td><td align="left"><select id="style_tab" name="style_tab" class="form-control"><option value="dark">dark</option><option value="light" selected>light</option></select></td><td><i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Changes the Theme Style"></i></td></tr>');
                 }else{
@@ -41,27 +54,31 @@ $(document).ready(function() {
 			<input type="text" class="form-control" readonly="">\
 		</div>';
 		$('form[action="?m=settings&p=themes"] tr:last').after('<tr><td align="right"><label for="custom_bg">Custom BG:'+custom_bg_info+'</label></td><td align="left">'+upload_input+'</td><td><i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Changes the Theme Background"></i></td></tr>');
+
+
+		}
         });
-
-	$('form[action="?m=settings&p=themes"]').submit(function(e){
-//		e.preventDefault();
-		$.ajax({
-			url: "themes/SimpleBootstrap/conf/write_conf.php",
-			type: "POST",
-			data: new FormData(this),
-			contentType: false,
-			cache: false,
-			processData:false,
-			success: function(data){
-				console.log(data);
-			}
-		});
-
-	});
 
 });
 
 $(window).load(function(){
+        $('form[action="?m=settings&p=themes"]').submit(function(e){
+		//e.preventDefault();
+
+                var values = $(this).serialize();
+                $.ajax({
+                        url: "themes/SimpleBootstrap/conf/write_conf.php",
+                        type: "POST",
+                        data: values,
+                        dataType: 'html',
+			async: false,
+                        success: function(data){
+                                console.log(data);
+                        }
+                });
+        });
+
+
         $('#del_custom_bg').click(function(){
 		if(confirm('Are you sure you want to remove the Background Image?')){
 			$.get('themes/SimpleBootstrap/conf/write_conf.php',
