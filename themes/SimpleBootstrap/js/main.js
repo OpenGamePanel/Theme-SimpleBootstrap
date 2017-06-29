@@ -1,5 +1,16 @@
 $(document).ready(function() {
 
+	/* *** Check if Config File exists, and if not, Call write_conf.php to create it *** */
+	$.get('themes/SimpleBootstrap/conf/theme.config').fail(function(){
+		$.get('themes/SimpleBootstrap/conf/write_conf.php',
+			{create_config:'yes'},
+			function(data){
+				console.log(data);
+			}
+		);
+	});
+
+
         $('.main').css('display','none');
 
 	/* *** Cutting Title *** */

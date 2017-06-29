@@ -2,9 +2,19 @@
 include("../../../includes/helpers.php");
 startSession();
 
+$f = "theme.config";
+
+if(isset($_GET['create_config'])=='yes'){
+	if(!file_exists($f)){
+		$json = json_encode(array('style' => 'light', 'custom_bg' => 'no'));
+		file_put_contents($f, $json);
+	}
+	echo "Config File created!";
+	exit();
+}
+
 if(isset($_SESSION['users_group']) && $_SESSION['users_group'] == 'admin'){
 
-$f = "theme.config";
 $pace = '../css/pace.css';
 $rp = realpath(dirname(__FILE__));
 $json = json_decode(file_get_contents($f));
@@ -62,6 +72,8 @@ if(!empty($_FILES)){
 if(file_exists($f)){ unlink($f); }
 $json = json_encode(array('style' => $_POST['style_tab'], 'custom_bg' => $bg_conf));
 file_put_contents($f, $json);
+
+echo "Debug: ".$json;
 
 if($bg_conf!='no'){
 	$replace = preg_replace("/background: url\((.*)\)/", "background: url(../conf/custom_bg/".$bg_conf.")", $replace);
