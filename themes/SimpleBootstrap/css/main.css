@@ -437,6 +437,9 @@ input[name="map-image"] {
 .menu .btn-primary:hover {
 	background-position: 0 -35px;
 }
+.menu .active .btn-primary:hover {
+        background-position: 0 -50px;
+}
 .menu a {
         display: block;
         color: #fff;

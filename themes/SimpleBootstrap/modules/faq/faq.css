@@ -54,4 +54,17 @@ li.faqblock {
 
 .accordion-toggle:hover {
 	cursor: pointer;
+	padding-left: 7px;
+}
+
+.syntaxhighlighter {
+	padding: 5px;
+}
+
+.search {
+	width: 85% !important;
+	display: inline-block !important;
+}
+#count {
+	font-size: 80%;
 }
