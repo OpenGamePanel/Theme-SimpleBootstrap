@@ -429,12 +429,14 @@ input[name="map-image"] {
 .menu .ready{
         background-color: rgba(25, 151, 198, 0.8) !important;
         text-decoration: none;
-	transition: all 0.1s;
+	transition: max-height 0.1s;
 }
 [class$="menu_link_selected"] {
 	background-color: #1686af !important;
 }
-
+.menu .btn-primary:hover {
+	background-position: 0 -35px;
+}
 .menu a {
         display: block;
         color: #fff;

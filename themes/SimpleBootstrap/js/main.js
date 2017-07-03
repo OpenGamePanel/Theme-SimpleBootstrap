@@ -45,27 +45,29 @@ $(document).ready(function() {
 		$('.copyButton').addClass('btn').addClass('btn-sm').addClass('btn-primary');
 	});
 
-	$('input[type="file"]').each(function(){
-		$(this).css('display', 'none');
-		$(this).wrap('<div class="input-group">').wrap('<label class="input-group-btn">').wrap('<span class="btn btn-sm btn-primary btn-file">');
-		$(this).parent('span').parent('label').parent('.input-group').append('<input type="text" class="form-control" readonly="">');
-		$(this).parent('span').prepend('Browse...');
-	});
-	$(document).on('change', ':file', function() {
-		var input = $(this),
-		numFiles = input.get(0).files ? input.get(0).files.length : 1,
-		label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-		input.trigger('fileselect', [numFiles, label]);
-	});
-	$(':file').on('fileselect', function(event, numFiles, label) {
-		var input = $(this).parents('.input-group').find(':text'),
-		log = numFiles > 1 ? numFiles + ' files selected' : label;
-		if( input.length ) {
-			input.val(log);
-		} else {
-			if( log ) alert(log);
-		}
-	});
+	if(window.location.href.indexOf("home.php?m=litefm&home_id=") > -1) {
+		$('input[type="file"]').each(function(){
+			$(this).css('display', 'none');
+			$(this).wrap('<div class="input-group">').wrap('<label class="input-group-btn">').wrap('<span class="btn btn-sm btn-primary btn-file">');
+			$(this).parent('span').parent('label').parent('.input-group').append('<input type="text" class="form-control" readonly="">');
+			$(this).parent('span').prepend('Browse...');
+		});
+		$(document).on('change', ':file', function() {
+			var input = $(this),
+			numFiles = input.get(0).files ? input.get(0).files.length : 1,
+			label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+			input.trigger('fileselect', [numFiles, label]);
+		});
+		$(':file').on('fileselect', function(event, numFiles, label) {
+			var input = $(this).parents('.input-group').find(':text'),
+			log = numFiles > 1 ? numFiles + ' files selected' : label;
+			if( input.length ) {
+				input.val(log);
+			} else {
+				if( log ) alert(log);
+			}
+		});
+	}
 
 	$('.main .redirectLink').prepend('<i class="fa fa-arrow-right" aria-hidden="true"></i> ');
 
@@ -109,7 +111,7 @@ $(document).ready(function() {
 		$(this).before("<img src='"+img_url+"'/>");
 	});
 
-	$('.menu [class$="menu_link_selected"]').addClass('ready').next('ul').addClass('opened').parent('li').addClass('active');
+	$('.menu [class$="menu_link_selected"]').addClass('ready').addClass('btn-primary').next('ul').addClass('opened').parent('li').addClass('active');
 	$('.menu a').next('ul').parent('li').addClass('tree');
 
 	$('.menu a').click(function () {
