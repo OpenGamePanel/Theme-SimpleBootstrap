@@ -3,10 +3,8 @@
 }
 
 .main .footer {
-	position: absolute;
-	bottom: 0;
-	right: 0;
 	font-size: 80%;
+	margin-top: 50px;
 }
 
 .main > .footer > div:nth-child(1) {
@@ -16,4 +14,44 @@
 .main > .footer > .credits {
 	display: inline-block !important;
 	margin-left: 20px;
+}
+
+.main .maincategory,
+.main .category
+{
+	text-transform: uppercase;
+	padding-bottom: 10px;
+	font-size: 24px;
+	font-weight: 300;
+	margin-top: 20px;
+}
+.main .maincategory > img,
+.main .category >img {
+	margin-right: 10px;
+}
+
+
+li.faqblock {
+	list-style: none;
+	margin-right: 10px;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+.accordion-toggle,
+.accordion-content
+{
+	background-color: rgba(26, 28, 34, 0.4);
+	padding: 2px 5px;
+	border: 1px solid rgba(35, 40, 46, 0.8);
+	border-bottom: 0px;
+}
+.accordion-content {
+	background-color: rgba(26, 28, 34, 0.2);
+	border-bottom: 1px solid rgba(35, 40, 46, 0.8);
+	margin-bottom: 5px;
+}
+
+.accordion-toggle:hover {
+	cursor: pointer;
 }
