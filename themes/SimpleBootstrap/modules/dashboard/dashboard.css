@@ -106,6 +106,10 @@ h0 {
 .dragbox {
 	margin-bottom: 10px;
 }
+.dragbox-content {
+	display: inline-block;
+	width: 100%;
+}
 .dragbox h4 .configure {
 	width: 30px;
 	height: 30px;
