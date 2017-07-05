@@ -69,12 +69,17 @@
 }
 #servermonitor .monitor-1 {
         float: left;
-        width: calc(100% - 260px);
+        width: calc(100% - 230px);
         margin-bottom: 20px;
 }
 #servermonitor .monitor-1 > div {
         float: left;
-        margin-right: 10px;
+}
+#servermonitor .server-info {
+	width: calc(100% - 180px);
+}
+#servermonitor .map-icon {
+	margin-right: 10px;
 }
 #servermonitor .monitor-2 {
         float: right;
@@ -221,31 +226,32 @@ tr.maintr td:last-child {
 	background-position: 0 -15px;
 }
 
-/*
-.ui-widget-content {
-	background-color: transparent !important;
-	border-color: transparent !important;
+.main select.form-control {
+	width: auto;
+	display: inline;
 }
-.ui-dialog {
-	background-color: rgba(26, 28, 34, 0.8) !important;
-	border: 1px solid #23282e !important;
+.table-responsive {
+	clear: both;
 }
-.ui-draggable .ui-dialog-titlebar {
-	background-color: #1997c6;
-	border: none;
-	color: #fff;
+
+@media (max-width: 992px) {
+	#servermonitor .monitor-1,
+	#servermonitor .monitor-1 > div,
+	#servermonitor .monitor-2
+	{
+		float: none !important;
+	}
+        table:not(.srvctrl) > thead > tr > th:nth-child(2),
+        table:not(.srvctrl) > thead > tr > th:nth-child(5),
+        table:not(.srvctrl) > thead > tr > th:nth-child(6),
+        table:not(.srvctrl) > tbody > tr > td:nth-child(2),
+        table:not(.srvctrl) > tbody > tr > td:nth-child(5),
+        table:not(.srvctrl) > tbody > tr > td:nth-child(6),
+	table:not(.srvctrl) .owner
+	{
+		display: none !important;
+	}
+	#servermonitor td:nth-child(4) b {
+		word-break: break-all;
+	}
 }
-input[name="map-image"] {
-	color: #fff;
-	outline: none;
-}
-.ui-widget-content {
-	height: auto !important;
-}
-button.ui-dialog-titlebar-close {
-	font-family: FontAwesome !important;
-}
-button.ui-dialog-titlebar-close:before {
-	content: "\f00d";
-}
-*/
