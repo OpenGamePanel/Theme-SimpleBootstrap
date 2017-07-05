@@ -55,6 +55,9 @@ h0 {
 .column {
 	min-height: 150px;
 }
+.main .column {
+	padding-left: 0px !important;
+}
 
 .column .placeholder {
 	background-color: rgba(26, 28, 34, 0.5);
@@ -102,7 +105,10 @@ h0 {
 	min-height: 130px;
 }
 
-
+#column4 > .dragbox,
+#column4 > .bloc {
+	margin-bottom: 0px !important;
+}
 .dragbox {
 	margin-bottom: 10px;
 }
