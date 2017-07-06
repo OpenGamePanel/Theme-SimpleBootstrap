@@ -241,16 +241,6 @@ tr.maintr td:last-child {
 	{
 		float: none !important;
 	}
-        table:not(.srvctrl) > thead > tr > th:nth-child(2),
-        table:not(.srvctrl) > thead > tr > th:nth-child(5),
-        table:not(.srvctrl) > thead > tr > th:nth-child(6),
-        table:not(.srvctrl) > tbody > tr > td:nth-child(2),
-        table:not(.srvctrl) > tbody > tr > td:nth-child(5),
-        table:not(.srvctrl) > tbody > tr > td:nth-child(6),
-	table:not(.srvctrl) .owner
-	{
-		display: none !important;
-	}
 	#servermonitor td:nth-child(4) b {
 		word-break: break-all;
 	}
