@@ -50,6 +50,12 @@ input[type="radio"], input[type="checkbox"] {
 	margin: 4px 6px;
 }
 
+input#search,
+input#search + input[type="submit"] {
+	display: inline-block !important;
+	width: auto !important;
+}
+
 .btn-file {
 	position: relative;
 	overflow: hidden;
