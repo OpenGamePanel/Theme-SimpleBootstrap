@@ -8,6 +8,10 @@ body {
 	background-size: cover !important;
 }
 
+body > .container-fluid {
+	display: none;
+}
+
 ::-webkit-scrollbar-button{
         display: none;
 }

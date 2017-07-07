@@ -10,9 +10,6 @@ $(document).ready(function() {
 		);
 	});
 
-
-        $('.main').css('display','none');
-
 	/* *** Cutting Title *** */
 	$('.logo h2').text($('.logo h2').text().substring(0, $('.logo h2').text().lastIndexOf(" [") + 1));
 
@@ -316,9 +313,8 @@ $(document).ready(function() {
 
 
 
-
         $(window).load(function () {
-                $('.main').css('display','');
+		$("body > .container-fluid").fadeIn(50);
         });
 
 });
