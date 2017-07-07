@@ -3,6 +3,9 @@ body {
 	background: transparent !important;
 	color: #fff;
 }
+body {
+	display: none;
+}
 td {
 	color: #fff !important;
 }
