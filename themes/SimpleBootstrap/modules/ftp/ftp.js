@@ -37,8 +37,13 @@ $(document).ready(function(){
                         $(this).contents().find('img[src$="view_tree.png"]').replaceWith('<i class="fa fa-list-alt" aria-hidden="true"></i>');
                         $(this).contents().find('img[src$="document.png"]').replaceWith('<i class="fa fa-file-text-o" aria-hidden="true"></i>');
 			$(this).contents().find('img[src$="terminal.png"]').replaceWith('<i class="fa fa-terminal" aria-hidden="true"></i>');
+			$(this).contents().find('img[src$="colors.png"]').replaceWith('<i class="fa fa-file-image-o" aria-hidden="true"></i>');
 
-			$(this).contents().find("body").css('display', 'block');
+			$('iframe').contents().find('table h1').each(function(){
+				$(this).parent('td').replaceWith('<th>'+$(this).parent('td').html()+'</th>');
+			});
+
+			$('iframe').contents().find("body").css('display', 'block');
                 });
         }
 });

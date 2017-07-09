@@ -88,6 +88,10 @@ input#search + input[type="submit"] {
 	margin-bottom: 15px !important;
 }
 
+h0, h1, h2, h3, h4, h5, h6, legend {
+	font-family: Roboto;
+	font-weight: 300;
+}
 h0, h1, h2, h3, h4, h5, h6 {
         text-transform: uppercase;
         padding-bottom: 10px;
@@ -635,7 +639,7 @@ body {
         background: url(../images/bg/blur_1.jpg) no-repeat center center fixed;
         background-color: #2b343b;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, legend {
         border-bottom: 1px solid #9fa1a9;
 }
 h0 a
