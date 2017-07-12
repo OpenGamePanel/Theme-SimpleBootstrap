@@ -82,6 +82,7 @@ $(document).ready(function() {
 	$('.monitorbutton, .administration-buttons').addClass('btn-primary');
 	$('.administration-buttons').removeClass('administration-buttons').addClass('admin-buttons');
 	$('form').addClass('form-group').css('float', '');
+	$('.main #search').parent('form').css('margin-bottom', '10px');
 	$('table').addClass('table').addClass('table-sm').addClass('table-striped').removeAttr('style');
 	$('tfoot, input').removeAttr('style');
 	$('tfoot .bloc').removeClass('bloc');

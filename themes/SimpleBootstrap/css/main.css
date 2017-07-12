@@ -100,6 +100,9 @@ h0, h1, h2, h3, h4, h5, h6 {
 .logo{
         padding: 20px;
 }
+.logo h2 {
+	margin-top: 0px;
+}
 
 .login-container {
 	max-width: 400px;
