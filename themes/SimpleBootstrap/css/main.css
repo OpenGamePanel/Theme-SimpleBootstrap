@@ -414,12 +414,10 @@ input[name="map-image"] {
         margin-bottom: 20px;
 }
 .menu ul[id^=submenu] > li > a,
-.menu [class*="menu_link"]
+.menu [class*="menu_link"],
+.menu > ul > li:last-child ul > li:last-child
 {
         border-bottom: 1px solid #23282e;
-}
-.menu > ul > li > ul > li:first-of-type {
-	border-top: 1px solid #23282e;
 }
 
 .menu ul {
@@ -432,10 +430,8 @@ input[name="map-image"] {
 }
 .menu > ul { background-color: rgba(26, 28, 34, 0.5); }
 
-.menu ul#administration,
-.menu ul#administration li,
-.menu ul[id^=submenu],
-.menu ul[id^=submenu] li {
+.menu li li
+{
         line-height: 25px;
 }
 
