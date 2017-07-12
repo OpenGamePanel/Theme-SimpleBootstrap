@@ -7,7 +7,9 @@
 .log .table:first-of-type td {
 	vertical-align: bottom;
 }
-
+.log td {
+	color: #fff !important;
+}
 .log b table {
 	width: 100%;
 }	

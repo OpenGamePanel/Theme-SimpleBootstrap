@@ -1,3 +1,7 @@
 td[style="width: 35px;"] {
 	width: 70px !important;
 }
+.log td {
+        color: #fff !important;
+}
+
