@@ -6,4 +6,6 @@ $(document).ready(function() {
 	$('img[src="images/txt.png"]').replaceWith('<i class="fa fa-pencil-square-o" aria-hidden="true"></i>');
         $('img[src="images/exec.png"]').replaceWith('<i class="fa fa-cog" aria-hidden="true"></i>');
 
+	$('.unlocked').children('span').addClass('btn').addClass('btn-xs').addClass('btn-danger').css('min-width','80px');
+	$('.locked').children('span').addClass('btn').addClass('btn-xs').addClass('btn-success').css('min-width','80px');
 });
