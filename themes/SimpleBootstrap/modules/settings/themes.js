@@ -18,12 +18,17 @@ $(document).ready(function() {
 
 			console.log(JSON.stringify(json));
 
-
-	                if(json['style']=='light'){
-				$('form[action="?m=settings&p=themes"] tr:last').after('<tr><td align="right"><label for="style_tab">Theme Style:</label></td><td align="left"><select id="style_tab" name="style_tab" class="form-control"><option value="dark">dark</option><option value="light" selected>light</option></select></td><td><i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Changes the Theme Style"></i></td></tr>');
-	                }else{
-				$('form[action="?m=settings&p=themes"] tr:last').after('<tr><td align="right"><label for="style_tab">Theme Style:</label></td><td align="left"><select id="style_tab" name="style_tab" class="form-control"><option value="dark" selected>dark</option><option value="light">light</option></select></td><td><i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Changes the Theme Style"></i></td></tr>');
-	                }
+			var theme_styles = {'Light':'light', 'Dark':'dark', 'Fire':'fire'}
+			var add_row = '<tr><td align="right"><label for="style_tab">Theme Style:</label></td><td align="left"><select id="style_tab" name="style_tab" class="form-control">';
+                        for (var key in theme_styles) {
+                                if(theme_styles[key]==json['style']){
+                                        add_row += '<option value="'+theme_styles[key]+'" selected>'+key+'</option>';
+                                }else{
+                                        add_row += '<option value="'+theme_styles[key]+'">'+key+'</option>';
+                                }
+                        }
+			add_row += '</td><td><i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Changes the Theme Style"></i></td></tr>';
+			$('form[action="?m=settings&p=themes"] tr:last').after(add_row);
 
 			var paces = {'Center Bar':'center-bar', 'Corner Indicator':'corner-indicator', 'Flash':'flash', 'Loading Bar':'loading-bar'};
 			var add_row = '<tr><td align="right"><label for="style_loader">Pace Loader</label></td><td align="left"><select id="style_loader" name="style_loader" class="form-control">';

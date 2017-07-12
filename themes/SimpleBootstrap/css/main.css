@@ -6,6 +6,7 @@ body {
 	-moz-background-size: cover !important;
 	-o-background-size: cover !important;
 	background-size: cover !important;
+	text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
 body > .container-fluid {
@@ -444,7 +445,7 @@ input[name="map-image"] {
 [class$="menu_link_selected"] {
 	background-color: #1686af !important;
 }
-.menu .btn-primary:hover {
+.menu [id$=#submenu_] .btn-primary:hover {
 	background-position: 0 -35px;
 }
 .menu .active .btn-primary:hover {
@@ -632,8 +633,8 @@ a:before,
 
 /* *** THEME STYLER *** */
 body {
-        background: url(../images/bg/blur_1.jpg) no-repeat center center fixed;
-        background-color: #2b343b;
+        background: url(../images/bg/fire.jpg) no-repeat center center fixed;
+        background-color: #000;
 }
 h1, h2, h3, h4, h5, h6, legend {
         border-bottom: 1px solid #9fa1a9;

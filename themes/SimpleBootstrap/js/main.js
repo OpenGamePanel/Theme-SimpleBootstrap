@@ -121,7 +121,7 @@ $(document).ready(function() {
 				if($(this).hasClass('ready')){
 					return true;
 				}else{
-					$(this).addClass('ready').parent('li').addClass('btn-primary');
+					$(this).addClass('ready').addClass('btn-primary');
 					return false;
 				}
 			}
