@@ -14,7 +14,12 @@ $(document).ready(function() {
 	});
 
 	$('#serverview').css('padding','5px').wrap('<table class="table table-sm table-striped">');
-
 	$('#serverstatus').parent('td').children('a').addClass('label').addClass('label-primary').addClass('label-size');
+
+	$('#clearLink').parent('div').each(function(){
+		$(this).find('img').remove();
+		$(this).html($(this).html().replace('|',''));
+	});
+
 });
 
