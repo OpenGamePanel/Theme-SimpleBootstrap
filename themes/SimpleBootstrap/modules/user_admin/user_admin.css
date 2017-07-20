@@ -1,0 +1,13 @@
+.subusersShowHide:hover {
+	cursor: pointer;
+}
+.subuser td {
+	border: none !important;
+}
+
+.tr0 {
+	background-color: rgba(26, 28, 34, 0.2) !important;
+}
+.tr1 {
+	background-color: transparent !important;
+}
