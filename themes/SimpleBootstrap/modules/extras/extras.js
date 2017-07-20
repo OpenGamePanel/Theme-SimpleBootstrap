@@ -1,4 +1,9 @@
 $(document).ready(function() {
+
+	$('[name="update"]').click(function(){
+		$('body').append('<div class="loading-overlay"><img src="themes/SimpleBootstrap/images/loader/dual_ring.svg"></div>');
+	});
+
         $('.dragbox-content').html(function(index, text) {
                 return text.replace(/\ - /g, '');
         });
