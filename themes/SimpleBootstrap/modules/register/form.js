@@ -21,7 +21,7 @@ $(document).ready(function() {
                 var new_form = '\
                 <div class="login-container">\
                         <h3>'+title+'</h3>\
-                        <form action="index.php" name="login_form" method="post" class="form-group">\
+                        <form action="?m=register&p=exec" name="loginForm" method="post" class="form-group">\
 				<input type="text" id="login_name" name="login_name" class="form-control" placeholder="'+user+'">\
 				<input id="users_passwd" type="password" name="users_passwd" class="form-control" placeholder="'+pass+'">\
 				<input id="users_cpasswd" type="password" name="users_cpasswd" class="form-control" placeholder="'+vpass+'">\
