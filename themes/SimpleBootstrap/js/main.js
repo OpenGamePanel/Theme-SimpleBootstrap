@@ -135,9 +135,9 @@ $(document).ready(function() {
                 $(this).replaceWith('<ul class="pagination">'+$(this).html()+'</ul>');
                 var pm = $('.pagination');
 
-                var ps = $(pm).find('.watchLogger_paginationStart');
-                var pp = $(pm).find('.watchLogger_paginationPages');
-                var pe = $(pm).find('.watchLogger_paginationEnd');
+                var ps = $(pm).find('[class$="_paginationStart"]');
+                var pp = $(pm).find('[class$="_paginationPages"]');
+                var pe = $(pm).find('[class$="_paginationEnd"]');
 
                 if($(ps).length){
                         if($(ps).find('span').length){ console.log('divider!'); }
@@ -154,7 +154,7 @@ $(document).ready(function() {
                 $(pp).find('a').each(function(){
                         var tl = $(this).attr('href');
                         var tc = $(this).text().replace('[','').replace(']','');
-                        if($(this).hasClass('watchLogger_currentPageLink')){
+                        if($(this).is('[class$="_currentPageLink"]')){
                                 $(pm).append('<li class="active"><span><a href="'+tl+'">'+tc+'</a></li>');
                         }else{
                                 $(pm).append('<li><span><a href="'+tl+'">'+tc+'</a></li>');
