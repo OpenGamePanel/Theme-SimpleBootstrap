@@ -18,7 +18,7 @@ $(document).ready(function() {
 	$('link[href="js/bootstrap/css/bootstrap-combined.min.css"]').remove();
 
 	/* *** Removing Chars from Links *** */
-        $('a, a span').each(function(){
+        $('a:not(.user_menu_link), a span').each(function(){
                 $(this).html($(this).html().replace('[','').replace(']',''));
         });
 
