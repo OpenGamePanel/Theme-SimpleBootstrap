@@ -3,16 +3,21 @@ body {
 	background: transparent !important;
 	color: #fff;
 }
-body {
+body,
+.title {
 	display: none;
 }
 td {
 	color: #fff !important;
 }
 
-#StatusbarForm .fa {
-	font-size: 32px;
-	margin-right: 10px;
+#StatusbarForm {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+i.fa.fa-folder-open-o {
+	color: #ffe699;
 }
 
 h1 {

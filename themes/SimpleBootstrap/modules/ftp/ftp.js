@@ -27,6 +27,11 @@ $(document).ready(function(){
 			$(this).contents().find('form').addClass('form-group');
 
 			$(this).contents().find('.browse_rows_heading a').removeAttr('style').addClass('btn').addClass('btn-xs').addClass('btn-primary');
+			$(this).contents().find('[href^="javascript:submitBrowseForm(\'%2F\'"]').addClass('btn').addClass('btn-xs').addClass('btn-primary').prepend('<i class="fa fa-arrow-up" aria-hidden="true"></i>&nbsp;');
+			$(this).contents().find('[href^="javascript:submitBrowseForm"]:not(.btn)').addClass('label').addClass('label-default');
+			$(this).contents().find('[onclick*="view"] > a').addClass('btn').addClass('btn-xs').addClass('btn-success').addClass('btn-block');
+			$(this).contents().find('[onclick*="edit"] > a').addClass('btn').addClass('btn-xs').addClass('btn-warning').addClass('btn-block');
+			$(this).contents().find('[href^="javascript:toggleElement(\'upload\')"]').addClass('btn').addClass('btn-xs').addClass('btn-danger');
 
 			$(this).contents().find('img[src$="folder.png"]').replaceWith('<i class="fa fa-folder-open-o" aria-hidden="true"></i>');
 			$(this).contents().find('img[src$="txt.png"]').replaceWith('<i class="fa fa-pencil-square-o" aria-hidden="true"></i>');
@@ -38,6 +43,14 @@ $(document).ready(function(){
                         $(this).contents().find('img[src$="document.png"]').replaceWith('<i class="fa fa-file-text-o" aria-hidden="true"></i>');
 			$(this).contents().find('img[src$="terminal.png"]').replaceWith('<i class="fa fa-terminal" aria-hidden="true"></i>');
 			$(this).contents().find('img[src$="colors.png"]').replaceWith('<i class="fa fa-file-image-o" aria-hidden="true"></i>');
+			//$(this).contents().find('img[src$="misc.png"]').replaceWith('<i class="fa fa-cog" aria-hidden="true"></i>');
+			$(this).contents().find('img[src$="misc.png"]').remove();
+			$(this).contents().find('img[src$="back.png"]').replaceWith('<i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>');
+
+			$(this).contents().find('[accesskey="h"]').addClass('btn').addClass('btn-warning');
+			$(this).contents().find('[accesskey="i"]:not(input)').addClass('btn').addClass('btn-info');
+			$(this).contents().find('[accesskey="l"]').addClass('btn').addClass('btn-danger');
+			$(this).contents().find('[accesskey="b"]').addClass('btn').addClass('btn-primary');
 
 			$('iframe').contents().find('table h1').each(function(){
 				$(this).parent('td').replaceWith('<th>'+$(this).parent('td').html()+'</th>');
