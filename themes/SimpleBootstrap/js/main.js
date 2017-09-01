@@ -109,23 +109,30 @@ $(document).ready(function() {
 		$(this).before("<img src='"+img_url+"'/>");
 	});
 
-	$('.menu [class$="menu_link_selected"]').addClass('ready').addClass('btn-primary').next('ul').addClass('opened').parent('li').addClass('active');
-	$('.menu a').next('ul').parent('li').addClass('tree');
+	$('.menu a').click(function(){
+		if($(this).attr('aria-expanded')=="true"){
+			window.location = $(this).attr('link');
+		}
+	});
 
-	$('.menu a').click(function () {
-		$(this).parent('li').addClass('active');
-		if($(this).parent('li').has('ul').length){
-			if($(this).next('ul').hasClass('opened')){
-				$(this).next('ul').removeClass('opened');
-			}else{
-				$(this).next('ul').addClass('opened');
-				if($(this).hasClass('ready')){
-					return true;
-				}else{
-					$(this).addClass('ready').addClass('btn-primary');
-					return false;
-				}
+	$('.menu [class$="menu_link_selected"]').attr('aria-expanded', 'true').next('ul').addClass('collapse').addClass('in').attr('aria-expanded', 'true');
+
+	$('.menu > ul').attr('id', 'menu');
+	$('.menu ul').each(function() {
+		if($(this).prev('a').length){
+			var data_parent = '#'+$(this).parent('li').parent('ul').attr('id');
+			var link_id = $(this).prev('a').attr('href').replace(/[^a-z0-9\s]/gi, '');
+			if(!$(this).parent().hasClass('menu')){
+				$(this).addClass('collapse');
 			}
+			$(this).parent('li').addClass('panel');
+			$(this).attr('id', link_id);
+			$(this).prev('a').attr({
+				'link': $(this).prev('a').attr('href'),
+				'href': '#'+$(this).attr('id'),
+				'data-parent': data_parent,
+				'data-toggle': 'collapse'
+			});
 		}
 	});
 

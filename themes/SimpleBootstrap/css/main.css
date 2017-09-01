@@ -252,7 +252,7 @@ input[type="checkbox"] {
 	-webkit-appearance: none;
 	-o-appearance: none;
         font-family: FontAwesome;
-	border: 1px solid #22252f;
+	border: 1px solid rgba(67, 72, 87, 1);
 	width: 16px;
 	height: 16px;
 	background-color: rgba(26, 28, 34, 0.2) !important;
@@ -260,6 +260,9 @@ input[type="checkbox"] {
 	display: inline-block;
 	outline: none;
 	margin: 0px 4px;
+}
+input[type="checkbox"][disabled] {
+	border: 1px solid rgba(67, 72, 87, 0.5);
 }
 input[type=checkbox]:before {
         content: "\f00c";
@@ -434,7 +437,9 @@ input[name="map-image"] {
 }
 .menu ul[id^=submenu] > li > a,
 .menu [class*="menu_link"],
-.menu > ul > li:last-child ul > li:last-child
+.menu > ul > li:last-child ul > li:last-child,
+.menu .panel,
+.menu .panel > a[aria-expanded="true"]
 {
         border-bottom: 1px solid #23282e;
 }
@@ -447,10 +452,11 @@ input[name="map-image"] {
         cursor: pointer;
 	background-color: rgba(26, 28, 34, 0.2);
 }
-.menu > ul { background-color: rgba(26, 28, 34, 0.5); }
+.menu > ul {
+	background-color: rgba(26, 28, 34, 0.5);
+}
 
-.menu li li
-{
+.menu li li {
         line-height: 25px;
 }
 
@@ -460,7 +466,8 @@ input[name="map-image"] {
         text-decoration: none;
 	transition: max-height 0.1s;
 }
-[class$="menu_link_selected"] {
+[class$="menu_link_selected"],
+.menu a[aria-expanded="true"] {
 	background-color: #1686af !important;
 }
 .menu [id$=#submenu_] .btn-primary:hover {
@@ -479,7 +486,7 @@ input[name="map-image"] {
 	white-space: nowrap;
 }
 
-.menu #submenu_1 a {
+.menu ul[id^=submenu] ul[id^=submenu] a {
         padding: 0px 20px;
         white-space: nowrap;
         overflow: hidden;
@@ -498,13 +505,16 @@ input[name="map-image"] {
         text-decoration: none;
 }
 
-.menu ul li ul {
-        overflow:hidden;
-        max-height:0;
-        transition:max-height 1s ease-in;
+.menu a[href^="#mgamemanagerpgamemonitorhomecfgid"] span:before {
+	content: "" !important;
+	width: 0px !important;
 }
-.menu .opened {
-        max-height: 1000px;
+
+.menu ul {
+        transition: height 0.1s ease-in;
+}
+.menu .panel{
+	margin-bottom: 0px;
 }
 .menu img {
         max-height: 15px;
@@ -535,14 +545,14 @@ a:before,
         display: inline-block;
 }
 
-.menu .tree:before {
+.menu .panel > a:before {
 	position: absolute;
 	right: 0px;
         content: "\f104";
         margin-right: 10px;
 	font-size: 80%;
 }
-.menu .tree.active:before {
+.menu .panel > a[aria-expanded="true"]:before {
         content: "\f107";
 	font-size: 100%;
 }
@@ -572,8 +582,10 @@ a:before,
 .menu ul[id^="submenu"] span:before { display: none; }
 .menu [href="?m=dashboard&p=dashboard"] > span:before,
 .administration-table [href="?m=dashboard&p=dashboard"]:before { content: "\f0e4"; }
-.menu [href="?m=gamemanager&p=game_monitor"] > span:before { content: "\f108"; }
-.menu [href="?m=administration&p=main"] > span:before { content: "\f023"; }
+.menu [href="?m=gamemanager&p=game_monitor"] > span:before,
+.menu [link="?m=gamemanager&p=game_monitor"] > span:before { content: "\f108"; }
+.menu [href="?m=administration&p=main"] > span:before,
+.menu [link="?m=administration&p=main"] > span:before { content: "\f023"; }
 .menu [href="?m=TS3Admin"] > span:before { content: "\f086"; }
 .menu [href^="?m=gamemanager&p=log"] > span:before,
 .monitorButtonContainer [href^="?m=gamemanager&p=log"]:before { content: "\f1da"; }
@@ -607,6 +619,7 @@ a:before,
 .menu [href^="?m=gamemanager&p=update"] > span:before,
 .monitorButtonContainer [href^="?m=gamemanager&p=update"]:before { content: "\f1b6"; }
 .menu [href^="?m=user_admin"] > span:before,
+.menu [link^="?m=user_admin"] > span:before,
 .administration-table [href^="?m=user_admin"]:before{ content: "\f007"; }
 .menu [href="?m=user_admin&p=show_groups"] > span:before { content: "\f0c0"; }
 .menu [href="?m=administration&p=watch_logger"] > span:before,
@@ -651,29 +664,21 @@ a:before,
 
 /* *** THEME STYLER *** */
 body {
-        background: url(../images/bg/fire.jpg) no-repeat center center fixed;
-        background-color: #000;
+        background: url(../images/bg/dark.jpg) no-repeat center center fixed;
+        background-color: #111215;
 }
 h1, h2, h3, h4, h5, h6, legend {
-        border-bottom: 1px solid #9fa1a9;
-}
-h0 a
-{
-	color: #272c32;
-}
-h0 a:hover
-{
-        color: #fff;
+        border-bottom: 1px solid #434857;
 }
 
 .bloc,
 .form-control,
 table:not(.online_servers) {
-        border: 1px solid rgba(35, 40, 46, 0.8);
+	border: 1px solid rgba(67, 72, 87, 0.5);
 }
 
-.form-control {
-	box-shadow: 0px 0px 2px 0px rgba(255,255,255,0.5);
+.form-control:focus {
+	border-color: rgba(255, 255, 255, 0.4)
 }
 
 /* *** THEME STYLER END *** */
