@@ -22,6 +22,7 @@ if($debug==1){
 	echo "sbs_conf.php loaded...\n";
 	echo "POST: ".print_r($_POST, true);
 	echo "FILES: ".print_r($_FILES, true);
+	echo "GET: ".print_r($_GET, true);
 }
 
 if(!file_exists($pace_loc)){
@@ -77,7 +78,7 @@ if(isset($_SESSION['users_group']) && $_SESSION['users_group'] == 'admin')
 	}
 
 	/* *** Del Custom BG *** */
-	if(!empty($_GET['del_custom_bg'])){
+	if(isset($_GET['del_custom_bg'])){
 		if($conf_params['custom_bg']!='no'){
 			unlink($cbgf.'/'.$conf_params['custom_bg']);
 			$conf_changes = 1;
