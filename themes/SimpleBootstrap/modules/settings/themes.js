@@ -5,10 +5,9 @@ $(document).ready(function() {
 	$('form[action="?m=settings&p=themes"] tr:nth-child(4),form[action="?m=settings&p=themes"] tr:nth-child(5)').addClass('hide');
 	$('form[action="?m=settings&p=themes"]').attr('enctype','multipart/form-data');
 
-        //$.getJSON("themes/SimpleBootstrap/conf/theme.config", function(json) {
 	$.ajax({
 		type: "POST",
-		url: "themes/SimpleBootstrap/conf/theme.config",
+		url: "themes/SimpleBootstrap/conf/sbs.conf",
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
 		beforeSend: function( xhr ) {
@@ -16,7 +15,7 @@ $(document).ready(function() {
 		},
 		success: function(json) {
 
-			console.log(JSON.stringify(json));
+			//console.log(JSON.stringify(json));
 
 			var theme_styles = {'Light':'light', 'Dark':'dark', 'Fire':'fire'}
 			var add_row = '<tr><td align="right"><label for="style_tab">Theme Style:</label></td><td align="left"><select id="style_tab" name="style_tab" class="form-control">';
@@ -33,7 +32,8 @@ $(document).ready(function() {
 			var paces = {'Center Bar':'center-bar', 'Corner Indicator':'corner-indicator', 'Flash':'flash', 'Loading Bar':'loading-bar'};
 			var add_row = '<tr><td align="right"><label for="style_loader">Pace Loader</label></td><td align="left"><select id="style_loader" name="style_loader" class="form-control">';
 			for (var key in paces) {
-				if(paces[key]==get_active_loader()){
+				//if(paces[key]==get_active_loader()){
+				if(paces[key]==json['pace']){
 					add_row += '<option value="'+paces[key]+'" selected>'+key+'</option>';
 				}else{
 					add_row += '<option value="'+paces[key]+'">'+key+'</option>';
@@ -69,7 +69,7 @@ $(window).load(function(){
         $('form[action="?m=settings&p=themes"]').submit(function(){
 		var formData = new FormData($(this)[0]);
 		$.ajax({
-			url: 'themes/SimpleBootstrap/conf/write_conf.php',
+			url: 'themes/SimpleBootstrap/conf/sbs_conf.php',
 			type: 'POST',
 			data: formData,
 			async: false,
@@ -81,12 +81,12 @@ $(window).load(function(){
 			processData: false
 		});
 
-		//return false;
+//		return false;
         });
 
         $('#del_custom_bg').click(function(){
                 if(confirm('Are you sure you want to remove the Background Image?')){
-                        $.get('themes/SimpleBootstrap/conf/write_conf.php',
+                        $.get('themes/SimpleBootstrap/conf/sbs_conf.php',
                                 {del_custom_bg:'yes'},
                                 function(data){
                                         console.log(data);
