@@ -1,5 +1,5 @@
 body {
-        background: url(../images/bg/dark.jpg) no-repeat center center fixed;
+        background-image: url(../images/bg/dark.jpg);
         background-color: #111215;
 }
 h1, h2, h3, h4, h5, h6, legend {

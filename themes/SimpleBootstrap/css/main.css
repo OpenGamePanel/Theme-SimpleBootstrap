@@ -7,6 +7,9 @@ body {
 	-o-background-size: cover !important;
 	background-size: cover !important;
 	text-shadow: 0 1px 3px rgba(0,0,0,.5);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
 }
 
 body > .container-fluid {
@@ -664,21 +667,25 @@ a:before,
 
 /* *** THEME STYLER *** */
 body {
-        background: url(../images/bg/dark.jpg) no-repeat center center fixed;
-        background-color: #111215;
+        background-image: url(../images/bg/light.jpg);
+        background-color: #2b343b;
 }
 h1, h2, h3, h4, h5, h6, legend {
-        border-bottom: 1px solid #434857;
+        border-bottom: 1px solid #9fa1a9;
+}
+h0 a
+{
+	color: #272c32;
+}
+h0 a:hover
+{
+        color: #fff;
 }
 
 .bloc,
 .form-control,
 table:not(.online_servers) {
-	border: 1px solid rgba(67, 72, 87, 0.5);
-}
-
-.form-control:focus {
-	border-color: rgba(255, 255, 255, 0.4)
+        border: 1px solid rgba(35, 40, 46, 0.8);
 }
 
 /* *** THEME STYLER END *** */

@@ -1,5 +1,5 @@
 body {
-        background: url(../images/bg/fire.jpg) no-repeat center center fixed;
+        background-image: url(../images/bg/fire.jpg);
         background-color: #000;
 }
 h1, h2, h3, h4, h5, h6, legend {

@@ -1,14 +1,11 @@
 $(document).ready(function() {
 
-	/* *** Check if Config File exists, and if not, Call write_conf.php to create it *** */
-	$.get('themes/SimpleBootstrap/conf/theme.config').fail(function(){
-		$.get('themes/SimpleBootstrap/conf/write_conf.php',
-			{create_config:'yes'},
-			function(data){
-				console.log(data);
-			}
-		);
-	});
+	/* *** Call Theme Config Driver *** */
+	$.get('themes/SimpleBootstrap/conf/sbs_conf.php',
+		function(data){
+			console.log(data);
+		}
+	);
 
 	/* *** Cutting Title *** */
 	$('.logo h2').text($('.logo h2').text().substring(0, $('.logo h2').text().lastIndexOf(" [") + 1));
