@@ -17,7 +17,7 @@ $(document).ready(function() {
 
 			//console.log(JSON.stringify(json));
 
-			var theme_styles = {'Light':'light', 'Dark':'dark', 'Fire':'fire'}
+			var theme_styles = {'Light':'light', 'Dark':'dark'}
 			var add_row = '<tr><td align="right"><label for="style_tab">Theme Style:</label></td><td align="left"><select id="style_tab" name="style_tab" class="form-control">';
                         for (var key in theme_styles) {
                                 if(theme_styles[key]==json['style']){
@@ -29,10 +29,21 @@ $(document).ready(function() {
 			add_row += '</td><td><i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Changes the Theme Style"></i></td></tr>';
 			$('form[action="?m=settings&p=themes"] tr:last').after(add_row);
 
+			var theme_background = {'Light':'light', 'Dark':'dark', 'Fire':'fire', 'Vietnam (by omano)':'vietnam'}
+			var add_row = '<tr><td align="right"><label for="style_tab">Theme Background:</label></td><td align="left"><select id="style_bg" name="style_bg" class="form-control">';
+			for (var key in theme_background) {
+				if(theme_background[key]==json['background']){
+					add_row += '<option value="'+theme_background[key]+'" selected>'+key+'</option>';
+				}else{
+					add_row += '<option value="'+theme_background[key]+'">'+key+'</option>';
+				}
+			}
+			add_row += '</td><td><i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Changes the Theme Background"></i></td></tr>';
+			$('form[action="?m=settings&p=themes"] tr:last').after(add_row);
+
 			var paces = {'Center Bar':'center-bar', 'Corner Indicator':'corner-indicator', 'Flash':'flash', 'Loading Bar':'loading-bar'};
 			var add_row = '<tr><td align="right"><label for="style_loader">Pace Loader</label></td><td align="left"><select id="style_loader" name="style_loader" class="form-control">';
 			for (var key in paces) {
-				//if(paces[key]==get_active_loader()){
 				if(paces[key]==json['pace']){
 					add_row += '<option value="'+paces[key]+'" selected>'+key+'</option>';
 				}else{
@@ -58,7 +69,7 @@ $(document).ready(function() {
 				</label>\
 				<input type="text" class="form-control" readonly="">\
 			</div>';
-			$('form[action="?m=settings&p=themes"] tr:last').after('<tr><td align="right"><label for="custom_bg">Custom BG:'+custom_bg_info+'</label></td><td align="left">'+upload_input+'</td><td><i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Changes the Theme Background"></i></td></tr>');
+			$('form[action="?m=settings&p=themes"] tr:last').after('<tr><td align="right"><label for="custom_bg">Custom BG:'+custom_bg_info+'</label></td><td align="left">'+upload_input+'</td><td><i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Changes the Theme Background to a Custom Image. The Image will be Fixed to 100%/100%!"></i></td></tr>');
 
 		}
         });

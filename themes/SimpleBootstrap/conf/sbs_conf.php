@@ -2,8 +2,9 @@
 include("../../../includes/helpers.php");
 startSession();
 
-$conf_params = array(
+$default_conf_params = array(
 	'style' => 'light',
+	'background' => 'fire',
 	'custom_bg' => 'no',
 	'pace' => 'flash'
 );
@@ -13,9 +14,11 @@ $css_loc	= "../css/main.css";
 $conf_loc       = "./sbs.conf";
 $sbs_css_loc	= "./sbs.css";
 
-$debug		= 0;	// Set to 1 for Debug in Brower Console
-$conf_changes	= 0;	// Declaration
-$bg_change	= 0;	// Declaration
+$debug		= 0;		// Set to 1 for Debug in Brower Console
+$conf_changes	= 0;		// Declaration
+$bg_change	= 0;		// Declaration
+$isadmin	= false;	// Declaration
+$conf_params	= array();	// Declaration
 $rp		= realpath(dirname(__FILE__));
 
 if($debug==1){
@@ -32,11 +35,25 @@ if(!file_exists($pace_loc)){
 if(!file_exists($conf_loc)){
 	file_put_contents($conf_loc, json_encode($conf_params));
 	echo "Theme Config not found. Created new one.\n";
+	$conf_params = $default_conf_params;
 }else{
-        $json                           = json_decode(file_get_contents($conf_loc));
-        $conf_params['style']           = $json->{"style"};
-        $conf_params['custom_bg']       = $json->{"custom_bg"};
-        $conf_params['pace']            = $json->{"pace"};
+        $json		= json_decode(file_get_contents($conf_loc));
+	$new_param	= false;
+
+	foreach($default_conf_params AS $key => $val)
+	{
+		if(!isset($json->{$key})){
+			$new_param = true;
+			$conf_params[$key] = $val;
+		}else{
+			$conf_params[$key] = $json->{$key};
+		}
+	}
+	if($new_param){
+		unlink($conf_loc);
+		file_put_contents($conf_loc, json_encode($conf_params));
+		echo "New Variable found. Updating Config File.\n";
+	}
 }
 if(!file_exists($sbs_css_loc)){
 	preg_match_all("/background-image: url\((.*)\)/", file_get_contents($css_loc), $css_bg);
@@ -44,12 +61,18 @@ if(!file_exists($sbs_css_loc)){
 	echo "Custom CSS not found. Created new one.\n";
 }
 
-/* *** Remove old Config Fles *** */
+if($debug==1){
+        echo "\$conf_params: ".print_r($conf_params, true);
+}
+
+
+/* *** Remove old Config File *** */
 if(file_exists("./theme.config")){ unlink("./theme.config"); }
-if(file_exists("./write_conf.php")){ unlink("./write_conf.php"); }
 
 if(isset($_SESSION['users_group']) && $_SESSION['users_group'] == 'admin')
 {
+	$isadmin = true;
+
 	/* *** Set Custom BG *** */
 	$cbgf = $rp.'/custom_bg';
 	if(!file_exists($cbgf)){
@@ -105,8 +128,11 @@ if(isset($_SESSION['users_group']) && $_SESSION['users_group'] == 'admin')
 	}
 
 	/* *** General Save via Theme Settings *** */
-	if(isset($_POST['style_tab'])){
-		if($_POST['style_tab']!=$conf_params['style']){
+	if(isset($_POST['style_tab']))
+	{
+echo $conf_params['style'];
+		if($_POST['style_tab']!=$conf_params['style'])
+		{
 			$conf_changes = 1;
 			$conf_params['style'] = $_POST['style_tab'];
 			file_put_contents(
@@ -119,24 +145,45 @@ if(isset($_SESSION['users_group']) && $_SESSION['users_group'] == 'admin')
 			);
 			if($debug==1){
 				echo "Style changed into: ".$_POST['style_tab']."\n";
+				echo "Put ../css/main_".$conf_params['style'].".css into ".$css_loc."\n";
 			}
 		}
 	}
 }
 
-if($conf_params['custom_bg']!='no'){
-	if(strpos(file_get_contents($sbs_css_loc), $conf_params['custom_bg'])===false Or $bg_change==1){
-		file_put_contents($sbs_css_loc, preg_replace("/background-image: url\((.*)\)/", "background-image: url(../conf/custom_bg/".$conf_params['custom_bg'].")", file_get_contents($sbs_css_loc)));
-		if($debug==1){
-			echo "Custom BG has been changed. Replaced it in ".$sbs_css_loc."\n";
+if($conf_params['custom_bg']!='no')
+{
+	change_bg("../conf/custom_bg/".$conf_params['custom_bg']);
+}else
+{
+	if(isset($_POST['style_bg']) && $isadmin)
+	{
+		if($_POST['style_bg']!=$conf_params['background']){
+			$conf_changes = 1;
+			$conf_params['background'] = $_POST['style_bg'];
 		}
 	}
+	change_bg("../images/bg/".$conf_params['background'].".jpg");
 }
 
-if($conf_changes==1){
+if($conf_changes==1)
+{
 	unlink($conf_loc);
 	file_put_contents($conf_loc, json_encode($conf_params));
 	if($debug==1){
 		echo "Found Changes. Rewrote Config File.\n";
+	}
+}
+
+function change_bg($bg_path)
+{
+	Global $sbs_css_loc, $debug, $bg_change;
+
+	if(strpos(file_get_contents($sbs_css_loc), $bg_path)===false Or $bg_change==1)
+	{
+		file_put_contents($sbs_css_loc, preg_replace("/background-image: url\((.*)\)/", "background-image: url(".$bg_path.")", file_get_contents($sbs_css_loc)));
+		if($debug==1){
+			echo "BG has been changed to: ".$bg_path.". Replaced it in ".$sbs_css_loc."\n";
+		}
 	}
 }
