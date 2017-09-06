@@ -438,6 +438,11 @@ input[name="map-image"] {
 .menu {
         margin-bottom: 20px;
 }
+.menu .panel{
+	margin-bottom: 0px;
+	border: none;
+}
+
 .menu ul[id^=submenu] > li > a,
 .menu [class*="menu_link"],
 .menu > ul > li:last-child ul > li:last-child,
@@ -516,9 +521,6 @@ input[name="map-image"] {
 .menu ul {
         transition: height 0.1s ease-in;
 }
-.menu .panel{
-	margin-bottom: 0px;
-}
 .menu img {
         max-height: 15px;
         margin-right: 5px;
@@ -532,6 +534,11 @@ input[name="map-image"] {
 }
 .menu .tree ul.opened .tree:before {
         visibility: visible;
+}
+[id^="mgamemanagerpgamemonitorhomecfgid"] a.user_menu_link:before {
+	content: "●";
+	position: relative;
+	left: -5px;
 }
 
 
@@ -554,10 +561,15 @@ a:before,
         content: "\f104";
         margin-right: 10px;
 	font-size: 80%;
+	-webkit-transition: all 100ms;
+	transition: all 100ms;
 }
 .menu .panel > a[aria-expanded="true"]:before {
-        content: "\f107";
-	font-size: 100%;
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	transform: rotate(-90deg);
 }
 
 .monitorbutton:before
