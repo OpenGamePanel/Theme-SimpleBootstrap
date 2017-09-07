@@ -29,8 +29,8 @@ $(document).ready(function() {
 			add_row += '</td><td><i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Changes the Theme Style"></i></td></tr>';
 			$('form[action="?m=settings&p=themes"] tr:last').after(add_row);
 
-			var theme_background = {'Light':'light', 'Dark':'dark', 'Fire':'fire', 'Vietnam (by omano)':'vietnam'}
-			var add_row = '<tr><td align="right"><label for="style_tab">Theme Background:</label></td><td align="left"><select id="style_bg" name="style_bg" class="form-control">';
+			var theme_background = {'Light Blur':'light', 'Dark Clean':'dark', 'Fire':'fire', 'Vietnam (by omano)':'vietnam', 'Dream':'dream', 'Light Dream':'light_dream'}
+			var add_row = '<tr><td align="right"><label for="style_tab">Theme Background: <a class="label label-primary" id="bg_preview" data-toggle="tooltip" title="<img src=\'themes/SimpleBootstrap/images/bg/'+json['background']+'.jpg\' width=\'180px\' \>">Preview</a></label></td><td align="left"><select id="style_bg" name="style_bg" class="form-control">';
 			for (var key in theme_background) {
 				if(theme_background[key]==json['background']){
 					add_row += '<option value="'+theme_background[key]+'" selected>'+key+'</option>';
@@ -107,6 +107,10 @@ $(window).load(function(){
                         location.reload();
                 }
         });
+
+	$('#style_bg').change(function(){
+		$('#bg_preview').attr("data-original-title", "<img src='themes/SimpleBootstrap/images/bg/"+$(this).val()+".jpg' width='180px'>");
+	});
 });
 
 function get_active_loader() {

@@ -236,8 +236,11 @@ th {
 	background-color: rgba(67,72,87,0.6);
 }
 
-[data-toggle="tooltip"] {
+[data-toggle="tooltip"]:not(#bg_preview) {
 	font-size: 130%;
+}
+#bg_preview + .tooltip.in {
+	opacity: 1 !important;
 }
 .image-tooltip + .tooltip {
 	left: 40px !important;
@@ -443,13 +446,11 @@ input[name="map-image"] {
 	border: none;
 }
 
-.menu ul[id^=submenu] > li > a,
-.menu [class*="menu_link"],
-.menu > ul > li:last-child ul > li:last-child,
-.menu .panel,
-.menu .panel > a[aria-expanded="true"]
-{
+.menu li:not(:last-of-type) {
         border-bottom: 1px solid #23282e;
+}
+.menu ul:not(:first-child) {
+	border-top: 1px solid #23282e;
 }
 
 .menu ul {
@@ -459,6 +460,7 @@ input[name="map-image"] {
         line-height: 35px;
         cursor: pointer;
 	background-color: rgba(26, 28, 34, 0.2);
+	transition: height 0.1s ease-in;
 }
 .menu > ul {
 	background-color: rgba(26, 28, 34, 0.5);
@@ -518,9 +520,6 @@ input[name="map-image"] {
 	width: 0px !important;
 }
 
-.menu ul {
-        transition: height 0.1s ease-in;
-}
 .menu img {
         max-height: 15px;
         margin-right: 5px;
