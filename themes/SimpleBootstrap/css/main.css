@@ -140,6 +140,18 @@ h0, h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 10px;
 }
 
+.input-group > .input-group-addon {
+	border: 1px solid rgba(35, 40, 46, 0.8);
+	border-right: 0px;
+}
+.input-group > .form-control {
+	border-left: 0px;
+}
+.input-group > .form-control:focus {
+	box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+}
+
 .btn:not(span) {
 	margin: 2px;
 }
