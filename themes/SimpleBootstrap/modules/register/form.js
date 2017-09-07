@@ -3,7 +3,7 @@ $(document).ready(function() {
 	$(window).load(function () {
 		if ($('.g-recaptcha').length > 0) {
 			var recaptcha_pubkey = $('.g-recaptcha').attr('data-sitekey');
-			var recaptcha = "<div class='text-center'><script src='//www.google.com/recaptcha/api.js'></script><div style='display: inline-block;' class='g-recaptcha' data-sitekey='"+recaptcha_pubkey+"' data-theme='dark'></div></div>";
+			var recaptcha = "<div class='text-center' style='margin-bottom: 10px;'><script src='//www.google.com/recaptcha/api.js'></script><div style='display: inline-block;' class='g-recaptcha' data-sitekey='"+recaptcha_pubkey+"' data-theme='dark'></div></div>";
 		}else{
 			var recaptcha = "";
 		}

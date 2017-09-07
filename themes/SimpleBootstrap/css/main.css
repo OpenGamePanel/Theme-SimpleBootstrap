@@ -136,6 +136,9 @@ h0, h1, h2, h3, h4, h5, h6 {
 .login-container h3 {
 	margin-top: 0px;
 }
+.login-container .input-group {
+	margin-bottom: 10px;
+}
 
 .btn:not(span) {
 	margin: 2px;

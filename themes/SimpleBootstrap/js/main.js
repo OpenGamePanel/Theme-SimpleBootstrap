@@ -208,7 +208,7 @@ $(document).ready(function() {
 		if($('form[name="login_form"]').length > 0) {
 	                if ($('.g-recaptcha').length > 0) {
 	                        var recaptcha_pubkey = $('.g-recaptcha').attr('data-sitekey');
-				var recaptcha = "<div class='text-center'><script src='//www.google.com/recaptcha/api.js'></script><div style='display: inline-block;' class='g-recaptcha' data-sitekey='"+recaptcha_pubkey+"' data-theme='dark'></div></div>";
+				var recaptcha = "<div class='text-center' style='margin-bottom: 10px;'><script src='//www.google.com/recaptcha/api.js'></script><div style='display: inline-block;' class='g-recaptcha' data-sitekey='"+recaptcha_pubkey+"' data-theme='dark'></div></div>";
 	                }else{
 	                        var recaptcha = "";
 	                }
@@ -220,17 +220,51 @@ $(document).ready(function() {
         	        var lbtn = $('[name="login"]').val();
         	        var optns = $('[name="lang"]').html();
 
+
+			if($('[href="?m=register&p=form"]').length > 0) {
+				var buttons = '\
+					<div class="row" style="margin-bottom: 10px;">\
+						<div class="col-xs-6">\
+							<input type="submit" name="login" value="'+lbtn+'" class="btn btn-primary btn-block btn-sm">\
+						</div>\
+						<div class="col-xs-6">\
+							<a href="?m=register&p=form" class="btn btn-primary btn-block btn-sm">'+$('[href="?m=register&p=form"] > span').text()+'</a>\
+						</div>\
+					</div>\
+				';
+			}else{
+				var buttons = '\
+					<div class="row" style="margin-bottom: 10px;">\
+						<div class="col-xs-12">\
+							<input type="submit" name="login" value="'+lbtn+'" class="btn btn-primary btn-block btn-sm">\
+						</div>\
+					</div>\
+				';
+			}
+
+
 	                var new_form = '\
 			<div class="login-container">\
 	        		<h3>'+title+'</h3>\
         			<form action="index.php" name="login_form" method="post" class="form-group">\
-        			        <input type="text" name="ulogin" id="ulogin" class="form-control" placeholder="'+user+'">\
-					<input type="password" name="upassword" class="form-control" placeholder="'+pass+'">\
+        			        <div class="input-group">\
+						<span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>\
+						<input type="text" name="ulogin" id="ulogin" class="form-control" placeholder="'+user+'">\
+					</div>\
+					<div class="input-group">\
+						<span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>\
+						<input type="password" name="upassword" class="form-control" placeholder="'+pass+'">\
+					</div>\
         	        		<select name="lang" onchange="this.form.submit();" class="form-control">'+optns+'</select>\
 					'+recaptcha+'\
-        	        		<input type="submit" name="login" value="'+lbtn+'" class="btn btn-primary btn-block btn-sm">\
+					'+buttons+'\
         			</form>\
-        			<a href="?m=lostpwd">'+forgot+'</a>\
+				<div class="row">\
+	        			<div class="col-xs-12">\
+						<a class="pull-right label" href="?m=lostpwd">'+forgot+'</a>\
+					</div>\
+				</div>\
+				<div class="clearfix"></div>\
 			</div>';
 
 	                $('.main').empty().html(new_form);
