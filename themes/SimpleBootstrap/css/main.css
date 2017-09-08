@@ -115,6 +115,11 @@ h0, h1, h2, h3, h4, h5, h6 {
         text-transform: uppercase;
         padding-bottom: 10px;
 }
+td > h3 {
+	margin: 0px !important;
+	padding: 0px !important;
+	border-bottom: none !important;
+}
 .logo{
         padding: 20px;
 }
@@ -420,7 +425,16 @@ input[name="map-image"] {
 {
 	background-color: #c12e2a;
 }
-
+.list-group {
+	border: 1px solid #23282e;
+	background-color: rgba(26, 28, 34, 0.2);
+}
+.list-group-item:not(:last-child) {
+	border-bottom: 1px solid #22252f;
+}
+.list-group > .list-group-item:nth-of-type(odd) {
+	background-color: rgba(26, 28, 34, 0.2);
+}
 
 
 /* ***** MENU ***** */
