@@ -8,4 +8,7 @@ $(document).ready(function() {
 
 	$('.unlocked').children('span').addClass('btn').addClass('btn-xs').addClass('btn-danger').css('min-width','80px');
 	$('.locked').children('span').addClass('btn').addClass('btn-xs').addClass('btn-success').css('min-width','80px');
+
+	$('[href*="&item="], [href^="javascript:downloadFile"]').addClass('label').addClass('label-default');
+	$('[href$="&p=read_file"]').removeClass('label').removeClass('label-default').addClass('btn').addClass('btn-primary').addClass('btn-xs');
 });

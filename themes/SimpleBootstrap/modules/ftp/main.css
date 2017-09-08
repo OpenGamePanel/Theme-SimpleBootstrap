@@ -35,3 +35,9 @@ h1 {
         display: inline-block;
 }
 
+.table-striped>tbody>tr:nth-of-type(odd) {
+	background-color: rgba(26, 28, 34, 0.2) !important;
+}
+.table-striped>tbody>tr:nth-of-type(even) {
+	background-color: transparent !important;
+}

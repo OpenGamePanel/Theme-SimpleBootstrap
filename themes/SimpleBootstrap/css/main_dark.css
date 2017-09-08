@@ -11,6 +11,17 @@ h1, h2, h3, h4, h5, h6, legend {
 table:not(.online_servers) {
 	border: 1px solid rgba(67, 72, 87, 0.5);
 }
+input[type="checkbox"] {
+	border: 1px solid #22252f;
+}
+.table>thead>tr>th,
+.table>tbody>tr>th,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>tbody>tr>td,
+.table>tfoot>tr>td {
+	border-top: 1px solid rgba(67, 72, 87, 0.5);
+}
 
 .form-control:focus {
 	border-color: rgba(255, 255, 255, 0.4)

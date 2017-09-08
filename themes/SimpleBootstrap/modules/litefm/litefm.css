@@ -25,7 +25,9 @@
 a[href^="?m=litefm&home_id="] {
 	margin-right: 5px;
 }
-
+i.fa.fa-folder-open-o {
+	color: #ffe699;
+}
 #remove:before {
 	content: "\f1f8";
 }
