@@ -59,3 +59,18 @@ $(document).ready(function(){
 	checkWidth();
 	$(window).resize(checkWidth);
 });
+
+$(window).load(function(){
+	$('#mgamemanagerpgamemonitor .user_menu_link').each(function(){
+		if(window.location.href.indexOf($(this).attr('href'))>0){
+			$(this).attr('aria-expanded', 'true').parent('li').parent('ul').addClass('in').attr('aria-expanded', 'true').prev('a').attr('aria-expanded', 'true');
+		}
+	});
+
+	$('#mgamemanagerpgamemonitor > .panel > a').each(function(){
+		if(window.location.href.indexOf($(this).attr('link'))>0){
+			$(this).attr('aria-expanded', 'true').removeAttr('class').next('ul').addClass('in').attr('aria-expanded', 'true');
+		}
+	});
+});
+
