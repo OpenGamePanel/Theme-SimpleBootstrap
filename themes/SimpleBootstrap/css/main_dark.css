@@ -23,6 +23,11 @@ input[type="checkbox"] {
 	border-top: 1px solid rgba(67, 72, 87, 0.5);
 }
 
-.form-control:focus {
+form:not([name="login_form"]).form-control:focus {
 	border-color: rgba(255, 255, 255, 0.4)
+}
+
+.input-group-addon {
+	border: 1px solid rgba(67, 72, 87, 0.5);
+	border-right: 0px;
 }

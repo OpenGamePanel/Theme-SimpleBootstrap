@@ -20,3 +20,9 @@ table:not(.online_servers),
 input[type="checkbox"] {
         border: 1px solid #22252f;
 }
+
+.input-group > .input-group-addon {
+	border: 1px solid rgba(35, 40, 46, 0.8);
+	border-right: 0px;
+}
+
