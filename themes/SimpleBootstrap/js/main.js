@@ -214,12 +214,12 @@ $(document).ready(function() {
 	                }
 
         	        var title = $('.main h4').text();
+			var lang = $('[name="login_form"] tr:nth-child(1) td:first-child').text().replace(':', '');
         	        var user = $('[name="login_form"] tr:nth-child(2) td:first-child').text().replace(':', '');
         	        var pass = $('[name="login_form"] tr:nth-child(3) td:first-child').text().replace(':', '');
         	        var forgot = $('[href="?m=lostpwd"]').text();
         	        var lbtn = $('[name="login"]').val();
         	        var optns = $('[name="lang"]').html();
-
 
 			if($('[href="?m=register&p=form"]').length > 0) {
 				var buttons = '\
@@ -255,7 +255,10 @@ $(document).ready(function() {
 						<span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>\
 						<input type="password" name="upassword" class="form-control" placeholder="'+pass+'">\
 					</div>\
-        	        		<select name="lang" onchange="this.form.submit();" class="form-control">'+optns+'</select>\
+					<div class="input-group">\
+						<span class="input-group-addon"><i class="fa fa-language" aria-hidden="true"></i></span>\
+						<select name="lang" onchange="this.form.submit();" class="form-control">'+optns+'</select>\
+					</div>\
 					'+recaptcha+'\
 					'+buttons+'\
         			</form>\
@@ -268,6 +271,7 @@ $(document).ready(function() {
 			</div>';
 
 	                $('.main').empty().html(new_form);
+			$('select[name=lang] > option:first-child').replaceWith('<option value="" disabled selected hidden>'+lang+'</option>');
 		}
 
 		/* *** Lost Password Form *** */
