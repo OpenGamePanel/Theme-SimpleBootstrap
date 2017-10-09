@@ -330,6 +330,10 @@
 
                 cFont = indOption.fontFamily || cFont[cFont.length - 1];
 
+		ctx.shadowColor = "rgba(0,0,0,.5)";
+		ctx.shadowOffsetX = 0;
+		ctx.shadowOffsetY = 1;
+		ctx.shadowBlur = 3;
                 ctx.fillStyle = indOption.fontColor || curColor;
                 ctx.font = weight + " " + fontSize + "px " + cFont;
                 ctx.textAlign = "center";
