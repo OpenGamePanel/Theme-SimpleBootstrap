@@ -14,14 +14,15 @@ $css_loc	= "../css/main.css";
 $conf_loc       = "./sbs.conf";
 $sbs_css_loc	= "./sbs.css";
 
-$debug		= 0;		// Set to 1 for Debug in Brower Console
-$conf_changes	= 0;		// Declaration
-$bg_change	= 0;		// Declaration
+$debug		= false;	// Set true for Debug in Brower Console
+
+$conf_changes	= false;	// Declaration
+$bg_change	= false;	// Declaration
 $isadmin	= false;	// Declaration
 $conf_params	= array();	// Declaration
 $rp		= realpath(dirname(__FILE__));
 
-if($debug==1){
+if($debug){
 	echo "sbs_conf.php loaded...\n";
 	echo "POST: ".print_r($_POST, true);
 	echo "FILES: ".print_r($_FILES, true);
@@ -61,7 +62,7 @@ if(!file_exists($sbs_css_loc)){
 	echo "Custom CSS not found. Created new one.\n";
 }
 
-if($debug==1){
+if($debug){
         echo "\$conf_params: ".print_r($conf_params, true);
 }
 
@@ -89,10 +90,10 @@ if(isset($_SESSION['users_group']) && $_SESSION['users_group'] == 'admin')
 				if ($_FILES["bg_file"]["error"]==0){
 					if(file_exists($file_complete)){ unlink($file_complete); }
 					move_uploaded_file($_FILES['bg_file']['tmp_name'],$file_complete);
-					$conf_changes = 1;
-					$bg_change = 1;
+					$conf_changes = true;
+					$bg_change = true;
 					$conf_params['custom_bg'] = $file_name;
-					if($debug==1){
+					if($debug){
 						echo "Custom BG Uploaded: ".$file_name;
 					}
 				}
@@ -104,11 +105,11 @@ if(isset($_SESSION['users_group']) && $_SESSION['users_group'] == 'admin')
 	if(isset($_GET['del_custom_bg'])){
 		if($conf_params['custom_bg']!='no'){
 			unlink($cbgf.'/'.$conf_params['custom_bg']);
-			$conf_changes = 1;
+			$conf_changes = true;
 			$conf_params['custom_bg'] = 'no';
 			preg_match_all("/background-image: url\((.*)\)/", file_get_contents($css_loc), $css_bg);
 			file_put_contents($sbs_css_loc, "body {\n\tbackground-image: url(".$css_bg[1][0].") !important;\n}");
-			if($debug==1){
+			if($debug){
 				echo "Custom BG Deleted.\n";
 			}
 		}
@@ -117,11 +118,11 @@ if(isset($_SESSION['users_group']) && $_SESSION['users_group'] == 'admin')
 	/* *** Pace Loader *** */
 	if(isset($_POST['style_loader'])){
 		if($_POST['style_loader']!=$conf_params['pace']){
-			$conf_changes = 1;
+			$conf_changes = true;
 			$conf_params['pace'] = $_POST['style_loader'];
 			if(file_exists($pace_loc)){ unlink($pace_loc); }
 			file_put_contents($pace_loc, '@import url("pace_'.$_POST['style_loader'].'.css");');
-			if($debug==1){
+			if($debug){
 				echo "Style Loader Changed into: ".$_POST['style_loader']."\n";
 			}
 		}
@@ -133,7 +134,7 @@ if(isset($_SESSION['users_group']) && $_SESSION['users_group'] == 'admin')
 echo $conf_params['style'];
 		if($_POST['style_tab']!=$conf_params['style'])
 		{
-			$conf_changes = 1;
+			$conf_changes = true;
 			$conf_params['style'] = $_POST['style_tab'];
 			file_put_contents(
 				$css_loc,
@@ -143,7 +144,7 @@ echo $conf_params['style'];
 					file_get_contents($css_loc)
 				)
 			);
-			if($debug==1){
+			if($debug){
 				echo "Style changed into: ".$_POST['style_tab']."\n";
 				echo "Put ../css/main_".$conf_params['style'].".css into ".$css_loc."\n";
 			}
@@ -159,18 +160,18 @@ if($conf_params['custom_bg']!='no')
 	if(isset($_POST['style_bg']) && $isadmin)
 	{
 		if($_POST['style_bg']!=$conf_params['background']){
-			$conf_changes = 1;
+			$conf_changes = true;
 			$conf_params['background'] = $_POST['style_bg'];
 		}
 	}
 	change_bg("../images/bg/".$conf_params['background'].".jpg");
 }
 
-if($conf_changes==1)
+if($conf_changes)
 {
 	unlink($conf_loc);
 	file_put_contents($conf_loc, json_encode($conf_params));
-	if($debug==1){
+	if($debug){
 		echo "Found Changes. Rewrote Config File.\n";
 	}
 }
@@ -179,10 +180,10 @@ function change_bg($bg_path)
 {
 	Global $sbs_css_loc, $debug, $bg_change;
 
-	if(strpos(file_get_contents($sbs_css_loc), $bg_path)===false Or $bg_change==1)
+	if(strpos(file_get_contents($sbs_css_loc), $bg_path)===false Or $bg_change)
 	{
 		file_put_contents($sbs_css_loc, preg_replace("/background-image: url\((.*)\)/", "background-image: url(".$bg_path.")", file_get_contents($sbs_css_loc)));
-		if($debug==1){
+		if($debug){
 			echo "BG has been changed to: ".$bg_path.". Replaced it in ".$sbs_css_loc."\n";
 		}
 	}
