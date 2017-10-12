@@ -1,4 +1,10 @@
 $(document).ready(function() {
+	if($('h0').length>1){
+		$('h0:first').css('margin-top', '5px').css('margin-bottom', '0px');
+	}
+	$('.one_fourth').parent('div').css('margin-right', '-15px');
+	$('h0:last').css('width', 'calc(100% - 15px)');
+
 	$('.online_servers td').each(function(){
 		$(this).addClass('btn-primary').html($(this).children());
 	});
@@ -26,12 +32,6 @@ function animateProgressBars(){
 			initValue: value
 		});
 	});
-
-	/*$('#column4:nth-child(1)').addClass('col-xs-12').addClass('col-md-8').removeAttr('style');
-	$('#column4:nth-child(2)').addClass('col-xs-12').addClass('col-md-6').removeAttr('style');
-	$('#column4:nth-child(3)').addClass('col-xs-12').addClass('col-md-6').removeAttr('style');
-	$('#column4:nth-child(4), #column4:nth-child(5)').addClass('col-xs-12').addClass('col-md-12').removeAttr('style');
-*/
 
 	$('.dragbox-content b').each(function() {
 		$('<cutter></cutter>').insertBefore(this);

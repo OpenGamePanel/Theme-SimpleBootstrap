@@ -700,7 +700,7 @@ a:before,
 .monitorbutton.getAutoUpdateLink:before { content: "\f0c1"; }
 .monitorButtonContainer [href^="?m=gamemanager&p=rsync_install"]:before { content: "\f0ed"; }
 .administration-table [href^="?m=administration&p=iframe&external_link="]:before { content: "\f0c1"; }
-
+.menu [href="?m=Tickets"] > span:before { content: "\f145"; }
 
 
 /* *** Theme Styler - Dont remove anything below this Line or it will break the Sheet!!! *** */
