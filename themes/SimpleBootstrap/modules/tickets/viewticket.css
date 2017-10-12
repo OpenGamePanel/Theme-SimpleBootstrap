@@ -1,0 +1,61 @@
+.ticket_reply {
+	margin: 10px 0;
+	padding: 0;
+	border: 1px solid #22252f;
+	background-color: rgba(26, 28, 34, 0.2);
+}
+
+.ticket_reply.admin {
+}
+
+.ticket_reply .date {
+	float: right;
+	padding: 8px 10px;
+	font-size: .8em;
+}
+
+.ticket_reply .user {
+	padding: 5px 10px;
+	background-color: rgba(26, 28, 34, 0.2);
+	border-bottom: 1px solid #22252f;
+}
+
+.ticket_reply .admin,
+.ticket_reply .ticket_footer {
+	padding: 5px 10px;
+}
+
+.ticket_reply .user .name {
+	display: block;
+	font-size: .9em;
+}
+
+.ticket_reply .admin .name {
+	display: block;
+	font-size: .9em;
+}
+
+.ticket_reply .user .type {
+	display: block;
+	font-weight: 700;
+	font-size: .8em;
+}
+
+.ticket_reply .admin .type {
+	display: block;
+	font-weight: 700;
+	font-size: .8em;
+
+	background: -moz-linear-gradient(left, rgba(135,2,4,0.5) 0%, rgba(135,2,4,0) 14%, rgba(135,2,4,0) 100%);
+	background: -webkit-linear-gradient(left, rgba(135,2,4,0.5) 0%,rgba(135,2,4,0) 14%,rgba(135,2,4,0) 100%);
+	background: linear-gradient(to right, rgba(135,2,4,0.5) 0%,rgba(135,2,4,0) 14%,rgba(135,2,4,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80870204', endColorstr='#00870204',GradientType=1);
+}
+
+.ticket_reply .message {
+	padding: 12px 15px;
+}
+
+.ticket_reply .ticket_footer {
+	font-size: .8em;
+}
