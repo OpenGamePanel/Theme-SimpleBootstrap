@@ -5,24 +5,23 @@
 	background-color: rgba(26, 28, 34, 0.2);
 }
 
-.ticket_reply.admin {
-}
-
 .ticket_reply .date {
 	float: right;
 	padding: 8px 10px;
 	font-size: .8em;
 }
 
-.ticket_reply .user {
+.ticket_reply .user,
+.ticket_reply .admin {
 	padding: 5px 10px;
 	background-color: rgba(26, 28, 34, 0.2);
 	border-bottom: 1px solid #22252f;
 }
 
-.ticket_reply .admin,
-.ticket_reply .ticket_footer {
+.ticket_footer {
 	padding: 5px 10px;
+	background-color: rgba(26, 28, 34, 0.2);
+	border-top: 1px solid #22252f;
 }
 
 .ticket_reply .user .name {

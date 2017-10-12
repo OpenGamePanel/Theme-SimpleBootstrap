@@ -159,14 +159,14 @@ td > h3 {
 .btn:not(span) {
 	margin: 2px;
 }
-h4.collapse {
+h4.collapse,
+.subUserShowHideTextTd.collapse {
         display: block !important;
 }
 .bloc {
         padding: 10px;
 }
 .col.footer {
-//	background-color: rgba(67,72,87,0.6);
 	background-color: rgba(26, 28, 34, 0.5);
         padding: 40px;
         margin-top: 40px;
@@ -700,7 +700,7 @@ a:before,
 .monitorbutton.getAutoUpdateLink:before { content: "\f0c1"; }
 .monitorButtonContainer [href^="?m=gamemanager&p=rsync_install"]:before { content: "\f0ed"; }
 .administration-table [href^="?m=administration&p=iframe&external_link="]:before { content: "\f0c1"; }
-.menu [href="?m=Tickets"] > span:before { content: "\f145"; }
+.menu [href="?m=tickets"] > span:before { content: "\f145"; }
 
 
 /* *** Theme Styler - Dont remove anything below this Line or it will break the Sheet!!! *** */
