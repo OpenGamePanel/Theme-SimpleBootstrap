@@ -52,6 +52,10 @@ h0 {
 	float: left;
 }
 
+.one_fourth#column3 {
+	padding-right: 0px;
+}
+
 .column {
 	min-height: 150px;
 }

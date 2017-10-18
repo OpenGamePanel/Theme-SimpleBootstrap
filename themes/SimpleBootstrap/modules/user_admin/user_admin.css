@@ -2,7 +2,11 @@
 	cursor: pointer;
 }
 .subuser td {
-	border: none !important;
+	border-top: 1px solid rgba(34, 37, 47, 1) !important;
+}
+.subuser > td:first-of-type,
+.subuser > td:last-of-type {
+	padding: 8px 20px;
 }
 
 .tr0 {

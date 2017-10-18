@@ -2,8 +2,8 @@ $(document).ready(function() {
 	if($('h0').length>1){
 		$('h0:first').css('margin-top', '5px').css('margin-bottom', '0px');
 	}
-	$('.one_fourth').parent('div').css('margin-right', '-15px');
-	$('h0:last').css('width', 'calc(100% - 15px)');
+	//$('.one_fourth').parent('div').css('margin-right', '-15px');
+	//$('h0:last').css('width', 'calc(100% - 15px)');
 
 	$('.online_servers td').each(function(){
 		$(this).addClass('btn-primary').html($(this).children());
