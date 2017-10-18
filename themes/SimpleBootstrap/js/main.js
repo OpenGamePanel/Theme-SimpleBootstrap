@@ -203,7 +203,7 @@ $(document).ready(function() {
 
 
         /* *** Login Page Mod *** */
-	if(/^(\/|\/index\.php)$/i.test(location.pathname)){
+	if(location.pathname.substring(location.pathname.length-1) == "/" || location.pathname.substring(location.pathname.length-9) == "index.php"){
 
 		if($('form[name="login_form"]').length > 0) {
 	                if ($('.g-recaptcha').length > 0) {
@@ -271,7 +271,7 @@ $(document).ready(function() {
 			</div>';
 
 	                $('.main').empty().html(new_form);
-			$('select[name=lang] > option:first-child').replaceWith('<option value="" disabled selected hidden>'+lang+'</option>');
+			$('select[name=lang] > option:first-child').replaceWith('<option value="-" disabled selected hidden>'+lang+'</option>');
 		}
 
 		/* *** Lost Password Form *** */
