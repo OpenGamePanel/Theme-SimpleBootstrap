@@ -31,3 +31,16 @@ form:not([name="login_form"]).form-control:focus {
 	border: 1px solid rgba(67, 72, 87, 0.5);
 	border-right: 0px;
 }
+
+th {
+	background-color: rgba(26, 28, 34, 0.8) !important;
+}
+
+.col.footer,
+.bloc,
+table,
+.form-control,
+.login-container
+{
+	background-color: rgba(26, 28, 34, 0.65) !important;
+}

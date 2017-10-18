@@ -271,7 +271,7 @@ $(document).ready(function() {
 			</div>';
 
 	                $('.main').empty().html(new_form);
-			$('select[name=lang] > option:first-child').replaceWith('<option value="-" disabled selected hidden>'+lang+'</option>');
+			$('select[name=lang] > option:first-child').replaceWith('<option value="-" selected="selected">'+lang+'</option>');
 		}
 
 		/* *** Lost Password Form *** */
