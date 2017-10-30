@@ -80,3 +80,22 @@ i.fa.fa-folder-open-o {
 	border-radius: 3px;
 	border: none;
 }
+
+[id^="fileid"] {
+	position: relative;
+}
+[id^="progress"] {
+	height: 5px !important;
+	border: none !important;
+	border-radius: 2px;
+	width: 96% !important;
+}
+[id^="progress"] > div {
+	background: #1997c6 !important;
+	height: 5px !important;
+	border-radius: 2px !important;
+	-webkit-transition: width 0.2s ease-in-out;
+	-moz-transition: width 0.2s ease-in-out;
+	-o-transition: width 0.2s ease-in-out;
+	transition: width 0.2s ease-in-out;
+}

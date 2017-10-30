@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
 	$('.operations-button').addClass('btn').addClass('btn-xs').addClass('btn-primary');
 	$('.main [href^="?m=gamemanager&p=game_monitor&home_id="]').addClass('btn').addClass('btn-primary').addClass('btn-sm');
 
@@ -12,3 +13,4 @@ $(document).ready(function() {
 	$('[href*="&item="], [href^="javascript:downloadFile"]').addClass('label').addClass('label-default');
 	$('[href$="&p=read_file"]').removeClass('label').removeClass('label-default').addClass('btn').addClass('btn-primary').addClass('btn-xs');
 });
+
