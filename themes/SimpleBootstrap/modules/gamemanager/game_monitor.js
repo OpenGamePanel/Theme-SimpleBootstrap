@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	$('#search').parent('form').addClass('pull-right');
+
         $('.monitorbutton.size').click(function(){
                 $(this).addClass('loading');
                 $(this).bind("DOMSubtreeModified",function(){

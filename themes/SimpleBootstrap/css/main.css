@@ -296,12 +296,11 @@ input[type=checkbox]:before {
 input[type=checkbox]:checked:before {
 	color: #fff;
 }
-select {
+.select-wrapper > select {
 	padding-right: 20px !important;
 }
 .select-wrapper {
 	position: relative;
-	display: inline;
 }
 .select-wrapper:before {
 	content: '\f0d7';

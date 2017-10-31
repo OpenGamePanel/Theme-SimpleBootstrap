@@ -65,7 +65,8 @@ $(document).ready(function() {
 
 	$('.main .redirectLink').prepend('<i class="fa fa-arrow-right" aria-hidden="true"></i> ');
 
-	$('select').wrap('<div class="select-wrapper"></div>');
+	$('select').wrap('<span class="select-wrapper"></span>');
+
 	var inputs = $('input, textarea, select').not('input[type=button], input[type="submit"], input[type="SUBMIT"], input[type=reset], input[type=radio], input[type=checkbox], input[type=image], input[type="file"]');
 	$(inputs).addClass('form-control').removeAttr('style');
 	var buttons = $('button, input[type="button"], input[type="submit"], input[type="SUBMIT"], input[type="reset"], .redirectLink, [href^="?m=gamemanager&p=update&update=refresh"], .main [href="?m=modulemanager&p=update"], .main [href="?m=simple-billing&p=shop"], .main [href^="home.php?m=TS3Admin&changevServer"], .main [href^="?m=gamemanager&p=game_monitor&home_id="], .serverIdToggle');
@@ -371,6 +372,7 @@ $(window).load(function(){
                         if(log) alert(log);
                 }
         });
+
 });
 
 
