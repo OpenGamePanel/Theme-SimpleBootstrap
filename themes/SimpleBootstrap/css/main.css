@@ -296,6 +296,23 @@ input[type=checkbox]:before {
 input[type=checkbox]:checked:before {
 	color: #fff;
 }
+select {
+	padding-right: 20px !important;
+}
+.select-wrapper {
+	position: relative;
+	display: inline;
+}
+.select-wrapper:before {
+	content: '\f0d7';
+	font-family: FontAwesome;
+	color: #fff;
+	display: inline-block;
+	position: absolute;
+	right: 12px;
+	top: 0px;
+	pointer-events: none;
+}
 
 /* *** Button Fix *** */
 button { -webkit-appearance: button; }
