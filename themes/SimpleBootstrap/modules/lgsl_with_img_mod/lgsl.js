@@ -5,4 +5,6 @@ $(document).ready(function() {
 
 	$('img[src$="icon_details.gif"]').replaceWith('<i class="fa fa-search" aria-hidden="true"></i>');
 	$('.main [href^="?m=lgsl_with_img_mod&p=lgsl&s="]').addClass('btn').addClass('btn-xs').addClass('btn-primary');
+
+	$('.main [title="GAME LINK"] > a').addClass('label').addClass('label-primary').addClass('label-size');
 });
