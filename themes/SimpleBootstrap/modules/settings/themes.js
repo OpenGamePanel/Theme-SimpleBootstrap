@@ -30,7 +30,7 @@ $(document).ready(function() {
 			$('form[action="?m=settings&p=themes"] tr:last').after(add_row);
 
 			var theme_background = {'Light Blur':'light', 'Dark Clean':'dark', 'Fire':'fire', 'Vietnam (by omano)':'vietnam', 'Dream':'dream', 'Light Dream':'light_dream', 'BF3: The Russian':'bf3_the_russian'}
-			var add_row = '<tr><td align="right"><label for="style_tab">Theme Background: <a class="label label-primary" id="bg_preview" data-toggle="tooltip" title="<img src=\'themes/SimpleBootstrap/images/bg/'+json['background']+'.jpg\' width=\'180px\' \>">Preview</a></label></td><td align="left"><select id="style_bg" name="style_bg" class="form-control">';
+			var add_row = '<tr><td align="right"><label for="style_tab">Theme Background: <a class="label label-primary" id="bg_preview" data-toggle="tooltip" data-original-title="<img src=\'themes/SimpleBootstrap/images/bg/'+json['background']+'.jpg\' width=\'180px\' \>">Preview</a></label></td><td align="left"><select id="style_bg" name="style_bg" class="form-control">';
 			for (var key in theme_background) {
 				if(theme_background[key]==json['background']){
 					add_row += '<option value="'+theme_background[key]+'" selected>'+key+'</option>';
