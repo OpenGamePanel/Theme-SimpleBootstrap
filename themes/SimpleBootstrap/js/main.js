@@ -371,6 +371,8 @@ $(window).load(function(){
                 }
         });
 
+	$('input[src$="remove.gif"]').replaceWith('<button type="submit" class="btn btn-xs btn-danger btn-sm btn-primary" onclick="this.form.submit();"><i class="fa fa-trash" aria-hidden="true"></i></button>');
+
 });
 
 
