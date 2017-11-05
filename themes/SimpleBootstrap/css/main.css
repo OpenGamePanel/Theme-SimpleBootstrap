@@ -296,21 +296,11 @@ input[type=checkbox]:before {
 input[type=checkbox]:checked:before {
 	color: #fff;
 }
-.select-wrapper > select {
-	padding-right: 20px !important;
-}
-.select-wrapper {
-	position: relative;
-}
-.select-wrapper:before {
-	content: '\f0d7';
-	font-family: FontAwesome;
-	color: #fff;
-	display: inline-block;
-	position: absolute;
-	right: 12px;
-	top: 0px;
-	pointer-events: none;
+select{
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKBAMAAAB/HNKOAAAAGFBMVEUAAAD///////////////////////////8jfp1fAAAAB3RSTlMAGjG+6/P1wTTolgAAACVJREFUCFtjYEAC5uXl5Q4MYkBSgYExvbwIKCQGZDIwMAYxYAEA1swFyXm1qtoAAAAASUVORK5CYII=") no-repeat calc(100% - 10px) 50% rgba(26, 28, 34, 0.4) !important;
+	-moz-appearance: none; 
+	-webkit-appearance: none; 
+	appearance: none;
 }
 
 /* *** Button Fix *** */
