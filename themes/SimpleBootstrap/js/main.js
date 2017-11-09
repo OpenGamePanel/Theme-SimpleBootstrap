@@ -371,7 +371,30 @@ $(window).load(function(){
                 }
         });
 
-	$('input[src$="remove.gif"]').replaceWith('<button type="submit" class="btn btn-xs btn-danger btn-sm btn-primary" onclick="this.form.submit();"><i class="fa fa-times" aria-hidden="true"></i></button>');
+	$('input[src$="remove.gif"]').each(function(){
+		var NewButton = $("<button />");
+		$.each(this.attributes, function(i, attrib){
+			// Change Type to Submit Mod
+			if(attrib.name=='type'){
+				attrval = 'submit';
+			}else{
+				attrval = attrib.value;
+			}
+			// Skip src Attribute
+			if(attrib.name=='src'){
+				return false;
+			}
+			// Change Stop Update Value for "Cancel Update" Fix
+			if(attrib.value=='stop_update'){
+				attrval = 'stop_update_x';
+			}
+			$(NewButton).attr(attrib.name, attrval);
+		});
+		$(NewButton).attr('class', 'btn btn-xs btn-danger btn-sm btn-primary');
+		$(this).replaceWith(function () {
+			return $(NewButton).append($(this).contents()).prepend('<i class="fa fa-times" aria-hidden="true"></i>');
+		});
+	});
 
 });
 
