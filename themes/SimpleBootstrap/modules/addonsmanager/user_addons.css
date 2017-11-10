@@ -1,0 +1,43 @@
+.main [href*="&addon_type="]
+{
+	width: 150px;
+	height: 90px;
+	border-radius: 4px;
+	margin: 2px;
+	font-size: 12px;
+	float: left;
+	text-align: center;
+	vertical-align: middle;
+}
+.main [href*="&addon_type="] span {
+	line-height: 14px;
+	max-height: 28px;
+}
+.main [href*="&addon_type="]:hover
+{
+	cursor: pointer !important;
+	background-position: 0 -90px !important;
+}
+.main [href*="&addon_type="]:before
+{
+	display: block;
+	font-size: 40px;
+	content: "\f192";
+}
+.main div.addons {
+	padding: 8px;
+	border: 1px solid #22252f;
+	background-color: rgba(26, 28, 34, 0.2);
+	display: inline-block;
+	width: 100%;
+}
+
+.main [href*="&addon_type=plugin"]:before {
+	content: "\f12e";
+}
+.main [href*="&addon_type=config"]:before {
+	content: "\f121";
+}
+.main [href*="&addon_type=mappack"]:before {
+	content: "\f278";
+}

@@ -1,6 +1,6 @@
 $(document).ready(function(){
-	$('.main [href*="&addon_type=config"]').each(function(){
-		$(this).addClass('btn').addClass('btn-xs').addClass('btn-success');
-		$(this).prepend('<i class="fa fa-puzzle-piece"></i> ');
-	});
+	$('.main > table').before('<div class="addons"></div>');
+	$('.main td').contents().appendTo('.addons');
+	$('.main > table').remove();
+	$('.main [href*="&addon_type="]').addClass('btn-primary').wrapInner('<span>');
 });
