@@ -47,17 +47,5 @@ $(document).ready(function(){
 
 
 	$('.main .remove-button').replaceWith('<button type="submit" class="btn btn-xs btn-danger" class="remove-button" onclick="this.form.submit();"><i class="fa fa-trash" aria-hidden="true"></i></button>');
-	$('label[for="file"], #file').remove();
-	$('form[enctype="multipart/form-data"]').prepend('\
-		<div class="input-group">\
-			<label class="input-group-btn">\
-				<span class="btn btn-primary">\
-					Browse file(.sql): <input type="file" name="file" id="file" class="hide">\
-				</span>\
-			</label>\
-			<input type="text" class="form-control" readonly="">\
-		</div>\
-	');
-
 });
 

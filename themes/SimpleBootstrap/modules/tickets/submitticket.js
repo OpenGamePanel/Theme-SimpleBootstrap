@@ -8,4 +8,9 @@ $(document).ready(function() {
 
 		counter = counter+1;
 	});
+
+	$('.attachment_header').each(function(){
+		$(this).replaceWith('<h3>'+$(this).html()+'</h3>');
+	});
+
 });

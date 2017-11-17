@@ -5,3 +5,6 @@
 	background-color: rgba(26, 28, 34, 0.6) !important;
 	min-width: 100px;
 }
+.attachment_inputs {
+	margin: 10px 0px;
+}

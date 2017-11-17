@@ -39,6 +39,7 @@ $(document).ready(function() {
 		$('.copyButton').addClass('btn').addClass('btn-sm').addClass('btn-primary');
 	});
 
+/*
 	if(window.location.href.indexOf("home.php?m=litefm&home_id=") > -1) {
 		$('input[type="file"]').each(function(){
 			$(this).css('display', 'none');
@@ -62,6 +63,39 @@ $(document).ready(function() {
 			}
 		});
 	}
+*/
+	// File Style Hack
+	$.fn.input_file_styling = function() {
+		$('input[type="file"]').each(function(){
+			if($(this).parent().hasClass('btn-file')==false){
+				$(this).css('display', 'none');
+				$(this).wrap('<div class="input-group">').wrap('<label class="input-group-btn">').wrap('<span class="btn btn-sm btn-primary btn-file">');
+				$(this).parent('span').parent('label').parent('.input-group').append('<input type="text" class="form-control" readonly="">');
+				$(this).parent('span').prepend('<i class="fa fa-search"></i> Browse...');
+			}
+		});
+		$(document).on('change', ':file', function() {
+			var input = $(this),
+			numFiles = input.get(0).files ? input.get(0).files.length : 1,
+			label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+			input.trigger('fileselect', [numFiles, label]);
+		});
+		$(':file').on('fileselect', function(event, numFiles, label) {
+			var input = $(this).parents('.input-group').find(':text'),
+			log = numFiles > 1 ? numFiles + ' files selected' : label;
+			if( input.length ) {
+				input.val(log);
+			} else {
+				if( log ) alert(log);
+			}
+		});
+	}
+	// Init Call of the Function
+	$.fn.input_file_styling();
+	// Restyle after Adding a File Input
+	$('#add_file_attachment').click(function(){
+		setTimeout($.fn.input_file_styling, 1);
+	});
 
 	$('.main .redirectLink').prepend('<i class="fa fa-arrow-right" aria-hidden="true"></i> ');
 
@@ -88,6 +122,7 @@ $(document).ready(function() {
 	$('.online').addClass('label').addClass('label-success').addClass('label-size');
 	$('.offline').addClass('label').addClass('label-danger').addClass('label-size');
         $('.success').addClass('alert').addClass('alert-success');
+	$('.attachment_info').addClass('alert').addClass('alert-info');
 	$('td b.success').removeClass('alert').removeClass('alert-success');
         $('.failure:not(b)').addClass('alert').addClass('alert-danger');
 

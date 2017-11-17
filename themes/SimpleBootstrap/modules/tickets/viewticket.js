@@ -1,5 +1,9 @@
 $(document).ready(function() {
-	$('.no_ticket_replies').removeClass('no_ticket_replies').addClass('alert').addClass('alert-danger');
+	$('.no_ticket_replies, .ticket_closed').removeClass('no_ticket_replies').addClass('alert').addClass('alert-danger');
+	$('[name="ticket_close"]').removeClass('btn-primary').addClass('btn-danger');
+
+	$('.ticket_reply_notice').addClass('btn').addClass('btn-primary');
+	$('.downloadAttachmentLink').addClass('label').addClass('label-default');
 
 	$('.divTableCell').each(function(){
 		$(this).replaceWith('<td>'+$(this).html()+'</td>');
@@ -14,5 +18,7 @@ $(document).ready(function() {
 		$(this).replaceWith('<table>'+$(this).html()+'</table>');
 	});
 
-
+	$('.attachment_header').each(function(){
+		$(this).replaceWith('<div class="attachment_header"><h3>'+$(this).html()+'</h3></div>');
+	});
 });

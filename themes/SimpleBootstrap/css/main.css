@@ -64,6 +64,15 @@ input#search + input[type="submit"] {
 	width: auto !important;
 }
 
+.input-group-btn > .btn-file {
+	line-height: 22px;
+	border: 0px solid transparent;
+	margin-left: 2px;
+}
+.input-group-btn > .btn-file > .fa {
+	line-height: 22px;
+}
+
 .btn-file {
 	position: relative;
 	overflow: hidden;
@@ -387,6 +396,32 @@ button.mfp-close:hover {
 }
 button.mfp-close:focus {
 	outline: none !important;
+}
+
+
+/* *** Alert Styling *** */
+.alert {
+	padding-left: 50px;
+	position: relative;
+}
+.alert:before {
+	font-family: FontAwesome;
+	position: absolute;
+	top: 10px;
+	left: 15px;
+	font-size: 20px;
+}
+.alert.alert-info:before {
+	content: "\f05a";
+}
+.alert.alert-success:before {
+	content: "\f046";
+}
+.alert.alert-warning:before {
+	 content: "\f071";
+}
+.alert.alert-danger:before {
+	content: "\f057";
 }
 
 
@@ -757,7 +792,8 @@ a:before,
 .monitorbutton.getAutoUpdateLink:before { content: "\f0c1"; }
 .monitorButtonContainer [href^="?m=gamemanager&p=rsync_install"]:before { content: "\f0ed"; }
 .administration-table [href^="?m=administration&p=iframe&external_link="]:before { content: "\f0c1"; }
-.menu [href="?m=tickets"] > span:before { content: "\f145"; }
+.menu [href^="?m=tickets"] > span:before,
+.administration-table [href^="?m=tickets"]:before { content: "\f145"; }
 .monitorButtonContainer [href^="?m=editconfigfiles"]:before { content: "\f1c9"; }
 
 /* *** Theme Styler - Dont remove anything below this Line or it will break the Sheet!!! *** */
