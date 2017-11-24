@@ -82,7 +82,7 @@ input.star {
 
 label.star {
 	float: right;
-	color: #444;
+	color: #b1b1b1;
 	transition: all .2s;
 	font-size: 16px;
 	cursor: pointer;
@@ -103,6 +103,7 @@ input.star-1:checked ~ label.star:before {
 }
 
 label.star:hover {
+	color: #FD4;
 	transform: rotate(-15deg) scale(1.3);
 }
 
