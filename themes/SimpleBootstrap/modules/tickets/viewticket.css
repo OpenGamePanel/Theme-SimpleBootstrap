@@ -150,3 +150,14 @@ label.star:before {
 	border-bottom: 1px solid #9fa1a9;
 	margin-bottom: 40px;
 }
+
+.input-group {
+	margin-bottom: 5px;
+}
+.input-group-addon {
+	background-color: rgba(26, 28, 34, 0.6) !important;
+	min-width: 100px;
+}
+.attachment_inputs {
+	margin: 10px 0px;
+}
