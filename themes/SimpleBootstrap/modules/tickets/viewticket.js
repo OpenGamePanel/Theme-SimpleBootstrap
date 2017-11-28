@@ -21,4 +21,12 @@ $(document).ready(function() {
 	$('.attachment_header').each(function(){
 		$(this).replaceWith('<div class="attachment_header"><h3>'+$(this).html()+'</h3></div>');
 	});
+
+	$('.ticketErrorHolder').addClass('alert').addClass('alert-danger');
+});
+
+$(window).load(function(){
+	$('#errorHeader').replaceWith(function(){
+		return $("<strong />", {html: $(this).html()});
+	});
 });
