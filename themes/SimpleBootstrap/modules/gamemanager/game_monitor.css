@@ -83,6 +83,7 @@
 }
 #servermonitor .monitor-2 {
         float: right;
+	margin-bottom: 10px;
 }
 #servermonitor .monitor-2 .srvctrl {
         width: auto;

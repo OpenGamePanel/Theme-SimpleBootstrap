@@ -22,6 +22,10 @@ $isadmin	= false;	// Declaration
 $conf_params	= array();	// Declaration
 $rp		= realpath(dirname(__FILE__));
 
+$files_to_del	= array(
+	"../modules/tickets/submitticket.css"
+);
+
 if($debug){
 	echo "sbs_conf.php loaded...\n";
 	echo "POST: ".print_r($_POST, true);
@@ -131,7 +135,6 @@ if(isset($_SESSION['users_group']) && $_SESSION['users_group'] == 'admin')
 	/* *** General Save via Theme Settings *** */
 	if(isset($_POST['style_tab']))
 	{
-echo $conf_params['style'];
 		if($_POST['style_tab']!=$conf_params['style'])
 		{
 			$conf_changes = true;
@@ -173,6 +176,18 @@ if($conf_changes)
 	file_put_contents($conf_loc, json_encode($conf_params));
 	if($debug){
 		echo "Found Changes. Rewrote Config File.\n";
+	}
+}
+
+// Delete All Files defined in Array (Cleanup)
+foreach($files_to_del AS $fd)
+{
+	if(file_exists($fd))
+	{
+		unlink($fd);
+		if($debug){
+			echo "File successfully Deleted: ".$fd."\n";
+		}
 	}
 }
 

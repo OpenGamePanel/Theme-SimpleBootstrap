@@ -15,9 +15,9 @@ $(document).ready(function() {
 	$('link[href="js/bootstrap/css/bootstrap-combined.min.css"]').remove();
 
 	/* *** Removing Chars from Links *** */
-        $('a:not(.user_menu_link), a span').each(function(){
-                $(this).html($(this).html().replace('[','').replace(']',''));
-        });
+	$('a:not(.user_menu_link), a span').each(function(){
+		$(this).html($(this).html().replace('[','').replace(']',''));
+	});
 
 	/* *** Several Class and Style Stuff *** */
 	$(window).load(function () {
@@ -30,40 +30,16 @@ $(document).ready(function() {
 
 	});
 
-        $('table .first_row > td').each(function(){
-                $(this).replaceWith('<th>'+$(this).html()+'</th>');
-        });
+	$('table .first_row > td').each(function(){
+		$(this).replaceWith('<th>'+$(this).html()+'</th>');
+	});
 
 	$('.magnificContentsDiv').bind("DOMSubtreeModified",function(){
-		$('.updateLink').attr('disabled','disabled').addClass('form-control').css('display','inline-block');
+		$('.updateLink').addClass('form-control').css('display','inline-block');
 		$('.copyButton').addClass('btn').addClass('btn-sm').addClass('btn-primary');
 	});
 
-/*
-	if(window.location.href.indexOf("home.php?m=litefm&home_id=") > -1) {
-		$('input[type="file"]').each(function(){
-			$(this).css('display', 'none');
-			$(this).wrap('<div class="input-group">').wrap('<label class="input-group-btn">').wrap('<span class="btn btn-sm btn-primary btn-file">');
-			$(this).parent('span').parent('label').parent('.input-group').append('<input type="text" class="form-control" readonly="">');
-			$(this).parent('span').prepend('Browse...');
-		});
-		$(document).on('change', ':file', function() {
-			var input = $(this),
-			numFiles = input.get(0).files ? input.get(0).files.length : 1,
-			label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-			input.trigger('fileselect', [numFiles, label]);
-		});
-		$(':file').on('fileselect', function(event, numFiles, label) {
-			var input = $(this).parents('.input-group').find(':text'),
-			log = numFiles > 1 ? numFiles + ' files selected' : label;
-			if( input.length ) {
-				input.val(log);
-			} else {
-				if( log ) alert(log);
-			}
-		});
-	}
-*/
+
 	// File Style Hack
 	$.fn.input_file_styling = function() {
 		$('input[type="file"]').each(function(){
@@ -121,10 +97,10 @@ $(document).ready(function() {
 
 	$('.online').addClass('label').addClass('label-success').addClass('label-size');
 	$('.offline').addClass('label').addClass('label-danger').addClass('label-size');
-        $('.success').addClass('alert').addClass('alert-success');
+		$('.success').addClass('alert').addClass('alert-success');
 	$('.attachment_info').addClass('alert').addClass('alert-info');
 	$('td b.success').removeClass('alert').removeClass('alert-success');
-        $('.failure:not(b)').addClass('alert').addClass('alert-danger');
+		$('.failure:not(b)').addClass('alert').addClass('alert-danger');
 
 	$('img[src="modules/addonsmanager/loading.gif"]').replaceWith('<i class="fa fa-spinner fa-pulse fa-3x fa-fw loadinggif"></i>');
 	$('img[src="images/online.png"], img[src$="icon_online.gif"]').replaceWith('<i class="fa fa-circle online" aria-hidden="true"></i>');
@@ -169,51 +145,51 @@ $(document).ready(function() {
 	});
 
 
-        /* *** Pagination *** */
-        $('#pagination').each(function(){
-                $(this).replaceWith('<ul class="pagination">'+$(this).html()+'</ul>');
-                var pm = $('.pagination');
+	/* *** Pagination *** */
+	$('#pagination').each(function(){
+		$(this).replaceWith('<ul class="pagination">'+$(this).html()+'</ul>');
+		var pm = $('.pagination');
 
-                var ps = $(pm).find('[class$="_paginationStart"]');
-                var pp = $(pm).find('[class$="_paginationPages"]');
-                var pe = $(pm).find('[class$="_paginationEnd"]');
+		var ps = $(pm).find('[class$="_paginationStart"]');
+		var pp = $(pm).find('[class$="_paginationPages"]');
+		var pe = $(pm).find('[class$="_paginationEnd"]');
 
-                if($(ps).length){
-                        if($(ps).find('span').length){ console.log('divider!'); }
-                        $(ps).find('a').each(function(){
-                                var tl = $(this).attr('href');
-                                var tc = $(this).text();
-                                $(pm).append('<li><span><a href="'+tl+'">'+tc+'</a></li>');
-                        });
-                        if($(ps).find('span').length){
-                                $(pm).append('<li><span><a>...</a></span></li>');
-                        }
-                        $(ps).remove();
-                }
-                $(pp).find('a').each(function(){
-                        var tl = $(this).attr('href');
-                        var tc = $(this).text().replace('[','').replace(']','');
-                        if($(this).is('[class$="_currentPageLink"]')){
-                                $(pm).append('<li class="active"><span><a href="'+tl+'">'+tc+'</a></li>');
-                        }else{
-                                $(pm).append('<li><span><a href="'+tl+'">'+tc+'</a></li>');
-                        }
-                });
-                $(pp).remove();
+		if($(ps).length){
+			if($(ps).find('span').length){ console.log('divider!'); }
+			$(ps).find('a').each(function(){
+				var tl = $(this).attr('href');
+				var tc = $(this).text();
+				$(pm).append('<li><span><a href="'+tl+'">'+tc+'</a></li>');
+			});
+			if($(ps).find('span').length){
+				$(pm).append('<li><span><a>...</a></span></li>');
+			}
+			$(ps).remove();
+		}
+		$(pp).find('a').each(function(){
+			var tl = $(this).attr('href');
+			var tc = $(this).text().replace('[','').replace(']','');
+			if($(this).is('[class$="_currentPageLink"]')){
+				$(pm).append('<li class="active"><span><a href="'+tl+'">'+tc+'</a></li>');
+			}else{
+				$(pm).append('<li><span><a href="'+tl+'">'+tc+'</a></li>');
+			}
+		});
+		$(pp).remove();
 
-                if($(pe).length){
-                        if($(pe).find('span').length){
-                                $(pm).append('<li><span><a>...</a></span></li>');
-                        }
-                        $(pe).find('a').each(function(){
-                                var tl = $(this).attr('href');
-                                var tc = $(this).text();
-                                $(pm).append('<li><span><a href="'+tl+'">'+tc+'</a></li>');
-                        });
-                        $(pe).remove();
-                }
+		if($(pe).length){
+			if($(pe).find('span').length){
+				$(pm).append('<li><span><a>...</a></span></li>');
+			}
+			$(pe).find('a').each(function(){
+				var tl = $(this).attr('href');
+				var tc = $(this).text();
+				$(pm).append('<li><span><a href="'+tl+'">'+tc+'</a></li>');
+			});
+			$(pe).remove();
+		}
 
-        });
+	});
 
 
 	/* *** Removing CSS File from FTP Page *** */
@@ -237,24 +213,24 @@ $(document).ready(function() {
 	});
 
 
-        /* *** Login Page Mod *** */
+		/* *** Login Page Mod *** */
 	if(location.pathname.substring(location.pathname.length-1) == "/" || location.pathname.substring(location.pathname.length-9) == "index.php"){
 
 		if($('form[name="login_form"]').length > 0) {
-	                if ($('.g-recaptcha').length > 0) {
-	                        var recaptcha_pubkey = $('.g-recaptcha').attr('data-sitekey');
-				var recaptcha = "<div class='text-center' style='margin-bottom: 10px;'><script src='//www.google.com/recaptcha/api.js'></script><div style='display: inline-block;' class='g-recaptcha' data-sitekey='"+recaptcha_pubkey+"' data-theme='dark'></div></div>";
-	                }else{
-	                        var recaptcha = "";
-	                }
+			if ($('.g-recaptcha').length > 0) {
+				var recaptcha_pubkey = $('.g-recaptcha').attr('data-sitekey');
+			var recaptcha = "<div class='text-center' style='margin-bottom: 10px;'><script src='//www.google.com/recaptcha/api.js'></script><div style='display: inline-block;' class='g-recaptcha' data-sitekey='"+recaptcha_pubkey+"' data-theme='dark'></div></div>";
+			}else{
+				var recaptcha = "";
+			}
 
-        	        var title = $('.main h4').text();
+			var title = $('.main h4').text();
 			var lang = $('[name="login_form"] tr:nth-child(1) td:first-child').text().replace(':', '');
-        	        var user = $('[name="login_form"] tr:nth-child(2) td:first-child').text().replace(':', '');
-        	        var pass = $('[name="login_form"] tr:nth-child(3) td:first-child').text().replace(':', '');
-        	        var forgot = $('[href="?m=lostpwd"]').text();
-        	        var lbtn = $('[name="login"]').val();
-        	        var optns = $('[name="lang"]').html();
+			var user = $('[name="login_form"] tr:nth-child(2) td:first-child').text().replace(':', '');
+			var pass = $('[name="login_form"] tr:nth-child(3) td:first-child').text().replace(':', '');
+			var forgot = $('[href="?m=lostpwd"]').text();
+			var lbtn = $('[name="login"]').val();
+			var optns = $('[name="lang"]').html();
 
 			if($('[href="?m=register&p=form"]').length > 0) {
 				var buttons = '\
@@ -278,11 +254,11 @@ $(document).ready(function() {
 			}
 
 
-	                var new_form = '\
+			var new_form = '\
 			<div class="login-container">\
-	        		<h3>'+title+'</h3>\
-        			<form action="index.php" name="login_form" method="post" class="form-group">\
-        			        <div class="input-group">\
+					<h3>'+title+'</h3>\
+					<form action="index.php" name="login_form" method="post" class="form-group">\
+							<div class="input-group">\
 						<span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>\
 						<input type="text" name="ulogin" id="ulogin" class="form-control" placeholder="'+user+'">\
 					</div>\
@@ -296,16 +272,16 @@ $(document).ready(function() {
 					</div>\
 					'+recaptcha+'\
 					'+buttons+'\
-        			</form>\
+					</form>\
 				<div class="row">\
-	        			<div class="col-xs-12">\
+						<div class="col-xs-12">\
 						<a class="pull-right label" href="?m=lostpwd">'+forgot+'</a>\
 					</div>\
 				</div>\
 				<div class="clearfix"></div>\
 			</div>';
 
-	                $('.main').empty().html(new_form);
+			$('.main').empty().html(new_form);
 			$('select[name=lang] > option:first-child').replaceWith('<option value="-" selected="selected">'+lang+'</option>');
 		}
 
@@ -319,14 +295,14 @@ $(document).ready(function() {
 				/* *** Error Message *** */
 
 				var err = $('.main strong').text();
-	                        var err_msg = $('.main p').text();
+				var err_msg = $('.main p').text();
 
 				var new_form = '\
-       	                	<div class="login-container">\
-	                                <h3>'+title+'</h3>\
+	   			<div class="login-container">\
+					<h3>'+title+'</h3>\
 					<div class="alert alert-danger" role="alert"><strong>'+err+'</strong><p>'+err_msg+'</p></div>\
 					<a href="?m=lostpwd" class="btn btn-primary btn-sm"><< Back</a>\
-	                        </div>';
+				</div>';
 			}else if ($('.main > p > b[style="color:red;"]').length > 0) {
 				/* *** Sent Password *** */
 
@@ -334,12 +310,12 @@ $(document).ready(function() {
 				$('.main > p > b[style="color:red;"]').remove();
 				var msg = $('.main > p').text();
 
-                                var new_form = '\
-                                <div class="login-container">\
-                                        <h3>'+title+'</h3>\
-                                        <div class="alert alert-success" role="alert"><p>'+msg+'</p><p>'+msgb+'</p></div>\
-                                        <a href="?m=lostpwd" class="btn btn-primary btn-sm"><< Back</a>\
-                                </div>';
+				var new_form = '\
+				<div class="login-container">\
+					<h3>'+title+'</h3>\
+					<div class="alert alert-success" role="alert"><p>'+msg+'</p><p>'+msgb+'</p></div>\
+					<a href="?m=lostpwd" class="btn btn-primary btn-sm"><< Back</a>\
+				</div>';
 			}else{
 
 				if ($('.main td > p').length > 0) {
@@ -356,20 +332,20 @@ $(document).ready(function() {
 					var alert = "";
 				}
 
-			var email = $('.main label[for="email_address"]').text();
-                        var lbtn = $('td > [type="submit"]').val();
-                        var bbtn = $('[action="index.php"] > input[type="submit"]').val();
+				var email = $('.main label[for="email_address"]').text();
+				var lbtn = $('td > [type="submit"]').val();
+				var bbtn = $('[action="index.php"] > input[type="submit"]').val();
 
-                        var new_form = '\
-                        <div class="login-container">\
-                                <h3>'+title+'</h3>\
-				'+alert+'\
-                                <form action="?m=lostpwd" method="post" class="form-group">\
-					<input type="text" name="email_address" class="form-control" placeholder="Email">\
-                                        <input type="submit" name="login" value="'+lbtn+'" class="btn btn-primary btn-block btn-sm">\
-                                </form>\
-				<a href="index.php" class="btn btn-primary btn-sm">'+bbtn+'</a>\
-                        </div>';
+				var new_form = '\
+				<div class="login-container">\
+					<h3>'+title+'</h3>\
+					'+alert+'\
+					<form action="?m=lostpwd" method="post" class="form-group">\
+						<input type="text" name="email_address" class="form-control" placeholder="Email">\
+						<input type="submit" name="login" value="'+lbtn+'" class="btn btn-primary btn-block btn-sm">\
+					</form>\
+					<a href="index.php" class="btn btn-primary btn-sm">'+bbtn+'</a>\
+				</div>';
 
 			}
 			$('.main').empty().html(new_form);
@@ -387,24 +363,21 @@ $(document).ready(function() {
 		$('.menu').css('margin-bottom','0px');
 		$('body > .container-fluid > .row:first-of-type').remove();
 
-        }
-
-
-
+	}
 });
 
 $(window).load(function(){
 	$("body > .container-fluid").fadeIn(50);
 
-        $(':file').on('fileselect', function(event, numFiles, label) {
-                var input = $(this).parents('.input-group').find(':text'),
-                log = numFiles > 1 ? numFiles + ' files selected' : label;
-                if(input.length){
-                        input.val(log);
-                }else{
-                        if(log) alert(log);
-                }
-        });
+	$(':file').on('fileselect', function(event, numFiles, label) {
+		var input = $(this).parents('.input-group').find(':text'),
+		log = numFiles > 1 ? numFiles + ' files selected' : label;
+		if(input.length){
+				input.val(log);
+		}else{
+				if(log) alert(log);
+		}
+	});
 
 	$('input[src$="remove.gif"]').each(function(){
 		var NewButton = $("<button />");
@@ -435,9 +408,9 @@ $(window).load(function(){
 
 
 $(document).on('change', ':file', function() {
-        var input = $(this),
-        numFiles = input.get(0).files ? input.get(0).files.length : 1,
-        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-        input.trigger('fileselect', [numFiles, label]);
+	var input = $(this),
+	numFiles = input.get(0).files ? input.get(0).files.length : 1,
+	label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+	input.trigger('fileselect', [numFiles, label]);
 });
 

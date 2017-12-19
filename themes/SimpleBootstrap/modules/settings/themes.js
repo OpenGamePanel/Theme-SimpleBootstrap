@@ -96,7 +96,6 @@ $(window).load(function(){
         });
 
         $('#del_custom_bg').click(function(){
-		console.log('Delete Background Confirmation');
                 if(confirm('Are you sure you want to remove the Background Image?')){
                         $.get('themes/SimpleBootstrap/conf/sbs_conf.php',
                                 {del_custom_bg:'yes'},

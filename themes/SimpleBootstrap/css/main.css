@@ -648,6 +648,10 @@ input[name="map-image"] {
 }
 .menu a > span {
 	white-space: nowrap;
+	transition: padding 100ms;
+}
+#menu:not(.nav) a:hover > span {
+	padding-left: 2px;
 }
 .menu .tree ul:not(.opened) .tree:before {
 	visibility: hidden;
@@ -795,6 +799,7 @@ a:before,
 .menu [href^="?m=tickets"] > span:before,
 .administration-table [href^="?m=tickets"]:before { content: "\f145"; }
 .monitorButtonContainer [href^="?m=editconfigfiles"]:before { content: "\f1c9"; }
+.monitorButtonContainer [href^="?m=user_games&p=custom_fields"]:before { content: "\f1de"; }
 
 /* *** Theme Styler - Dont remove anything below this Line or it will break the Sheet!!! *** */
 
