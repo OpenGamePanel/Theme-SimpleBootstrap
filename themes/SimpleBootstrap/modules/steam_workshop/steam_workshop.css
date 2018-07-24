@@ -1,0 +1,12 @@
+#scrolling_checkbox,
+#uninstall_scrolling_checkbox
+{
+	min-height: 120px;
+	overflow-y: scroll;
+	text-align:left;
+}
+
+ul {
+	list-style: none;
+	padding: 0px;
+}
