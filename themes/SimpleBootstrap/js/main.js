@@ -379,6 +379,7 @@ $(window).load(function(){
 		}
 	});
 
+	/*
 	$('input[src$="remove.gif"]').each(function(){
 		var NewButton = $("<button />");
 		$.each(this.attributes, function(i, attrib){
@@ -403,6 +404,7 @@ $(window).load(function(){
 			return $(NewButton).append($(this).contents()).prepend('<i class="fa fa-times" aria-hidden="true"></i>');
 		});
 	});
+	*/
 
 });
 
