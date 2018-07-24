@@ -757,6 +757,7 @@ a:before,
 .administration-table [href="?m=update"]:before { content: "\f021"; }
 .menu [href^="?m=gamemanager&p=update"] > span:before,
 .menu [href^="?m=steam_workshop"] > span:before,
+.administration-table [href^="?m=steam_workshop"]:before,
 .monitorButtonContainer [href^="?m=gamemanager&p=update"]:before { content: "\f1b6"; }
 .menu [href^="?m=user_admin"] > span:before,
 .menu [link^="?m=user_admin"] > span:before,

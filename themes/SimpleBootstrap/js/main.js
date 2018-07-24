@@ -144,6 +144,16 @@ $(document).ready(function() {
 		}
 	});
 
+	/* *** Menu -> Check & Remove wrong active Links *** */
+	$('.menu [class$="menu_link_selected"]').each(function(){
+		if($(this).attr('href')!=window.location.href.slice(window.location.href.indexOf('?'))){
+			var checkLink = $(this).attr('link');
+			var thisClass = $(this).attr('class');
+			if(typeof checkLink == 'undefined') {
+				$(this).removeClass(thisClass).addClass(thisClass.replace(/_selected/g,'')).removeAttr('aria-expanded');
+			}
+		}
+	});
 
 	/* *** Pagination *** */
 	$('#pagination').each(function(){
