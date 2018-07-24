@@ -27,7 +27,7 @@ $(document).ready(function() {
 		if($.trim($("div").text()) == "") {
 			$(this).remove();
 		}
-
+		$('.footer.center').removeClass('center');
 	});
 
 	$('table .first_row > td').each(function(){
@@ -213,7 +213,7 @@ $(document).ready(function() {
 	});
 
 
-		/* *** Login Page Mod *** */
+	/* *** Login Page Mod *** */
 	if(location.pathname.substring(location.pathname.length-1) == "/" || location.pathname.substring(location.pathname.length-9) == "index.php"){
 
 		if($('form[name="login_form"]').length > 0) {
