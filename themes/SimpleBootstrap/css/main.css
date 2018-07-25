@@ -660,7 +660,7 @@ input[name="map-image"] {
         visibility: visible;
 }
 [id^="mgamemanagerpgamemonitorhomecfgid"] a.user_menu_link:before {
-	content: "●";
+	content: "â—";
 	position: relative;
 	left: -5px;
 }
@@ -776,7 +776,7 @@ a:before,
 .menu [href="?m=rcon&p=rcon"] > span:before,
 .administration-table [href="?m=rcon&p=rcon"]:before { content: "\f120"; }
 .menu [href^="?m=gamemanager&p=rsync_install"] > span:before { content: "\f0ad"; }
-.menu [href^="?m=support"] > span:before { content: "\f1cd"; }
+.menu [href^="?m=support"] > span:before { content: "\f095"; }
 .menu [href^="?m=faq"] > span:before,
 .administration-table [href^="?m=faq"]:before{ content: "\f29c"; }
 .menu [href^="?m=fast_download"] > span:before,
@@ -802,6 +802,8 @@ a:before,
 .administration-table [href^="?m=tickets"]:before { content: "\f145"; }
 .monitorButtonContainer [href^="?m=editconfigfiles"]:before { content: "\f1c9"; }
 .monitorButtonContainer [href^="?m=user_games&p=custom_fields"]:before { content: "\f1de"; }
+.menu [href="?m=tshock"] > span:before { content: "\f1bb"; }
+
 
 /* *** Theme Styler - Dont remove anything below this Line or it will break the Sheet!!! *** */
 
