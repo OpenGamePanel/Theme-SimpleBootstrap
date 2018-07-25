@@ -660,7 +660,7 @@ input[name="map-image"] {
         visibility: visible;
 }
 [id^="mgamemanagerpgamemonitorhomecfgid"] a.user_menu_link:before {
-	content: "â—";
+	content: "●";
 	position: relative;
 	left: -5px;
 }
