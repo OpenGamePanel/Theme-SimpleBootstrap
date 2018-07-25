@@ -1,20 +1,20 @@
 $(document).ready(function(){
         /* *** Administration Button - Removing all TD/TR *** */
-        $('.main').prepend('<table class="administration-table table table-sm"><tbody><tr><td><div class="flex-container"></div></td></tr></table>');
-        $('.main').prepend('<h2>'+$('.main h2:nth-of-type(1)').html()+'</h2>');
-        $('.main .administration-table:nth-of-type(2) td:not(.administration-buttons-hmargin)').each(function() {
+        $('.row > .main').prepend('<table class="administration-table table table-sm"><tbody><tr><td><div class="flex-container"></div></td></tr></table>');
+        $('.row > .main').prepend('<h2>'+$('.main h2:nth-of-type(1)').html()+'</h2>');
+        $('.row > .main .administration-table:nth-of-type(2) td:not(.administration-buttons-hmargin)').each(function() {
                 $('.flex-container').append($(this).html());
         });
-        $('.main h2:nth-of-type(2)').remove();
-        $('.main .administration-table:nth-of-type(2)').remove();
+        $('.row > .main h2:nth-of-type(2)').remove();
+        $('.row > .main .administration-table:nth-of-type(2)').remove();
 
-	$('.main .administration-table [href^="?m=administration&p=iframe&external_link="]').addClass('btn-primary').addClass('admin-buttons');
-	$('.main .administration-table [href^="?m=administration&p=iframe&external_link="]').wrapInner('<div></div>');
+	$('.row > .main .administration-table [href^="?m=administration&p=iframe&external_link="]').addClass('btn-primary').addClass('admin-buttons');
+	$('.row > .main .administration-table [href^="?m=administration&p=iframe&external_link="]').wrapInner('<div></div>');
 
-	$('.main button[name="restore"]').removeClass('btn-primary').addClass('btn-danger');
+	$('.row > .main button[name="restore"]').removeClass('btn-primary').addClass('btn-danger');
 
 	/* *** Buttons Order adding TR's *** */
-	var td = $('.main > table:last-of-type td');
+	var td = $('.row > .main > table:last-of-type td');
 	var width = $(window).width();
 
 	if(width >= 1025){
@@ -35,17 +35,16 @@ $(document).ready(function(){
 			td.slice(i, i+cutter).wrapAll('<tr/>')
 		}
 	}).parent('tr').unwrap();
-	$('.main > table:last-of-type tr').each(function(){
+	$('.row > .main > table:last-of-type tr').each(function(){
 		if($.trim($(this).html())=='') { $(this).remove(); }
 	});
-	var td_cnt = $('.main > table:last-of-type tr:last-of-type td').length;
+	var td_cnt = $('.row > .main > table:last-of-type tr:last-of-type td').length;
 	var col_diff = cutter - td_cnt + 1;
-	$('.main > table:last-of-type tr:last-of-type td:last-of-type').attr('colspan', col_diff);
+	$('.row > .main > table:last-of-type tr:last-of-type td:last-of-type').attr('colspan', col_diff);
 
-	$('.main > table:last-of-type form').remove();
-	$('.main > table:last-of-type').wrap('<form method="POST" \>');
+	$('.row > .main > table:last-of-type form').remove();
+	$('.row > .main > table:last-of-type').wrap('<form method="POST" \>');
 
 
-	$('.main .remove-button').replaceWith('<button type="submit" class="btn btn-xs btn-danger" class="remove-button" onclick="this.form.submit();"><i class="fa fa-trash" aria-hidden="true"></i></button>');
+	$('.row > .main .remove-button').replaceWith('<button type="submit" class="btn btn-xs btn-danger" class="remove-button" onclick="this.form.submit();"><i class="fa fa-trash" aria-hidden="true"></i></button>');
 });
-
