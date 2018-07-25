@@ -14,6 +14,8 @@
 	padding: 0;
 	border: 1px solid #22252f;
 	background-color: rgba(26, 28, 34, 0.2);
+	width: 92%;
+	position: relative;
 }
 
 .ticket_reply .date {
@@ -27,6 +29,38 @@
 	padding: 5px 10px;
 	background-color: rgba(26, 28, 34, 0.2);
 	border-bottom: 1px solid #22252f;
+}
+
+.ticket_reply.admin {
+	margin-right: 20px;
+	float: right;
+}
+
+.ticket_reply.user {
+	margin-left: 20px;
+	float: left;
+}
+
+.ticket_reply:before {
+	width: 0;
+	height: 0;
+	content: "";
+	top: -1px;
+	position: absolute;
+	border-style: solid;
+	border-color: rgba(26, 28, 34, 0.6) transparent;
+	display: inline-block;
+
+}
+
+.ticket_reply.admin:before {
+    right: -13px;
+    border-width: 13px 13px 0 0;
+}
+
+.ticket_reply.user:before {
+    left: -13px;
+    border-width: 13px 0 0 13px;
 }
 
 .ticket_reply_notice > div {
