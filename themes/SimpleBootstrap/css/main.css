@@ -780,8 +780,10 @@ a:before,
 .menu [href^="?m=faq"] > span:before,
 .administration-table [href^="?m=faq"]:before{ content: "\f29c"; }
 .menu [href^="?m=fast_download"] > span:before,
+.monitorButtonContainer [href^="?m=fast_download"]:before,
 .administration-table [href^="?m=fast_download"]:before { content: "\f019"; }
 .menu [href^="?m=dsi"] > span:before,
+.monitorButtonContainer [href^="?m=dsi"]:before,
 .administration-table [href^="?m=dsi"]:before{ content: "\f03e"; }
 .menu [href^="?m=simple-billing"] > span:before,
 .administration-table [href^="?m=simple-billing"]:before { content: "\f07a"; }
