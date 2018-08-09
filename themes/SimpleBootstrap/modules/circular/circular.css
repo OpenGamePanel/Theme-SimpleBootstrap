@@ -1,0 +1,49 @@
+.ql-editor,
+.ql-toolbar.ql-snow,
+.ql-snow .ql-picker,
+.ql-formats,
+.ql-picker-options {
+	color: #fff !important;
+	background-color: rgba(26, 28, 34, 0.4);
+}
+.ql-picker-options {
+	background-color: rgba(26, 28, 34, 0.8) !important;
+}
+
+.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-label:hover,
+.ql-snow.ql-toolbar button:hover,
+.ql-snow .ql-toolbar button:hover {
+	border: 1px solid rgba(255, 255, 255, 0.6) !important;
+}
+
+.ql-snow .ql-stroke {
+	stroke: rgba(255, 255, 255, 1) !important;
+}
+
+.ql-snow.ql-toolbar button:hover,
+.ql-snow .ql-toolbar button:hover,
+.ql-snow.ql-toolbar button:focus,
+.ql-snow .ql-toolbar button:focus,
+.ql-snow.ql-toolbar button.ql-active,
+.ql-snow .ql-toolbar button.ql-active,
+.ql-snow.ql-toolbar .ql-picker-label:hover,
+.ql-snow .ql-toolbar .ql-picker-label:hover,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active,
+.ql-snow.ql-toolbar .ql-picker-item:hover,
+.ql-snow .ql-toolbar .ql-picker-item:hover,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected {
+	color: #fff !important;
+}
+
+.ql-editor h1,
+.ql-editor h2,
+.ql-editor h3 {
+	border-bottom: none;
+}
+
+.ql-toolbar.ql-snow,
+.ql-container.ql-snow {
+	border: 1px solid #22252f !important;
+}
