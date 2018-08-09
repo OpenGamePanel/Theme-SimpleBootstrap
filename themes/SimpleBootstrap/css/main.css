@@ -805,6 +805,7 @@ a:before,
 .monitorButtonContainer [href^="?m=editconfigfiles"]:before { content: "\f1c9"; }
 .monitorButtonContainer [href^="?m=user_games&p=custom_fields"]:before { content: "\f1de"; }
 .menu [href="?m=tshock"] > span:before { content: "\f1bb"; }
+.menu [href="?m=circular"] > span:before { content: "\f0e0"; }
 
 
 /* *** Theme Styler - Dont remove anything below this Line or it will break the Sheet!!! *** */
