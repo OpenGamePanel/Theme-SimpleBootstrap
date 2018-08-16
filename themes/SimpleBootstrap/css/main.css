@@ -696,8 +696,7 @@ a:before,
 	transform: rotate(-90deg);
 }
 
-.monitorbutton:before
-{
+.monitorbutton:before {
         display: block;
         font-size: 40px;
         //margin-bottom: -5px;
@@ -709,6 +708,13 @@ a:before,
 }
 .loading {
         content: "Loading..." !important;
+}
+
+.form-control,
+input[type="checkbox"] {
+	-moz-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.2);
+	-webkit-box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.2);
+	box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.2);
 }
 
 /* Default */
@@ -768,6 +774,7 @@ a:before,
 .menu [href^="?m=cron"] > span:before,
 .administration-table [href^="?m=cron"]:before { content: "\f073"; }
 .menu [href="?m=mysql&p=mysql_admin"] > span:before,
+.monitorButtonContainer [href^="?m=mysql"]:before,
 .administration-table [href="?m=mysql&p=mysql_admin"]:before { content: "\f1c0"; }
 .menu [href="?m=administration&p=banlist"] > span:before,
 .administration-table [href="?m=administration&p=banlist"]:before { content: "\f05e"; }
