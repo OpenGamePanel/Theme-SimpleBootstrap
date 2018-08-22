@@ -223,6 +223,14 @@ $(document).ready(function() {
 	});
 
 
+	/* *** Login Redirect Size *** */
+	if(location.pathname.substring(location.pathname.length-1) == "/" || location.pathname.substring(location.pathname.length-9) == "index.php"){
+		if($('#refresh-manual').length){
+			$('.main').removeClass('col-md-12').addClass('col-md-6').addClass('col-md-offset-3');
+		}
+	}
+
+
 	/* *** Login Page Mod *** */
 	if(location.pathname.substring(location.pathname.length-1) == "/" || location.pathname.substring(location.pathname.length-9) == "index.php"){
 
@@ -354,7 +362,7 @@ $(document).ready(function() {
 						<input type="text" name="email_address" class="form-control" placeholder="Email">\
 						<input type="submit" name="login" value="'+lbtn+'" class="btn btn-primary btn-block btn-sm">\
 					</form>\
-					<a href="index.php" class="btn btn-primary btn-sm">'+bbtn+'</a>\
+					<a href="index.php" class="label" style="display: block;text-align: right;margin-top: 10px;">'+bbtn+'</a>\
 				</div>';
 
 			}
@@ -425,4 +433,3 @@ $(document).on('change', ':file', function() {
 	label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
 	input.trigger('fileselect', [numFiles, label]);
 });
-
