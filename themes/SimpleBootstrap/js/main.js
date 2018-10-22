@@ -28,6 +28,9 @@ $(document).ready(function() {
 			$(this).remove();
 		}
 		$('.footer.center').removeClass('center');
+//		$('input[type="submit"]').each(function(){
+//			$(this).replaceWith('<button type="submit" name="'+$(this).attr('name')+'" value="'+$(this).attr('value')+'" class="btn btn-primary btn-sm">'+$(this).attr('value')+'</button>');
+//		});
 	});
 
 	$('table .first_row > td').each(function(){
@@ -37,6 +40,19 @@ $(document).ready(function() {
 	$('.magnificContentsDiv').bind("DOMSubtreeModified",function(){
 		$('.updateLink').addClass('form-control').css('display','inline-block');
 		$('.copyButton').addClass('btn').addClass('btn-sm').addClass('btn-primary');
+	});
+
+	/* *** Submit Button Replacement *** */
+	$('input[type="submit"]').each(function(){
+	var oSubmitButton = $(this);
+	var oForm = oSubmitButton.closest('form');
+	var sOriginAttrs = '';
+
+	$.each(oSubmitButton[0].attributes, function() {
+		if (this.specified) {
+			sOriginAttrs += ' ' + this.name + '="' + this.value + '"';
+		}
+	});
 	});
 
 
@@ -77,7 +93,7 @@ $(document).ready(function() {
 
 	var inputs = $('input, textarea, select').not('input[type=button], input[type="submit"], input[type="SUBMIT"], input[type=reset], input[type=radio], input[type=checkbox], input[type=image], input[type="file"]');
 	$(inputs).addClass('form-control').removeAttr('style');
-	var buttons = $('button, input[type="button"], input[type="submit"], input[type="SUBMIT"], input[type="reset"], .redirectLink, [href^="?m=gamemanager&p=update&update=refresh"], .main [href="?m=modulemanager&p=update"], .main [href="?m=simple-billing&p=shop"], .main [href^="home.php?m=TS3Admin&changevServer"], .main [href^="?m=gamemanager&p=game_monitor&home_id="], .serverIdToggle');
+	var buttons = $('button, input[type="button"], input[type="submit"], input[type="SUBMIT"], input[type="reset"], .redirectLink, [href^="?m=gamemanager&p=update&update=refresh"], .main [href="?m=modulemanager&p=update"], .main [href="?m=simple-billing&p=shop"], .main [href^="home.php?m=TS3Admin&changevServer"], .main [href^="?m=gamemanager&p=game_monitor&home_id="], .serverIdToggle, .main [href="?m=settings&p=api_hosts"], .main [href="?m=settings"]');
 	$(buttons).addClass('btn').addClass('btn-sm').addClass('btn-primary');
 	$('.main [href^="?m=modulemanager&p=del&id="]').addClass('btn').addClass('btn-xs').addClass('btn-danger');
 	$('.main [href^="?m=modulemanager&p=add&module="]').addClass('btn').addClass('btn-xs').addClass('btn-success');
@@ -251,10 +267,11 @@ $(document).ready(function() {
 			var optns = $('[name="lang"]').html();
 
 			if($('[href="?m=register&p=form"]').length > 0) {
+				//<input type="submit" name="login" value="'+lbtn+'" class="btn btn-primary btn-block btn-sm">\
 				var buttons = '\
 					<div class="row" style="margin-bottom: 10px;">\
 						<div class="col-xs-6">\
-							<input type="submit" name="login" value="'+lbtn+'" class="btn btn-primary btn-block btn-sm">\
+							<button type="submit" name="login" value="'+lbtn+'" class="btn btn-primary btn-block btn-sm">'+lbtn+'</button>\
 						</div>\
 						<div class="col-xs-6">\
 							<a href="?m=register&p=form" class="btn btn-primary btn-block btn-sm">'+$('[href="?m=register&p=form"] > span').text()+'</a>\
@@ -262,10 +279,11 @@ $(document).ready(function() {
 					</div>\
 				';
 			}else{
+				//<input type="submit" name="login" value="'+lbtn+'" class="btn btn-primary btn-block btn-sm">\
 				var buttons = '\
 					<div class="row" style="margin-bottom: 10px;">\
 						<div class="col-xs-12">\
-							<input type="submit" name="login" value="'+lbtn+'" class="btn btn-primary btn-block btn-sm">\
+							<button type="submit" name="login" value="'+lbtn+'" class="btn btn-primary btn-block btn-sm">'+lbtn+'</button>\
 						</div>\
 					</div>\
 				';
@@ -354,13 +372,14 @@ $(document).ready(function() {
 				var lbtn = $('td > [type="submit"]').val();
 				var bbtn = $('[action="index.php"] > input[type="submit"]').val();
 
+				//<input type="submit" name="login" value="'+lbtn+'" class="btn btn-primary btn-block btn-sm">\
 				var new_form = '\
 				<div class="login-container">\
 					<h3>'+title+'</h3>\
 					'+alert+'\
 					<form action="?m=lostpwd" method="post" class="form-group">\
 						<input type="text" name="email_address" class="form-control" placeholder="Email">\
-						<input type="submit" name="login" value="'+lbtn+'" class="btn btn-primary btn-block btn-sm">\
+						<button type="submit" name="login" value="'+lbtn+'" class="btn btn-primary btn-block btn-sm">'+lbtn+'</button>\
 					</form>\
 					<a href="index.php" class="label" style="display: block;text-align: right;margin-top: 10px;">'+bbtn+'</a>\
 				</div>';
@@ -433,3 +452,4 @@ $(document).on('change', ':file', function() {
 	label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
 	input.trigger('fileselect', [numFiles, label]);
 });
+

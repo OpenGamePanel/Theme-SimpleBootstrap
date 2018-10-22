@@ -30,7 +30,7 @@ $(document).ready(function() {
 				<input type="text" id="users_email" name="users_email" class="form-control" placeholder="'+email+'">\
 				<input type="hidden" name="users_comment" value="'+rval+'" class="form-control">\
                                 '+recaptcha+'\
-                                <input type="submit" name="Submit" value="'+sbtn+'" class="btn btn-primary btn-block btn-sm">\
+				<button type="submit" name="Submit" value="'+sbtn+'" class="btn btn-primary btn-block btn-sm">'+sbtn+'</button>\
                         </form>\
                 </div>';
 

@@ -39,6 +39,19 @@ body > .container-fluid {
         height: 3px;
 }
 
+@-webkit-keyframes autofill {
+	to {
+		color: #fff;
+		background: transparent;
+	}
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+	-webkit-animation-name: autofill;
+	-webkit-animation-fill-mode: both;
+}
 
 @media (max-width: 360px) {
 	.g-recaptcha {
@@ -50,10 +63,6 @@ body > .container-fluid {
 	        -webkit-transform: scale(0.95);
 	        -webkit-transform-origin: 0 0;
 	}
-}
-
-input:-webkit-autofill {
-	-webkit-text-fill-color: rgba(26, 28, 34, 0.4) !important;
 }
 
 input[type="image"]{
@@ -96,6 +105,45 @@ input#search + input[type="submit"] {
 	background: white;
 	cursor: inherit;
 	display: block;
+}
+
+.btn,
+.btn-primary {
+	overflow: hidden;
+	position: relative;
+}
+.btn-primary:after,
+.btn:after,
+.input-hack:after {
+	content: '';
+	position: absolute;
+	top: -10%;
+	right: -25%;
+	width: 60%;
+	height: 400%;
+	background-color: rgba(255,255,255,0.2);
+	z-index: 1;
+	-ms-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-ms-transform: rotate(-15deg);
+	transform: rotate(-15deg);
+	transition: all .3s ease-in-out;
+}
+.input-hack {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	border-radius: 4px;
+	margin: 2px;
+}
+.input-hack > input {
+	margin: 0px !important;
+}
+
+.btn-primary:hover:after,
+.btn:hover:after,
+.input-hack:hover:after {
+	width: 70%;
 }
 
 .loading-overlay {
@@ -665,7 +713,7 @@ input[name="map-image"] {
         visibility: visible;
 }
 [id^="mgamemanagerpgamemonitorhomecfgid"] a.user_menu_link:before {
-	content: "●";
+	content: "\25CF";
 	position: relative;
 	left: -5px;
 }

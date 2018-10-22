@@ -60,6 +60,9 @@ $(document).ready(function(){
 
 	checkWidth();
 	$(window).resize(checkWidth);
+
+
+	$('.monitorButtonContainer table th').attr('colspan', 2);
 });
 
 $(window).load(function(){

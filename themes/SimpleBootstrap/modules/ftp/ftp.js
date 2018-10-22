@@ -17,7 +17,7 @@ $(document).ready(function(){
 			var bs_t = '<link rel="stylesheet" href="../../themes/SimpleBootstrap/css/bootstrap-theme.min.css">';
 			var js = '<link rel="stylesheet" href="../../themes/SimpleBootstrap/js/main.js">';
                         $(this).contents().find("head").append(bs);
-			$(this).contents().find("head").append(bs_t);
+			//$(this).contents().find("head").append(bs_t);
                         $(this).contents().find("head").append(js);
 			$(this).contents().find("head").append(main_css);
 			$(this).contents().find("head").append(ftp_css);
