@@ -86,6 +86,9 @@ input#search + input[type="submit"] {
 .input-group-btn > .btn-file > .fa {
 	line-height: 22px;
 }
+.input-group .fa {
+	min-width: 12px;
+}
 
 .btn-file {
 	position: relative;
@@ -199,9 +202,6 @@ td > h3 {
 }
 .login-container input, .login-container select {
 	margin-bottom: 10px;
-}
-.login-container select[name=lang] {
-	padding-left: 5px;
 }
 .login-container h3 {
 	margin-top: 0px;
