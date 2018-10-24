@@ -217,6 +217,9 @@ td > h3 {
 	box-shadow: none !important;
 	-webkit-box-shadow: none !important;
 }
+select.form-control {
+	padding-right: 30px;
+}
 
 .btn:not(span) {
 	margin: 2px;
