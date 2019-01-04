@@ -123,7 +123,7 @@ $(document).ready(function() {
 	$('img[src="images/offline.png"], img[src$="icon_offline.gif"]').replaceWith('<i class="fa fa-circle offline" aria-hidden="true"></i>');
 
 	$('.main img, .main input[type="image"]').error(function () {
-		$(this).unbind("error").attr("src", "themes/SimpleBootstrap/images/image_not_found.png").removeAttr('height');
+		$(this).unbind("error").attr("src", "themes/SimpleBootstrap/images/image_not_found.png").attr("style", "max-width:250px;").removeAttr('height');
 	});
 
 
