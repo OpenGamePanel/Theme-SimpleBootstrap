@@ -20,7 +20,17 @@ $(document).ready(function() {
 	$.getScript( url, function() {
 		animateProgressBars();
 	});
+
+	$('#refreshed-0').bind("DOMSubtreeModified",function(){
+		
+	});
+	$('#refreshed-1').bind("DOMSubtreeModified",function(){
+		$('.currently-online').addClass('table').addClass('table-striped');
+		$('.currently-online td').attr('style','');
+	});
 });
+
+
 
 function animateProgressBars(){
 	$(".progress-bar").each(function() {
@@ -68,4 +78,3 @@ function animateProgressBars(){
 		$(this_b).text($(this_b).html().split(':')[0]);
 	});
 }
-

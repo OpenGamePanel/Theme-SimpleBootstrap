@@ -169,15 +169,18 @@ h0 {
         color: rgba(255, 255, 255, 0.6);
 }
 
-.online_servers div[id^="refreshed-"] div {
-	display: block;
+.online_server div[id^="refreshed-"] {
+	position: relative;
+}
+.online_servers div[id^="refreshed-"] > div:nth-child(2) {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 4px;
 	text-align: center;
-	float: none !important;
 }
-.online_servers div[id^="refreshed-"] div:nth-child(2)>div {
-        display: inline-block;
-}
-
 
 
 /* *** SYSTEM UPTIME *** */
@@ -228,4 +231,12 @@ h0 {
 	margin-right: 5px;
 	font-size: 75%;
 	content: "\f002";
+}
+.currently-online > tbody > tr:first-of-type > td {
+	font-weight: 400 !important;
+	text-transform: uppercase !important;
+	background-color: rgba(26, 28, 34, 0.5);
+}
+.online_servers + .pagination {
+	margin-bottom: 0px !important;
 }

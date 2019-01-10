@@ -123,7 +123,7 @@ input#search + input[type="submit"] {
 	top: -10%;
 	right: -25%;
 	width: 60%;
-	height: 400%;
+	height: 500%;
 	background-color: rgba(255,255,255,0.2);
 	z-index: 1;
 	-ms-transform-origin: 0 0;
