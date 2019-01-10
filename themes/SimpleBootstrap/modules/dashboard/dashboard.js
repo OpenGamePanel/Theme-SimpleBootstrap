@@ -13,6 +13,7 @@ $(document).ready(function() {
 	$('.one_two').addClass('col-xs-12').addClass('col-md-6');
 
 	$('.dragbox-content img').remove();
+	$('.dragbox-content').removeAttr('style');
 
 	$('.bloc > div > br').remove();
 
@@ -22,11 +23,12 @@ $(document).ready(function() {
 	});
 
 	$('#refreshed-0').bind("DOMSubtreeModified",function(){
-		
+
 	});
 	$('#refreshed-1').bind("DOMSubtreeModified",function(){
 		$('.currently-online').addClass('table').addClass('table-striped');
 		$('.currently-online td').attr('style','');
+		$('#refreshed-1 > br').remove();
 	});
 });
 
@@ -75,6 +77,8 @@ function animateProgressBars(){
 	$('.cpu_load br').remove();
 	$('.cpu_load').each(function() {
 		var this_b = $(this).children('b');
-		$(this_b).text($(this_b).html().split(':')[0]);
+		if($(this_b).text().indexOf(':') >= 0){
+			$(this_b).text($(this_b).html().split(':')[0]);
+		}
 	});
 }
