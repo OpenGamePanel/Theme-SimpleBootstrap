@@ -452,3 +452,4 @@ $(document).on('change', ':file', function() {
 	label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
 	input.trigger('fileselect', [numFiles, label]);
 });
+

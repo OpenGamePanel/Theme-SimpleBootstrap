@@ -13,7 +13,6 @@ $(document).ready(function() {
 	$('.one_two').addClass('col-xs-12').addClass('col-md-6');
 
 	$('.dragbox-content img').remove();
-	$('.dragbox-content').removeAttr('style');
 
 	$('.bloc > div > br').remove();
 
@@ -22,20 +21,27 @@ $(document).ready(function() {
 		animateProgressBars();
 	});
 
-	$('#refreshed-0').bind("DOMSubtreeModified",function(){
-
-	});
-	$('#refreshed-1').bind("DOMSubtreeModified",function(){
+	//$('#refreshed-1').bind("DOMSubtreeModified",function(){
+	$('[id^=refreshed-]').bind("DOMSubtreeModified",function(){
 		$('.currently-online').addClass('table').addClass('table-striped');
 		$('.currently-online td').attr('style','');
-		$('#refreshed-1 > br').remove();
+		$('[id^=refreshed-] > br').remove();
+		$('[id^=refreshed-] .load-container > br').remove();
+		$(".dragbox-content .load-container").each(function(){
+			if($(this).find('.progress-wrap').length < 1){
+				$(this).find('.progress').wrapAll('<div class="progress-wrap"></div>');
+			}
+		});
+
 	});
 });
 
 
 
 function animateProgressBars(){
+	$(".progress").addClass('inline-block');
 	$(".progress-bar").each(function() {
+		if($(this).children().length < 1){
 		var value = $(this).attr("data");
 		$(this).radialIndicator({
 			barColor: '#1997c6',
@@ -43,6 +49,7 @@ function animateProgressBars(){
 			roundCorner: true,
 			initValue: value
 		});
+		}
 	});
 
 	$('.dragbox-content b').each(function() {
@@ -62,18 +69,13 @@ function animateProgressBars(){
 
 	$('.dragbox-content cutter').remove();
 
-	$('.dragbox-content .load-container').each(function() {
-		var this_b = $(this).children('b');
-		var this_progress = $(this).children('.progress');
-		$(this_b).insertAfter(this_progress);
-	});
 
 	/* *** Only Storage *** */
-	$('#column4:nth-child(4) .load-container').addClass('storage');
+	$('#column4:nth-child(4) > .dragbox > .load-container').addClass('storage');
 	$('.storage br:first-of-type').replaceWith(' / ');
 
 	/* *** Only CPU Cutting *** */
-	$('#column4:nth-child(2) .load-container').addClass('cpu_load');
+	$('#column4:nth-child(2) > .dragbox > .load-container').addClass('cpu_load');
 	$('.cpu_load br').remove();
 	$('.cpu_load').each(function() {
 		var this_b = $(this).children('b');
@@ -82,3 +84,4 @@ function animateProgressBars(){
 		}
 	});
 }
+

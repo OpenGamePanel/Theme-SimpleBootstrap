@@ -6,10 +6,14 @@ body {
 	-moz-background-size: cover !important;
 	-o-background-size: cover !important;
 	background-size: cover !important;
-	text-shadow: 0 1px 3px rgba(0,0,0,.5);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
+	text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+#editor_wrapper {
+	text-shadow: none;
 }
 
 body > .container-fluid {
