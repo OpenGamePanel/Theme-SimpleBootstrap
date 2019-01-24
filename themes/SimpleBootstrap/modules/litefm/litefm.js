@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
 	$('.operations-button').addClass('btn').addClass('btn-xs').addClass('btn-primary');
 	$('.main [href^="?m=gamemanager&p=game_monitor&home_id="]').addClass('btn').addClass('btn-primary').addClass('btn-sm');
 
@@ -12,5 +11,11 @@ $(document).ready(function() {
 
 	$('[href*="&item="], [href^="javascript:downloadFile"]').addClass('label').addClass('label-default');
 	$('[href$="&p=read_file"]').removeClass('label').removeClass('label-default').addClass('btn').addClass('btn-primary').addClass('btn-xs');
+
+	/* *** Long Name Fix *** */
+	$('td > h3').each(function(){
+		$(this).parent('td').attr('style', 'max-width:400px');
+		$(this).attr('title', $(this).text()).attr('style', 'overflow:hidden;text-overflow:ellipsis;display:inline-block;white-space:nowrap;max-width:100%;');
+	});
 });
 
