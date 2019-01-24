@@ -54,3 +54,7 @@ b.label {
 		margin: 0px;
 	}
 }
+a.btn-xs {
+	font-weight: 600;
+	text-transform: uppercase;
+}
