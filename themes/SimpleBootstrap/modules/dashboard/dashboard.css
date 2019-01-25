@@ -2,9 +2,9 @@ b {
 	font-weight: normal !important;
 }
 .progress {
-        background: none !important;
-        height: auto !important;
-        display: block;
+	background: none !important;
+	height: auto !important;
+	display: block;
 	margin-bottom: 0px !important;
 	box-shadow: none !important;
 }
@@ -16,15 +16,17 @@ b {
 }
 .progress-bar > canvas
 {
-        height: 60px !important;
-        width: 60px !important;
+	height: 60px !important;
+	width: 60px !important;
 }
 .load-container {
 	text-align: center;
 	margin-bottom: 5px;
+display: inline-block;
+margin: 0px 5px 5px;
 }
 #refreshed-0 > #column4:nth-child(2) .load-container {
-        display: inline-block;
+	display: inline-block;
 	width: 24%;
 }
 .load-container b {
@@ -71,7 +73,6 @@ h0 {
 	margin-bottom: 10px;
 }
 .column .placeholder:after {
-	//content: "\f045";
 	content: "\f047";
 	color: rgba(255, 255, 255, 0.3);
 	text-transform: uppercase;
@@ -100,9 +101,9 @@ h0 {
 }
 
 .bloc {
-        background-color: rgba(26, 28, 34, 0.3);
-        border-radius: 4px;
-        border: 1px solid rgba(35, 40, 46, 0.8);
+	background-color: rgba(26, 28, 34, 0.3);
+	border-radius: 4px;
+	border: 1px solid rgba(35, 40, 46, 0.8);
 	margin-bottom: 10px;
 }
 
@@ -123,6 +124,12 @@ h0 {
 	display: inline-block;
 	width: 100%;
 }
+[id^="refreshed-"] .dragbox-content {
+	text-align: center;
+}
+[id^="refreshed-"] pre {
+	text-align: left;
+}
 .dragbox h4 .configure {
 	width: 30px;
 	height: 30px;
@@ -130,8 +137,8 @@ h0 {
 	opacity: 0.8;
 }
 .dragbox h4 .configure:before {
-        font-family: 'FontAwesome';
-        content: "\f063";
+	font-family: 'FontAwesome';
+	content: "\f063";
 }
 
 .dragbox > .ui-sortable:hover,
@@ -166,7 +173,7 @@ h0 {
 }
 .online_servers a:hover
 {
-        color: rgba(255, 255, 255, 0.6);
+	color: rgba(255, 255, 255, 0.6);
 }
 
 .online_server div[id^="refreshed-"] {
@@ -202,15 +209,15 @@ h0 {
 #item5 img,
 #item1 img,
 #item4 img {
-        display: none;
+		display: none;
 }
 #item5 > div:before,
 #item1 > div:before,
 #item4 > div:before {
-        display: inline-block;
+		display: inline-block;
 	font-family: "FontAwesome";
 	font-size: 36px;
-        float: right;
+		float: right;
 	height: 36px;
 	margin: 0px 0px 5px 5px;
 }
