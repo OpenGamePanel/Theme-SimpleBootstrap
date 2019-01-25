@@ -779,6 +779,10 @@ input[type="checkbox"] {
 	border-radius: 3px;
 }
 
+.ace_scroller {
+	overflow-x: scroll;
+}
+
 /* Default */
 .menu a > span:before,
 .administration-table a:before,
