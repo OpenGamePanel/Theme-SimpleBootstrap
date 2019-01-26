@@ -782,6 +782,9 @@ input[type="checkbox"] {
 .ace_scroller {
 	overflow-x: scroll;
 }
+.ace_scrollbar-inner {
+	height: 3px;
+}
 
 /* Default */
 .menu a > span:before,
