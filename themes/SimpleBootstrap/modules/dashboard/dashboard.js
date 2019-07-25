@@ -27,6 +27,7 @@ $(document).ready(function() {
 		$('.currently-online td').attr('style','');
 		$('[id^=refreshed-] > br').remove();
 		$('[id^=refreshed-] .load-container > br').remove();
+		$('.dragbox-content .load-container > br').remove();
 		$(".dragbox-content .load-container").each(function(){
 			if($(this).find('.progress-wrap').length < 1){
 				$(this).find('.progress').wrapAll('<div class="progress-wrap"></div>');
@@ -84,4 +85,3 @@ function animateProgressBars(){
 		}
 	});
 }
-
