@@ -450,6 +450,9 @@ input[name="empty_logger"]:hover
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false) !important;
 	background-repeat: repeat-x !important;
 	border-color: #116787 !important;
+	overflow: hidden !important;
+	display: inline-block !important;
+	position: absolute !important;
 }
 button.mfp-close:hover {
 	background-color: #126e90 !important;
@@ -882,6 +885,7 @@ input[type="checkbox"] {
 .monitorButtonContainer [href^="?m=user_games&p=custom_fields"]:before { content: "\f1de"; }
 .menu [href="?m=tshock"] > span:before { content: "\f1bb"; }
 .menu [href="?m=circular"] > span:before { content: "\f0e0"; }
+.monitorbutton.getAPILinks:before { content: "\f0ec"; }
 
 
 /* *** Theme Styler - Dont remove anything below this Line or it will break the Sheet!!! *** */

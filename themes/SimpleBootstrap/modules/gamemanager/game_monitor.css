@@ -249,3 +249,8 @@ tr.maintr td:last-child {
 		word-break: break-all;
 	}
 }
+.ts3_viewer img {
+	width: 16px;
+	height: 16px;
+	margin-left: 2px;
+}

@@ -38,7 +38,7 @@ $(document).ready(function() {
 	});
 
 	$('.magnificContentsDiv').bind("DOMSubtreeModified",function(){
-		$('.updateLink').addClass('form-control').css('display','inline-block');
+		$('.updateLink, .ogpAPIActions').addClass('form-control').css('display','inline-block');
 		$('.copyButton').addClass('btn').addClass('btn-sm').addClass('btn-primary');
 	});
 
