@@ -2,9 +2,7 @@ $(document).ready(function() {
 	if($('h0').length>1){
 		$('h0:first').css('margin-top', '5px').css('margin-bottom', '0px');
 	}
-	//$('.one_fourth').parent('div').css('margin-right', '-15px');
-	//$('h0:last').css('width', 'calc(100% - 15px)');
-
+	
 	$('.online_servers td').each(function(){
 		$(this).addClass('btn-primary').html($(this).children());
 	});
@@ -13,15 +11,15 @@ $(document).ready(function() {
 	$('.one_two').addClass('col-xs-12').addClass('col-md-6');
 
 	$('.dragbox-content img').remove();
-
 	$('.bloc > div > br').remove();
-
+	
+	// Call Radial Indicator and Init Mod Function
 	var url = "themes/SimpleBootstrap/js/radialIndicator.js";
 	$.getScript( url, function() {
 		animateProgressBars();
 	});
-
-	//$('#refreshed-1').bind("DOMSubtreeModified",function(){
+	
+	// Remove not wanted Tags in Containers every time when DOM is modified
 	$('[id^=refreshed-]').bind("DOMSubtreeModified",function(){
 		$('.currently-online').addClass('table').addClass('table-striped');
 		$('.currently-online td').attr('style','');
@@ -40,6 +38,7 @@ $(document).ready(function() {
 
 
 function animateProgressBars(){
+	// Init Radial Indicator for each Progress Bar
 	$(".progress").addClass('inline-block');
 	$(".progress-bar").each(function() {
 		if($(this).children().length < 1){
@@ -53,23 +52,25 @@ function animateProgressBars(){
 		}
 	});
 
-	$('.dragbox-content b').each(function() {
-		$('<cutter></cutter>').insertBefore(this);
+	// Replace all <b> Tags with a Container in Server Status Section
+	$('.progress').each(function(){
+		var dragbox = $(this).parents('.dragbox-content').first();
+		$(dragbox).find('b').each(function() {
+			$('<cutter></cutter>').insertBefore(this);
+		});
+		$(dragbox).find('cutter').each(function() {
+			var $set = $();
+			var nxt = this.nextSibling;
+			while (nxt) {
+				if (!$(nxt).is('cutter')) {
+					$set.push(nxt);
+					nxt = nxt.nextSibling;
+				} else break;
+			}
+			$set.wrapAll('<div class="load-container"/>');
+		});
+		$(dragbox).find('cutter').remove();
 	});
-	$('.dragbox-content cutter').each(function() {
-		var $set = $();
-		var nxt = this.nextSibling;
-		while (nxt) {
-			if (!$(nxt).is('cutter')) {
-				$set.push(nxt);
-				nxt = nxt.nextSibling;
-			} else break;
-		}
-		$set.wrapAll('<div class="load-container"/>');
-	});
-
-	$('.dragbox-content cutter').remove();
-
 
 	/* *** Only Storage *** */
 	$('#column4:nth-child(4) > .dragbox > .load-container').addClass('storage');
