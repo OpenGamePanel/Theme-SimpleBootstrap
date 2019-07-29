@@ -55,7 +55,7 @@ function animateProgressBars(){
 	// Replace all <b> Tags with a Container in Server Status Section
 	$('.progress').each(function(){
 		var dragbox = $(this).parents('.dragbox-content').first();
-		$(dragbox).find('b').each(function() {
+		$(dragbox).children('b').each(function() {
 			$('<cutter></cutter>').insertBefore(this);
 		});
 		$(dragbox).find('cutter').each(function() {
