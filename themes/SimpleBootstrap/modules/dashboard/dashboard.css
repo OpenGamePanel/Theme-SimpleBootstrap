@@ -155,12 +155,6 @@ h0 {
 .online_servers .name img {
 	margin-right: 4px;
 }
-.online_servers #gamelink {
-	float: right;
-}
-.online_servers div {
-	display: inline-block;
-}
 .online_servers td {
 	border-radius: 4px;
 	padding: 3px 10px !important;
@@ -174,18 +168,25 @@ h0 {
 {
 	color: rgba(255, 255, 255, 0.6);
 }
-
-.online_server div[id^="refreshed-"] {
-	position: relative;
+.online_servers [id^=refreshed],
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
-.online_servers div[id^="refreshed-"] > div:nth-child(2) {
-	position: absolute;
-	margin-left: auto;
-	margin-right: auto;
-	left: 0;
-	right: 0;
-	top: 4px;
-	text-align: center;
+.online_servers [id^=refreshed] div
+{
+	display: inline-block;
+	white-space: nowrap;
+	margin: 0 auto;
+}
+.online_servers div
+{
+	display: inline-block;
+}
+.online_servers #gamelink
+{
+	float: right;
 }
 
 

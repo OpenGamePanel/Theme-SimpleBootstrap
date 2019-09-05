@@ -33,6 +33,26 @@ $(document).ready(function() {
 		});
 
 	});
+	
+	// Dashboard Row Config
+	$.ajax({
+		type: "POST",
+		url: "themes/SimpleBootstrap/conf/sbs.conf",
+		contentType: "application/json; charset=utf-8",
+		dataType: "json",
+		beforeSend: function( xhr ) {
+			xhr.overrideMimeType('application/json');
+		},
+		success: function(json) {
+			if(json['dashboard_rows']=="full_rows"){
+				$('.main .column').removeClassStartingWith('col-md').css("padding-right", "0px");
+			}
+			if(json['dashboard_rows']=="remove_gm_sup"){
+				$('.main .column').removeClassStartingWith('col-md').css("padding-right", "0px");
+				$('.main #column1, .main #column3').css("display", "none");
+			}
+		}
+	});
 });
 
 
@@ -86,3 +106,10 @@ function animateProgressBars(){
 		}
 	});
 }
+
+$.fn.removeClassStartingWith = function (filter) {
+	$(this).removeClass(function (index, className) {
+		return (className.match(new RegExp("\\S*" + filter + "\\S*", 'g')) || []).join(' ')
+	});
+	return this;
+};

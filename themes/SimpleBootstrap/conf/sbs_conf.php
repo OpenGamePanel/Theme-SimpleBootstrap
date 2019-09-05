@@ -6,7 +6,8 @@ $default_conf_params = array(
 	'style' => 'light',
 	'background' => 'fire',
 	'custom_bg' => 'no',
-	'pace' => 'flash'
+	'pace' => 'flash',
+	'dashboard_rows' => 'default'
 );
 
 $pace_loc	= "../css/pace.css";
@@ -150,6 +151,19 @@ if(isset($_SESSION['users_group']) && $_SESSION['users_group'] == 'admin')
 			if($debug){
 				echo "Style changed into: ".$_POST['style_tab']."\n";
 				echo "Put ../css/main_".$conf_params['style'].".css into ".$css_loc."\n";
+			}
+		}
+	}
+
+	/* *** Set Dashboard Rows *** */
+	if(isset($_POST['dashboard_rows']))
+	{
+		if($_POST['dashboard_rows']!=$conf_params['dashboard_rows'])
+		{
+			$conf_changes = true;
+			$conf_params['dashboard_rows'] = $_POST['dashboard_rows'];
+			if($debug){
+				echo "Dashboard Rows changed into: ".$_POST['dashboard_rows']."\n";
 			}
 		}
 	}

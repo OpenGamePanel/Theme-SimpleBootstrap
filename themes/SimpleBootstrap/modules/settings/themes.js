@@ -71,6 +71,18 @@ $(document).ready(function() {
 			</div>';
 			$('form[action="?m=settings&p=themes"] tr:last').after('<tr><td align="right"><label for="custom_bg">Custom BG:'+custom_bg_info+'</label></td><td align="left">'+upload_input+'</td><td><i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Changes the Theme Background to a Custom Image. The Image will be Fixed to 100%/100%!"></i></td></tr>');
 
+                        var dashboard_rows = {'Default':'default', 'Full size Rows':'full_rows', 'Remove \'Game Monitor\' & \'Support Rows\'':'remove_gm_sup'}
+                        var add_row = '<tr><td align="right"><label for="style_tab">Dashboard Rows:</label></td><td align="left"><select id="dashboard_rows" name="dashboard_rows" class="form-control">';
+                        for (var key in dashboard_rows) {
+                                if(dashboard_rows[key]==json['dashboard_rows']){
+                                        add_row += '<option value="'+dashboard_rows[key]+'" selected>'+key+'</option>';
+                                }else{
+                                        add_row += '<option value="'+dashboard_rows[key]+'">'+key+'</option>';
+                                }
+                        }
+                        add_row += '</td><td><i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Changes the Row Style of Game Monitor, Online Servers and Support Boxes at Dashboard"></i></td></tr>';
+                        $('form[action="?m=settings&p=themes"] tr:last').after(add_row);
+
 		}
         });
 
