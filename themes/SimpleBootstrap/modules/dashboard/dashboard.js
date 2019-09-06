@@ -47,8 +47,19 @@ $(document).ready(function() {
 			if(json['dashboard_rows']=="full_rows"){
 				$('.main .column').removeClassStartingWith('col-md').css("padding-right", "0px");
 			}
-			if(json['dashboard_rows']=="remove_gm_sup"){
-				$('.main .column').removeClassStartingWith('col-md').css("padding-right", "0px");
+			if(json['dashboard_rows']=="remove_one"){
+				$('.main .column').removeClassStartingWith('col-md').addClass('col-md-6');
+				$('.main #column3').css("padding-right", "0px");
+				$('.main #column1').css("display", "none");
+			}
+			if(json['dashboard_rows']=="remove_one_two"){
+				$('.main .column').removeClassStartingWith('col-md');
+				$('.main #column3').css("padding-right", "0px");
+				$('.main #column1, .main #column2').css("display", "none");
+			}
+			if(json['dashboard_rows']=="remove_one_three"){
+				$('.main .column').removeClassStartingWith('col-md');
+				$('.main #column2').css("padding-right", "0px");
 				$('.main #column1, .main #column3').css("display", "none");
 			}
 		}

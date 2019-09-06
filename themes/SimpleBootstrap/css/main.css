@@ -486,6 +486,10 @@ button.mfp-close:focus {
 .alert.alert-danger:before {
 	content: "\f057";
 }
+.alert-success,
+.alert-danger {
+	text-shadow: 0 1px 3px rgba(0,0,0,.2);
+}
 
 
 /* *** UI-Dialog Restyling *** */
@@ -884,7 +888,8 @@ input[type="checkbox"] {
 .monitorButtonContainer [href^="?m=editconfigfiles"]:before { content: "\f1c9"; }
 .monitorButtonContainer [href^="?m=user_games&p=custom_fields"]:before { content: "\f1de"; }
 .menu [href="?m=tshock"] > span:before { content: "\f1bb"; }
-.menu [href="?m=circular"] > span:before { content: "\f0e0"; }
+.menu [href="?m=circular"] > span:before,
+.administration-table [href="?m=circular"]:before { content: "\f0e0"; }
 .monitorbutton.getAPILinks:before { content: "\f0ec"; }
 
 

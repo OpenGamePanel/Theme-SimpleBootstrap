@@ -34,11 +34,17 @@
 .ticket_reply.admin {
 	margin-right: 20px;
 	float: right;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 
 .ticket_reply.user {
 	margin-left: 20px;
 	float: left;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 
 .ticket_reply:before {
@@ -68,7 +74,7 @@
 }
 
 .ticket_footer {
-	padding: 5px 10px;
+	padding: 5px 10px 0px;
 	background-color: rgba(26, 28, 34, 0.2);
 	border-top: 1px solid #22252f;
 	display: inline-block;

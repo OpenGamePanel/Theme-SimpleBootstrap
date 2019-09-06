@@ -57,11 +57,9 @@ h0 {
 	padding-right: 0px;
 }
 
-.column {
-	min-height: 150px;
-}
 .main .column {
 	padding-left: 0px !important;
+	min-height: 150px;
 }
 
 .column .placeholder {
@@ -86,6 +84,7 @@ h0 {
 	#column4 {
 		float: none !important;
 		width: 100% !important;
+		margin-left: 0px !important;
 	}
 	.col-md-3,
 	.col-md-6,
@@ -168,7 +167,7 @@ h0 {
 {
 	color: rgba(255, 255, 255, 0.6);
 }
-.online_servers [id^=refreshed],
+.online_servers [id^=refreshed]
 {
 	display: flex;
 	flex-wrap: wrap;
@@ -178,7 +177,6 @@ h0 {
 {
 	display: inline-block;
 	white-space: nowrap;
-	margin: 0 auto;
 }
 .online_servers div
 {
