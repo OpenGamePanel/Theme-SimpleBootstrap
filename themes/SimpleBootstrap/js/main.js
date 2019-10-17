@@ -321,14 +321,12 @@ $(document).ready(function() {
 			$('select[name=lang] > option:first-child').replaceWith('<option value="-" selected="selected">'+lang+'</option>');
 		}
 
-		/* *** Lost Password Form *** */
+		// *** Lost Password Form ***
 		if(window.location.href.indexOf('?m=lostpwd') > -1) {
-			//alert('bla');
-
 			var title = $('.main h2').text();
 
-			if ($('.main > strong').length > 0) {
-				/* *** Error Message *** */
+			if ($('.main > strong').length > 0 || $('.main > p').text().toLowerCase().indexOf('smtp')>=0) {
+				// *** Error Message ***
 
 				var err = $('.main strong').text();
 				var err_msg = $('.main p').text();
@@ -340,7 +338,7 @@ $(document).ready(function() {
 					<a href="?m=lostpwd" class="btn btn-primary btn-sm"><< Back</a>\
 				</div>';
 			}else if ($('.main > p > b[style="color:red;"]').length > 0) {
-				/* *** Sent Password *** */
+				// *** Sent Password ***
 
 				var msgb = $('.main > p > b[style="color:red;"]').text();
 				$('.main > p > b[style="color:red;"]').remove();
@@ -372,7 +370,6 @@ $(document).ready(function() {
 				var lbtn = $('td > [type="submit"]').val();
 				var bbtn = $('[action="index.php"] > input[type="submit"]').val();
 
-				//<input type="submit" name="login" value="'+lbtn+'" class="btn btn-primary btn-block btn-sm">\
 				var new_form = '\
 				<div class="login-container">\
 					<h3>'+title+'</h3>\
