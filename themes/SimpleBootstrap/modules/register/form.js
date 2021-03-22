@@ -17,10 +17,30 @@ $(document).ready(function() {
 
 		var sbtn = $('input[type="submit"]').val();
 		var rval = $('input[name="users_comment"]').val();
+		var errout = "";
+
+		if($('.main > table').length > 0)
+		{
+			var errt = [];
+			$(".main > table tr").each(function ()
+			{
+				var tdtxt = $(this).find('td').text();
+				if(!tdtxt.includes('<img'))
+				{
+					errt.push(tdtxt);
+				}
+			})
+		}
+
+		if(errt)
+		{
+			var errout = '<div class="alert alert-danger" role="alert"><ul><li>'+errt.join("</li><li>")+'</li></ul></div>';
+		}
 
                 var new_form = '\
                 <div class="login-container">\
                         <h3>'+title+'</h3>\
+			'+errout+'\
                         <form action="?m=register&p=exec" name="loginForm" method="post" class="form-group">\
 				<input type="text" id="login_name" name="login_name" class="form-control" placeholder="'+user+'">\
 				<input id="users_passwd" type="password" name="users_passwd" class="form-control" placeholder="'+pass+'">\
